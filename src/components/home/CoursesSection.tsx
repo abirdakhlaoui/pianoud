@@ -165,7 +165,7 @@ export default function CoursesSection() {
                       {isAr?course.instructor_ar:course.instructor_en}
                     </p>
                     <div style={{ display:"flex", alignItems:"center", gap:5, marginBottom:14 }}>
-                      {[1,2,3,4,5].map(s=>(
+                      {[1,2,3,4,5].map((s: any) =>(
                         <span key={s} style={{ fontSize:11, color:s<=Math.floor(course.rating)?"var(--gold)":"var(--border)" }}>★</span>
                       ))}
                       <span style={{ fontSize:12, fontWeight:700, color:"var(--gold)", marginLeft:2 }}>{course.rating}</span>

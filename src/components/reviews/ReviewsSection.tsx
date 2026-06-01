@@ -83,7 +83,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
   const ratingBars = [5,4,3,2,1].map((star: any) => ({
     star,
     count: reviews.filter((r: any) => r.rating === star).length,
-    pct:   total ? Math.round((reviews.filter(r=>r.rating===star).length/total)*100) : 0,
+    pct:   total ? Math.round((reviews.filter((r: any) =>r.rating===star).length/total)*100) : 0,
   }))
 
   return (
@@ -95,7 +95,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
           <div style={{ textAlign:"center", flexShrink:0 }}>
             <div className="font-display gradient-text" style={{ fontSize:56, fontWeight:800, lineHeight:1 }}>{avg}</div>
             <div style={{ display:"flex", gap:2, justifyContent:"center", margin:"8px 0" }}>
-              {[1,2,3,4,5].map(s=>(
+              {[1,2,3,4,5].map((s: any) =>(
                 <span key={s} style={{ fontSize:20, color:s<=Math.round(avg)?"var(--gold)":"var(--border)" }}>★</span>
               ))}
             </div>
@@ -229,7 +229,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
                   <div style={{ fontSize:11, color:"var(--text-muted)" }}>{formatDate(review.createdAt)}</div>
                 </div>
                 <div style={{ display:"flex", gap:1 }}>
-                  {[1,2,3,4,5].map(s=>(
+                  {[1,2,3,4,5].map((s: any) =>(
                     <span key={s} style={{ fontSize:14, color:s<=review.rating?"var(--gold)":"var(--border)" }}>★</span>
                   ))}
                 </div>

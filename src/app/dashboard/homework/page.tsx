@@ -368,7 +368,7 @@ export default function HomeworkPage() {
                                     onChange={e => setGrades(p=>({...p,[sub.id]:{...p[sub.id],grade:e.target.value}}))}
                                     style={{ ...inputStyle, padding:"9px 12px", fontSize:13, cursor:"pointer" }}>
                                     <option value="">{isAr?"اختر...":"Select..."}</option>
-                                    {["A+","A","A-","B+","B","B-","C+","C","D","F","10/10","9/10","8/10","7/10","6/10","5/10"].map(g=>(
+                                    {["A+","A","A-","B+","B","B-","C+","C","D","F","10/10","9/10","8/10","7/10","6/10","5/10"].map((g: any) =>(
                                       <option key={g} value={g}>{g}</option>
                                     ))}
                                   </select>

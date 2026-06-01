@@ -37,7 +37,7 @@ export default async function StudentDashboard() {
             { label:"Enrolled Courses",  value: enrollments.length,  icon:"📚" },
             { label:"Lessons Completed", value: completedLessons,    icon:"✅" },
             { label:"Unread Messages",   value: unreadMessages,      icon:"💬" },
-            { label:"Certificates",      value: enrollments.filter(e=>e.status==="COMPLETED").length, icon:"🏆" },
+            { label:"Certificates",      value: enrollments.filter((e: any) =>e.status==="COMPLETED").length, icon:"🏆" },
           ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <span style={{ fontSize:32 }}>{stat.icon}</span>

@@ -69,8 +69,8 @@ export default function AdminEnrollmentsPage() {
     setEnrolling(false)
 
     if (res.ok) {
-      const userName   = users.find(u=>u.id===selectedUser)?.name
-      const courseName = courses.find(c=>c.id===selectedCourse)?.title_en
+      const userName   = users.find((u: any) =>u.id===selectedUser)?.name
+      const courseName = courses.find((c: any) =>c.id===selectedCourse)?.title_en
       setMsg(`✓ ${userName} enrolled in ${courseName}`)
       setTimeout(() => setMsg(""), 4000)
       setSelectedUser("")
@@ -200,7 +200,7 @@ export default function AdminEnrollmentsPage() {
             ) : (
               <div className="card" style={{ overflow:"hidden" }}>
                 <div style={{ display:"grid", gridTemplateColumns:"1.5fr 2fr 1fr 80px", gap:16, padding:"12px 20px", background:"var(--ink-soft)", borderBottom:"1px solid var(--border)" }}>
-                  {["STUDENT","COURSE","STATUS",""].map(h=>(
+                  {["STUDENT","COURSE","STATUS",""].map((h: any) =>(
                     <span key={h} style={{ fontSize:11, fontWeight:700, color:"var(--text-muted)", letterSpacing:1.5 }}>{h}</span>
                   ))}
                 </div>

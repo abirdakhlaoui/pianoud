@@ -63,9 +63,9 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
 
   const counts = {
     ALL:        list.length,
-    STUDENT:    list.filter(u=>u.role==="STUDENT").length,
-    INSTRUCTOR: list.filter(u=>u.role==="INSTRUCTOR").length,
-    ADMIN:      list.filter(u=>u.role==="ADMIN").length,
+    STUDENT:    list.filter((u: any) =>u.role==="STUDENT").length,
+    INSTRUCTOR: list.filter((u: any) =>u.role==="INSTRUCTOR").length,
+    ADMIN:      list.filter((u: any) =>u.role==="ADMIN").length,
   }
 
   return (

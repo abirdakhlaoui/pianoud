@@ -180,7 +180,7 @@ export default function CoursesPage() {
                         {isAr?course.instructor_ar:course.instructor_en}
                       </p>
                       <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:12 }}>
-                        {[1,2,3,4,5].map(s=>(
+                        {[1,2,3,4,5].map((s: any) =>(
                           <span key={s} style={{ fontSize:12, color:s<=Math.floor(course.rating)?"var(--gold)":"var(--border)" }}>★</span>
                         ))}
                         <span style={{ fontSize:13, fontWeight:700, color:"var(--gold)" }}>{course.rating}</span>

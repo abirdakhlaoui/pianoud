@@ -66,7 +66,7 @@ export default function InstructorStudentsPage() {
           <div className="card" style={{ overflow:"hidden" }}>
             {/* Header */}
             <div style={{ display:"grid", gridTemplateColumns:"2fr 2fr 2fr 1fr 120px", gap:16, padding:"12px 24px", background:"var(--ink-soft)", borderBottom:"1px solid var(--border)" }}>
-              {["STUDENT","EMAIL","COURSE","PROGRESS","ACTIONS"].map(h=>(
+              {["STUDENT","EMAIL","COURSE","PROGRESS","ACTIONS"].map((h: any) =>(
                 <span key={h} style={{ fontSize:11, fontWeight:700, color:"var(--text-muted)", letterSpacing:1.5 }}>{h}</span>
               ))}
             </div>
