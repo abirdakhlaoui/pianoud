@@ -20,7 +20,7 @@ export async function GET() {
       orderBy: { enrolledAt:"desc" },
     })
 
-    const students = enrollments.map(e => ({
+    const students = enrollments.map((e: any) => ({
       enrollmentId: e.id,
       id:           e.user.id,
       name:         e.user.name,
