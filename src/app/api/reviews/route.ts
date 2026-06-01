@@ -25,7 +25,7 @@ export async function GET(req: Request) {
     })
 
     const avg = reviews.length
-      ? reviews.reduce((a,r) => a + r.rating, 0) / reviews.length
+      ? reviews.reduce((a: any, r: any) => a + r.rating, 0) / reviews.length
       : 0
 
     return NextResponse.json({ reviews, avg: Math.round(avg*10)/10, total: reviews.length })
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 
     // Update course rating
     const allReviews = await prisma.review.findMany({ where:{ courseId: course.id } })
-    const newRating  = allReviews.reduce((a,r) => a + r.rating, 0) / allReviews.length
+    const newRating  = allReviews.reduce((a: any, r: any) => a + r.rating, 0) / allReviews.length
 
     await prisma.course.update({
       where: { id: course.id },
