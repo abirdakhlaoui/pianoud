@@ -93,7 +93,7 @@ export async function POST(req: Request) {
     prisma.enrollment.findMany({
       where: { course:{ slug: courseSlug }, status:"ACTIVE" },
       include: { user:{ select:{ name:true, email:true } } }
-    }).then(enrollments => {
+    }).then((enrollments: any[]) => {
       for (const e of enrollments) {
         notifyHomeworkAssigned(
           e.user.email,
