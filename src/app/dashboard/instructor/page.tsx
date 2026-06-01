@@ -40,7 +40,7 @@ export default async function InstructorDashboard() {
             { label:"Total Students",  value: totalStudents,  icon:"👥" },
             { label:"Homework Given",  value: totalHomework,  icon:"📝" },
             { label:"Unread Messages", value: unreadMessages, icon:"💬" },
-          ].map(stat => (
+          ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <span style={{ fontSize:32 }}>{stat.icon}</span>
               <div>
@@ -61,7 +61,7 @@ export default async function InstructorDashboard() {
             { label:"Homework",          href:"/dashboard/homework",                 icon:"📝", desc:"Create & review homework", badge: 0 },
             { label:"Messages",          href:"/dashboard/messages",                 icon:"💬", desc:"Chat with students", badge: unreadMessages },
             { label:"Settings",          href:"/dashboard/settings",                 icon:"⚙️", desc:"Profile settings" },
-          ].map(item => (
+          ].map((item: any) => (
             <Link key={item.href} href={item.href} style={{ textDecoration:"none" }}>
               <div className="card" style={{ padding:24, position:"relative" }}>
                 {item.badge ? (

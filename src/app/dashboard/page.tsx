@@ -38,7 +38,7 @@ export default async function StudentDashboard() {
             { label:"Lessons Completed", value: completedLessons,    icon:"✅" },
             { label:"Unread Messages",   value: unreadMessages,      icon:"💬" },
             { label:"Certificates",      value: enrollments.filter(e=>e.status==="COMPLETED").length, icon:"🏆" },
-          ].map(stat => (
+          ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <span style={{ fontSize:32 }}>{stat.icon}</span>
               <div>
@@ -59,7 +59,7 @@ export default async function StudentDashboard() {
             { label:"Messages",        href:"/dashboard/messages",    icon:"💬", desc:"Chat with instructor", badge: unreadMessages },
             { label:"Settings",        href:"/dashboard/settings",    icon:"⚙️", desc:"Account settings" },
             { label:"Certificates",     href:"/dashboard/certificate", icon:"🎓", desc:"Download your certificates" },
-          ].map(item => (
+          ].map((item: any) => (
             <Link key={item.href} href={item.href} style={{ textDecoration:"none" }}>
               <div className="card" style={{ padding:24, position:"relative" }}>
                 {item.badge ? (
@@ -90,7 +90,7 @@ export default async function StudentDashboard() {
               My Courses
             </h2>
             <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
-              {enrollments.map(enrollment => (
+              {enrollments.map((enrollment: any) => (
                 <div key={enrollment.id} className="card" style={{ padding:22, display:"flex", alignItems:"center", gap:20, flexWrap:"wrap" }}>
                   <div style={{ width:52, height:52, borderRadius:10, background: enrollment.course.instrument==="PIANO" ? "linear-gradient(135deg,#0d1117,#1a1a2e)" : "linear-gradient(135deg,#0d1117,#1a0a00)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:24, flexShrink:0 }}>
                     {enrollment.course.instrument==="PIANO" ? "🎹" : "🪘"}

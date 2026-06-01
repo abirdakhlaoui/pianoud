@@ -34,7 +34,7 @@ export default function InstructorsSection() {
 
         {/* Cards */}
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(340px,1fr))", gap:32, maxWidth:860, margin:"0 auto" }}>
-          {INSTRUCTORS.map(inst => (
+          {INSTRUCTORS.map((inst: any) => (
             <Link key={inst.id} href={`/instructors`} style={{ textDecoration:"none" }}>
               <article style={{
                 borderRadius:24,
@@ -87,7 +87,7 @@ export default function InstructorsSection() {
                       { value:`${inst.experience}`, label_en:"yrs exp",  label_ar:"سنة" },
                       { value:`${inst.rating}★`,    label_en:"rating",   label_ar:"تقييم" },
                       { value:inst.students.toLocaleString(), label_en:"students", label_ar:"طالب" },
-                    ].map((stat,i) => (
+                    ].map((stat: any, i: any) => (
                       <div key={i} style={{ textAlign:"center", padding:"12px 8px", background:"var(--ink)", borderRadius:10 }}>
                         <div style={{ fontSize:16, fontWeight:700, color:"var(--cream)" }}>{stat.value}</div>
                         <div style={{ fontSize:11, color:"var(--text-muted)", marginTop:3 }}>{isAr?stat.label_ar:stat.label_en}</div>

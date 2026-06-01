@@ -56,7 +56,7 @@ export default function MaqamatSection() {
 
             {/* Pricing preview */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 28 }}>
-              {PLANS.map((p, i) => (
+              {PLANS.map((p: any, i: any) => (
                 <div key={i} style={{ padding: "14px 12px", borderRadius: 10, background: "rgba(0,0,0,0.3)", border: "1px solid " + p.color + "30", textAlign: "center" }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: p.color, letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 }}>
                     {isAr ? p.label_ar : p.label_en}
@@ -88,7 +88,7 @@ export default function MaqamatSection() {
                 {isAr ? "7 محاور رئيسية" : "7 Main Pillars"}
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                {PILLARS.map((p, i) => (
+                {PILLARS.map((p: any, i: any) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, background: "rgba(0,0,0,0.3)", border: "1px solid var(--border)" }}>
                     <span style={{ fontSize: 20 }}>{p.icon}</span>
                     <span style={{ fontSize: 13, fontWeight: 600, color: "var(--cream)" }}>

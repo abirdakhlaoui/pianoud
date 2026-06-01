@@ -220,7 +220,7 @@ function BookingContent() {
   const [loading, setLoading]     = useState(false)
   const [done, setDone]           = useState(false)
 
-  const selectedPlan = BOOKING_OPTIONS.find(o => o.id === selected)
+  const selectedPlan = BOOKING_OPTIONS.find((o: any) => o.id === selected)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -316,7 +316,7 @@ Notes: ${note || "None"}
             { key: "select",  en: "Choose Plan",    ar: "اختر الخطة"    },
             { key: "details", en: "Your Details",   ar: "بياناتك"        },
             { key: "confirm", en: "Confirm",        ar: "تأكيد"          },
-          ].map((s, i) => {
+          ].map((s: any, i: any) => {
             const steps = ["select", "details", "confirm"]
             const isActive = steps.indexOf(step) >= i
             return (
@@ -364,13 +364,13 @@ Notes: ${note || "None"}
               { group_en: "🌿 Intermediate Plans", group_ar: "🌿 خطط المتوسط", ids: ["intermediate-session", "intermediate-month", "intermediate-pack"] },
               { group_en: "🌳 Advanced Plans", group_ar: "🌳 خطط المتقدمين", ids: ["advanced-session", "advanced-month", "advanced-2months"] },
               { group_en: "⭐ Bundle Packages", group_ar: "⭐ باقات مجمّعة", ids: ["bundle-2levels", "bundle-3levels"] },
-            ].map(group => (
+            ].map((group: any) => (
               <div key={group.group_en} style={{ marginBottom: 28 }}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: "var(--cream)", marginBottom: 14, letterSpacing: 0.5 }}>
                   {isAr ? group.group_ar : group.group_en}
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  {BOOKING_OPTIONS.filter(o => group.ids.includes(o.id)).map(opt => (
+                  {BOOKING_OPTIONS.filter((o: any) => group.ids.includes(o.id)).map((opt: any) => (
                     <div key={opt.id}
                       onClick={() => setSelected(opt.id)}
                       style={{ padding: "18px 20px", borderRadius: 12, cursor: "pointer", display: "flex", alignItems: "center", gap: 16, transition: "all 0.2s", border: `1.5px solid ${selected === opt.id ? opt.border : "var(--border)"}`, background: selected === opt.id ? opt.bg : "var(--ink-card)", position: "relative" }}>
@@ -469,7 +469,7 @@ Notes: ${note || "None"}
                   <select value={time} onChange={e => setTime(e.target.value)} required
                     style={{ ...inputStyle, cursor: "pointer" }}>
                     <option value="">{isAr ? "اختر الوقت..." : "Select time..."}</option>
-                    {["09:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"].map(t => (
+                    {["09:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"].map((t: any) => (
                       <option key={t} value={t}>{t}</option>
                     ))}
                   </select>
@@ -526,7 +526,7 @@ Notes: ${note || "None"}
                   { en: "Free assessment session included", ar: "جلسة تقييم مجانية مشمولة" },
                   { en: "Confirmation within 24 hours",    ar: "تأكيد خلال 24 ساعة" },
                   { en: "Flexible rescheduling",           ar: "إمكانية إعادة الجدولة" },
-                ].map((f, i) => (
+                ].map((f: any, i: any) => (
                   <div key={i} style={{ display: "flex", gap: 8, fontSize: 12, color: "var(--text-muted)", marginBottom: 8 }}>
                     <span style={{ color: "var(--gold)" }}>✓</span>
                     <span>{isAr ? f.ar : f.en}</span>
@@ -560,7 +560,7 @@ Notes: ${note || "None"}
                   { label_en: "Preferred Date", label_ar: "التاريخ",      value: date  },
                   { label_en: "Preferred Time", label_ar: "الوقت",        value: time  },
                   ...(note ? [{ label_en: "Notes", label_ar: "ملاحظات", value: note }] : []),
-                ].map((row, i) => (
+                ].map((row: any, i: any) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid var(--border)", gap: 16 }}>
                     <span style={{ fontSize: 13, color: "var(--text-muted)", flexShrink: 0 }}>{isAr ? row.label_ar : row.label_en}</span>
                     <span style={{ fontSize: 13, color: "var(--cream)", fontWeight: 500, textAlign: "right" }}>{row.value}</span>

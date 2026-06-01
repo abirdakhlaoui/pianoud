@@ -97,7 +97,7 @@ export default function ContactPage() {
                 value: isAr ? "أقل من 24 ساعة" : "Less than 24 hours",
                 desc_en:"Mon–Sat, 9am–9pm", desc_ar:"الاثنين – السبت",
               },
-            ].map((item, i) => (
+            ].map((item: any, i: any) => (
               <div key={i} className="card" style={{ padding:24, display:"flex", gap:16, alignItems:"flex-start" }}>
                 <div style={{ width:48, height:48, borderRadius:12, background:"var(--gold-pale)", border:"1px solid var(--border)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
                   {item.icon}
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   { label:"YouTube",   icon:"▶", color:"#f87171", href:"#" },
                   { label:"Instagram", icon:"◈", color:"#c084fc", href:"#" },
                   { label:"Facebook",  icon:"f", color:"#60a5fa", href:"#" },
-                ].map(s => (
+                ].map((s: any) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                     style={{ display:"flex", alignItems:"center", gap:8, padding:"10px 16px", borderRadius:8, border:"1px solid var(--border)", textDecoration:"none", transition:"all 0.2s", background:"var(--ink)" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor=s.color; (e.currentTarget as HTMLElement).style.color=s.color }}

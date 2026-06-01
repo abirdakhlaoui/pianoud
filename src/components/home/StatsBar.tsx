@@ -9,8 +9,8 @@ export default function StatsBar() {
 
   useEffect(() => {
     fetch("/api/stats")
-      .then(r => r.json())
-      .then(d => setStats(d))
+      .then((r: any) => r.json())
+      .then((d: any) => setStats(d))
   }, [])
 
   const items = [
@@ -21,7 +21,7 @@ export default function StatsBar() {
 
   return (
     <div style={{ display: "flex", justifyContent: "center", gap: "clamp(24px, 6vw, 80px)", flexWrap: "wrap" }}>
-      {items.map((stat, i) => (
+      {items.map((stat: any, i: any) => (
         <div key={i} style={{ textAlign: "center" }}>
           <div className="gradient-text font-display" style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 700 }}>
             {isAr ? stat.value_ar : stat.value}

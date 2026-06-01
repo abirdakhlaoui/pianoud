@@ -529,7 +529,7 @@ export default function CourseDetailPage() {
                       { icon:"💬", en:"Instructor Q&A",             ar:"أسئلة للمدرّس"          },
                       { icon:"📅", en:"Live sessions available",    ar:"جلسات مباشرة متاحة"    },
                       { icon:"📥", en:"Downloadable resources",     ar:"موارد قابلة للتحميل"   },
-                    ].map(item => (
+                    ].map((item: any) => (
                       <div key={item.en} style={{ display:"flex", alignItems:"center", gap:10, fontSize:13, color:"var(--text-muted)", marginBottom:8 }}>
                         <span>{item.icon}</span>
                         <span>{isAr?item.ar:item.en}</span>
@@ -560,7 +560,7 @@ export default function CourseDetailPage() {
               { key:"curriculum",  en:"Curriculum",  ar:"المنهج"      },
               { key:"instructor",  en:"Instructor",  ar:"المدرّس"     },
               { key:"reviews",     en:"Reviews",     ar:"التقييمات"  },
-            ].map(t => (
+            ].map((t: any) => (
               <button key={t.key} onClick={() => setTab(t.key as any)} style={{
                 padding:"16px 24px", fontSize:14, fontWeight:600, cursor:"pointer",
                 background:"transparent", border:"none",
@@ -639,14 +639,14 @@ export default function CourseDetailPage() {
                   <div style={{ textAlign:"center" }}>
                     <div className="font-display gradient-text" style={{ fontSize:56, fontWeight:800, lineHeight:1 }}>{course.rating}</div>
                     <div style={{ display:"flex", gap:2, justifyContent:"center", margin:"8px 0" }}>
-                      {[1,2,3,4,5].map(s => (
+                      {[1,2,3,4,5].map((s: any) => (
                         <span key={s} style={{ fontSize:18, color:s<=Math.floor(course.rating)?"var(--gold)":"var(--border)" }}>★</span>
                       ))}
                     </div>
                     <div style={{ fontSize:12, color:"var(--text-muted)" }}>{isAr?"تقييم الدورة":"Course Rating"}</div>
                   </div>
                   <div style={{ flex:1 }}>
-                    {[5,4,3].map(stars => (
+                    {[5,4,3].map((stars: any) => (
                       <div key={stars} style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
                         <div style={{ flex:1, height:6, background:"var(--border)", borderRadius:3, overflow:"hidden" }}>
                           <div style={{ height:"100%", background:"var(--gold)", borderRadius:3, width: stars===5?"90%":stars===4?"7%":"3%" }}/>
@@ -668,7 +668,7 @@ export default function CourseDetailPage() {
                         <div>
                           <div style={{ fontSize:14, fontWeight:600, color:"var(--cream)" }}>{isAr?review.name_ar:review.name}</div>
                           <div style={{ display:"flex", gap:1 }}>
-                            {[1,2,3,4,5].map(s => (
+                            {[1,2,3,4,5].map((s: any) => (
                               <span key={s} style={{ fontSize:12, color:s<=review.rating?"var(--gold)":"var(--border)" }}>★</span>
                             ))}
                           </div>
@@ -790,7 +790,7 @@ export default function CourseDetailPage() {
                       {[
                         { icon:"⭐", value:course.rating, label_en:"Rating", label_ar:"تقييم" },
                         { icon:"👥", value:course.students.toLocaleString(), label_en:"Students", label_ar:"طالب" },
-                      ].map((stat,i) => (
+                      ].map((stat: any, i: any) => (
                         <div key={i} style={{ fontSize:13, color:"var(--text-muted)" }}>
                           <span style={{ color:"var(--gold)" }}>{stat.icon} {stat.value}</span>
                           {" "}{isAr?stat.label_ar:stat.label_en}

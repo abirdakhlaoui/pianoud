@@ -26,7 +26,7 @@ function SearchContent() {
   useEffect(() => {
     if (!query.trim()) { setResults([]); return }
     const q   = query.toLowerCase()
-    const res = ALL_COURSES.filter(c =>
+    const res = ALL_COURSES.filter((c: any) =>
       c.title_en.toLowerCase().includes(q) ||
       c.title_ar.includes(q) ||
       c.instrument.toLowerCase().includes(q) ||
@@ -67,7 +67,7 @@ function SearchContent() {
               {isAr?"اكتب للبحث عن دوراتنا...":"Type to search our courses..."}
             </p>
             <div style={{ display:"flex", gap:10, justifyContent:"center", marginTop:20, flexWrap:"wrap" }}>
-              {["Piano","Oud","Beginner","Advanced","Kids","Arabic"].map(tag => (
+              {["Piano","Oud","Beginner","Advanced","Kids","Arabic"].map((tag: any) => (
                 <button key={tag} onClick={() => setQuery(tag)} style={{ padding:"6px 16px", borderRadius:999, border:"1px solid var(--border)", background:"transparent", color:"var(--text-muted)", fontSize:13, cursor:"pointer" }}>
                   {tag}
                 </button>
@@ -90,7 +90,7 @@ function SearchContent() {
               {results.length} {isAr?"نتيجة":"result(s)"} {isAr?"لـ":"for"} "{query}"
             </p>
             <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
-              {results.map(course => (
+              {results.map((course: any) => (
                 <Link key={course.slug} href={`/courses/${course.slug}`} style={{ textDecoration:"none" }}>
                   <div className="card" style={{ padding:22, display:"flex", alignItems:"center", gap:16 }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)" }}

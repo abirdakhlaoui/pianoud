@@ -118,7 +118,7 @@ export default function PianoPage() {
               { key:"individual", en:"Individual Lessons",    ar:"دروس فردية"        },
               { key:"courses",    en:"Online Courses",         ar:"الدورات الاونلاين"  },
               { key:"manhej",     en:"Piano Styles & Genres",  ar:"انواع البيانو"      },
-            ].map(t => (
+            ].map((t: any) => (
               <button key={t.key} onClick={() => setActiveTab(t.key)} style={{ padding:"16px 24px", fontSize:14, fontWeight:600, cursor:"pointer", background:"transparent", border:"none", color: activeTab===t.key ? "var(--gold)" : "var(--text-muted)", borderBottom: activeTab===t.key ? "2px solid var(--gold)" : "2px solid transparent", transition:"all 0.2s", whiteSpace:"nowrap" }}>
                 {isAr ? t.ar : t.en}
               </button>
@@ -163,7 +163,7 @@ export default function PianoPage() {
                   </div>
 
                   <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16, marginBottom: plan.combos.length > 0 ? 24 : 0 }} className="pricing-grid">
-                    {plan.options.map((opt, oi) => (
+                    {plan.options.map((opt: any, oi: any) => (
                       <div key={oi} style={{ padding:24, borderRadius:14, background: oi===2 ? plan.bg : "var(--ink-card)", border:"1.5px solid " + (oi===2 ? plan.border : "var(--border)"), position:"relative", display:"flex", flexDirection:"column" }}>
                         {opt.badge_en && (
                           <span style={{ position:"absolute", top:-10, left:"50%", transform:"translateX(-50%)", fontSize:10, fontWeight:800, padding:"3px 12px", borderRadius:999, background:plan.color, color:"#0A0A0A", whiteSpace:"nowrap" }}>
@@ -191,7 +191,7 @@ export default function PianoPage() {
                       <p style={{ fontSize:12, fontWeight:700, color:"var(--gold)", letterSpacing:2, textTransform:"uppercase" }}>
                         {isAr ? "عروض الباقات" : "Bundle Offers"}
                       </p>
-                      {plan.combos.map((combo, ci) => (
+                      {plan.combos.map((combo: any, ci: any) => (
                         <div key={ci} style={{ padding:"18px 24px", borderRadius:12, background:"rgba(201,168,76,0.06)", border:"1px solid rgba(201,168,76,0.2)", display:"flex", alignItems:"center", justifyContent:"space-between", gap:16, flexWrap:"wrap" }}>
                           <div>
                             <p style={{ fontSize:15, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>
@@ -292,7 +292,7 @@ export default function PianoPage() {
                 { icon:"🧒", en:"Piano for Kids",          ar:"البيانو للاطفال",          desc_en:"Fun, engaging lessons designed specifically for children aged 5-12.",                              desc_ar:"دروس ممتعة مصممة خصيصا للاطفال من 5 الى 12 سنة." },
                 { icon:"📖", en:"Music Reading (Solfege)", ar:"قراءة النوتة الموسيقية",   desc_en:"Learn to read and write sheet music — an essential skill for every serious musician.",             desc_ar:"تعلم قراءة النوتة الموسيقية وكتابتها — مهارة اساسية لكل موسيقي جاد." },
                 { icon:"🎵", en:"Music Theory",            ar:"نظرية الموسيقى",           desc_en:"Harmony, scales, chords, and composition — understand how music works from the inside.",           desc_ar:"الهارموني والسلالم والاوتار والتأليف — افهم كيف تعمل الموسيقى من الداخل." },
-              ].map((style, i) => (
+              ].map((style: any, i: any) => (
                 <div key={i} className="card" style={{ padding:24, display:"flex", gap:16 }}>
                   <div style={{ width:48, height:48, borderRadius:10, background:"var(--gold-pale)", border:"1px solid var(--border)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
                     {style.icon}

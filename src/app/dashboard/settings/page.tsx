@@ -179,7 +179,7 @@ export default function SettingsPage() {
                 { label_en:"Current Password", label_ar:"كلمة المرور الحالية", value:currentPwd, onChange:setCurrentPwd },
                 { label_en:"New Password",     label_ar:"كلمة المرور الجديدة", value:newPwd,     onChange:setNewPwd     },
                 { label_en:"Confirm Password", label_ar:"تأكيد كلمة المرور",   value:confirmPwd, onChange:setConfirmPwd },
-              ].map(field => (
+              ].map((field: any) => (
                 <div key={field.label_en}>
                   <label style={{ fontSize:13, fontWeight:500, color:"var(--text-muted)", display:"block", marginBottom:8 }}>
                     {isAr ? field.label_ar : field.label_en}
@@ -217,7 +217,7 @@ export default function SettingsPage() {
               {isAr ? "اختر مظهر المنصة المفضل لديك" : "Choose your preferred theme"}
             </p>
             <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:12 }}>
-              {THEMES.map(t => (
+              {THEMES.map((t: any) => (
                 <button key={t.key} onClick={() => setTheme(t.key)} style={{
                   padding:"20px 16px", borderRadius:12, cursor:"pointer",
                   border:"2px solid",
@@ -250,7 +250,7 @@ export default function SettingsPage() {
               {[
                 { key:"en", label:"English", native:"English", flag:"🇬🇧" },
                 { key:"ar", label:"Arabic",  native:"عربي",    flag:"🇸🇦" },
-              ].map(l => (
+              ].map((l: any) => (
                 <button key={l.key} onClick={() => setLang(l.key as "en"|"ar")} style={{
                   padding:"20px", borderRadius:12, cursor:"pointer",
                   border:"2px solid",

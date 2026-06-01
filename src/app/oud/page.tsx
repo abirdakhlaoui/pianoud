@@ -120,7 +120,7 @@ export default function OudPage() {
               { key:"individual", en:"Individual Lessons", ar:"دروس فردية" },
               { key:"theory",     en:"Arabic Music Theory", ar:"نظرية الموسيقى العربية" },
               { key:"group",      en:"Curriculum (Manhej)", ar:"المنهج الدراسي" },
-            ].map(t => (
+            ].map((t: any) => (
               <button key={t.key} onClick={() => setActiveTab(t.key as any)} style={{
                 padding:"16px 24px", fontSize:14, fontWeight:600, cursor:"pointer",
                 background:"transparent", border:"none",
@@ -175,7 +175,7 @@ export default function OudPage() {
 
                   {/* Pricing options */}
                   <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16, marginBottom: plan.combos.length>0?24:0 }} className="pricing-grid">
-                    {plan.options.map((opt, oi) => (
+                    {plan.options.map((opt: any, oi: any) => (
                       <div key={oi} style={{
                         padding:24, borderRadius:14,
                         background: oi===2 ? plan.bg : "var(--ink-card)",
@@ -216,7 +216,7 @@ export default function OudPage() {
                       <p style={{ fontSize:12, fontWeight:700, color:"var(--gold)", letterSpacing:2, textTransform:"uppercase" }}>
                         {isAr?"عروض الباقات":"Bundle Offers"}
                       </p>
-                      {plan.combos.map((combo, ci) => (
+                      {plan.combos.map((combo: any, ci: any) => (
                         <div key={ci} style={{ padding:"18px 24px", borderRadius:12, background:"rgba(201,168,76,0.06)", border:"1px solid rgba(201,168,76,0.2)", display:"flex", alignItems:"center", justifyContent:"space-between", gap:16, flexWrap:"wrap" }}>
                           <div>
                             <p style={{ fontSize:15, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>
@@ -334,7 +334,7 @@ export default function OudPage() {
                   desc_ar:"فن الارتجال الحر (التقسيم) في المقامات — كيف تعبّر عن المشاعر بحرية ضمن قواعد المقام.",
                   icon:"🎭",
                 },
-              ].map((topic, i) => (
+              ].map((topic: any, i: any) => (
                 <div key={i} className="card" style={{ padding:24, display:"flex", gap:16 }}>
                   <div style={{ width:48, height:48, borderRadius:10, background:"var(--gold-pale)", border:"1px solid var(--border)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
                     {topic.icon}
@@ -366,7 +366,7 @@ export default function OudPage() {
                   { label_en:"2 months",  label_ar:"شهران",        price:325, note_en:"8 sessions/month × 2 months",     note_ar:"8 جلسات/شهر × شهرين",      badge_en:"Minimum",  badge_ar:"الحد الأدنى" },
                   { label_en:"Beginner + Intermediate", label_ar:"مبتدئ + متوسط", price:650, note_en:"2 levels · 4 months", note_ar:"مستويان · 4 أشهر",            badge_en:"Recommended", badge_ar:"موصى به" },
                   { label_en:"All 3 levels", label_ar:"المستويات الثلاثة", price:975, note_en:"Complete journey · 6 months", note_ar:"رحلة كاملة · 6 أشهر", badge_en:"Best Value", badge_ar:"أفضل قيمة" },
-                ].map((opt,i) => (
+                ].map((opt: any, i: any) => (
                   <div key={i} style={{ padding:20, borderRadius:12, background:"var(--ink-card)", border:`1.5px solid ${i===2?"rgba(201,168,76,0.3)":"var(--border)"}`, position:"relative" }}>
                     <span style={{ position:"absolute", top:-10, left:"50%", transform:"translateX(-50%)", fontSize:10, fontWeight:800, padding:"3px 12px", borderRadius:999, background: i===2?"var(--gold)":i===1?"#34d399":"var(--text-muted)", color:"#0A0A0A", whiteSpace:"nowrap" }}>
                       {isAr?opt.badge_ar:opt.badge_en}
@@ -415,7 +415,7 @@ onError={(e) => { (e.target as HTMLImageElement).src = "" }}
                     <p style={{ fontSize:14, color:"var(--text-muted)" }}>منهج آلة العود</p>
                     <p style={{ fontSize:13, color:"var(--cream)", marginTop:8 }}>Tareq Jundi · طارق الجندي</p>
                     <div style={{ display:"flex", gap:6, justifyContent:"center", marginTop:16, flexWrap:"wrap" }}>
-                      {[1,2,3,4,5,6,7,8].map(g => (
+                      {[1,2,3,4,5,6,7,8].map((g: any) => (
                         <span key={g} style={{ fontSize:10, fontWeight:800, width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center",
                           background: g<=2?"#ef4444":g<=4?"#f97316":g<=6?"#22c55e":"#3b82f6",
                           color:"#fff"
@@ -444,7 +444,7 @@ onError={(e) => { (e.target as HTMLImageElement).src = "" }}
                     { en:"Classical & contemporary pieces",     ar:"مقطوعات كلاسيكية ومعاصرة"    },
                     { en:"Arabic maqamat & theory",             ar:"مقامات عربية ونظرية موسيقية" },
                     { en:"Used in academies worldwide",         ar:"مستخدم في أكاديميات عالمية"  },
-                  ].map((item,i) => (
+                  ].map((item: any, i: any) => (
                     <div key={i} style={{ display:"flex", gap:8, alignItems:"flex-start", fontSize:13, color:"var(--text-muted)" }}>
                       <span style={{ color:"var(--gold)", flexShrink:0 }}>✓</span>
                       <span>{isAr?item.ar:item.en}</span>
@@ -468,7 +468,7 @@ onError={(e) => { (e.target as HTMLImageElement).src = "" }}
                 { grade:6, color:"#3b82f6", en:"Intermediate+", ar:"متوسط متقدم",  desc_en:"Free taqsim, modal modulation",            desc_ar:"التقسيم الحر والانتقال المقامي" },
                 { grade:7, color:"#8b5cf6", en:"Advanced",      ar:"متقدم",        desc_en:"Professional repertoire, composition",     desc_ar:"ريبرتوار احترافي وتأليف موسيقي" },
                 { grade:8, color:"#ec4899", en:"Mastery",       ar:"الإتقان",      desc_en:"Concert performance, original compositions", desc_ar:"الأداء الاحترافي والمقطوعات الأصلية" },
-              ].map(g => (
+              ].map((g: any) => (
                 <div key={g.grade} className="card" style={{ padding:16, borderTop:`3px solid ${g.color}` }}>
                   <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8 }}>
                     <div style={{ width:28, height:28, borderRadius:"50%", background:g.color, display:"flex", alignItems:"center", justifyContent:"center", fontSize:12, fontWeight:800, color:"#fff", flexShrink:0 }}>

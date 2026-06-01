@@ -156,7 +156,7 @@ export default function SignUpPage() {
                       { key:"PIANO", icon:"🎹", label:"Piano",      desc:"Classical, Arabic, Jazz" },
                       { key:"OUD",   icon:"🪘", label:"Oud",        desc:"Arabic, Maqam, Andalusian" },
                       { key:"BOTH",  icon:"🎵", label:"Both",       desc:"Piano & Oud together" },
-                    ].map(opt => (
+                    ].map((opt: any) => (
                       <button key={opt.key} type="button" onClick={() => setInstrument(opt.key as any)} style={{
                         padding:"18px 12px", borderRadius:12, cursor:"pointer",
                         border:"2px solid",
@@ -187,7 +187,7 @@ export default function SignUpPage() {
                       { key:"BEGINNER",     icon:"🌱", label:"Beginner",     desc:"No experience yet" },
                       { key:"INTERMEDIATE", icon:"🌿", label:"Intermediate", desc:"Some basics known" },
                       { key:"ADVANCED",     icon:"🌳", label:"Advanced",     desc:"Looking to master" },
-                    ].map(opt => (
+                    ].map((opt: any) => (
                       <button key={opt.key} type="button" onClick={() => setLevel(opt.key as any)} style={{
                         padding:"18px 12px", borderRadius:12, cursor:"pointer",
                         border:"2px solid",

@@ -51,7 +51,7 @@ export default function CourseVideosPage() {
         )}
 
         <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
-          {LESSONS.map((lesson, i) => {
+          {LESSONS.map((lesson: any, i: any) => {
             const videoId = videos[lesson.id] || ""
             const previewUrl = "https://www.youtube.com/watch?v=" + videoId
             return (

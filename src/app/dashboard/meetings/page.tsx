@@ -13,12 +13,12 @@ export default function StudentMeetingsPage() {
 
   useEffect(() => {
     fetch("/api/meetings")
-      .then(r => r.json())
-      .then(data => { setMeetings(data.meetings || []); setLoading(false) })
+      .then((r: any) => r.json())
+      .then((data: any) => { setMeetings(data.meetings || []); setLoading(false) })
   }, [])
 
-  const upcoming = meetings.filter(m => new Date(`${m.date}T${m.time}`) >= new Date())
-  const past     = meetings.filter(m => new Date(`${m.date}T${m.time}`) < new Date())
+  const upcoming = meetings.filter((m: any) => new Date(`${m.date}T${m.time}`) >= new Date())
+  const past     = meetings.filter((m: any) => new Date(`${m.date}T${m.time}`) < new Date())
 
   function MeetingCard({ m, isPast }: { m: any; isPast: boolean }) {
     return (
@@ -106,7 +106,7 @@ export default function StudentMeetingsPage() {
                   {isAr?"القادمة":"Upcoming"}
                 </h2>
                 <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
-                  {upcoming.map((m,i) => <MeetingCard key={i} m={m} isPast={false}/>)}
+                  {upcoming.map((m: any, i: any) => <MeetingCard key={i} m={m} isPast={false}/>)}
                 </div>
               </div>
             )}
@@ -116,7 +116,7 @@ export default function StudentMeetingsPage() {
                   {isAr?"المنتهية":"Past"}
                 </h2>
                 <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
-                  {past.map((m,i) => <MeetingCard key={i} m={m} isPast={true}/>)}
+                  {past.map((m: any, i: any) => <MeetingCard key={i} m={m} isPast={true}/>)}
                 </div>
               </div>
             )}

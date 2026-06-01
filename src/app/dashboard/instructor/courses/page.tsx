@@ -47,7 +47,7 @@ export default function InstructorCoursesPage() {
     setDeleting(id)
     const res = await fetch(`/api/instructor/courses/${id}`, { method: "DELETE" })
     if (res.ok) {
-      setCourses(prev => prev.filter(c => c.id !== id))
+      setCourses(prev => prev.filter((c: any) => c.id !== id))
     }
     setDeleting(null)
   }
@@ -59,7 +59,7 @@ export default function InstructorCoursesPage() {
       body: JSON.stringify({ isPublished: !current }),
     })
     if (res.ok) {
-      setCourses(prev => prev.map(c => c.id === id ? { ...c, isPublished: !current } : c))
+      setCourses(prev => prev.map((c: any) => c.id === id ? { ...c, isPublished: !current } : c))
     }
   }
 
@@ -101,7 +101,7 @@ export default function InstructorCoursesPage() {
           </div>
         ) : (
           <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
-            {courses.map(course => (
+            {courses.map((course: any) => (
               <div key={course.id} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:20, flexWrap:"wrap" }}>
                 <div style={{ width:56, height:56, borderRadius:12, background:"var(--ink)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28, flexShrink:0 }}>
                   {course.instrument === "PIANO" ? "🎹" : "🪘"}

@@ -80,9 +80,9 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
     return new Date(str).toLocaleDateString(isAr ? "ar-SA" : "en-US", { year:"numeric", month:"long", day:"numeric" })
   }
 
-  const ratingBars = [5,4,3,2,1].map(star => ({
+  const ratingBars = [5,4,3,2,1].map((star: any) => ({
     star,
-    count: reviews.filter(r => r.rating === star).length,
+    count: reviews.filter((r: any) => r.rating === star).length,
     pct:   total ? Math.round((reviews.filter(r=>r.rating===star).length/total)*100) : 0,
   }))
 
@@ -105,7 +105,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
           </div>
 
           <div style={{ flex:1, minWidth:180 }}>
-            {ratingBars.map(bar => (
+            {ratingBars.map((bar: any) => (
               <div key={bar.star} style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
                 <span style={{ fontSize:12, color:"var(--text-muted)", width:20, textAlign:"center" }}>{bar.star}★</span>
                 <div style={{ flex:1, height:6, background:"var(--border)", borderRadius:3, overflow:"hidden" }}>
@@ -144,7 +144,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
                   {isAr ? "تقييمك:" : "Your Rating:"}
                 </label>
                 <div style={{ display:"flex", gap:6 }}>
-                  {[1,2,3,4,5].map(s => (
+                  {[1,2,3,4,5].map((s: any) => (
                     <button key={s} type="button"
                       onClick={() => setMyRating(s)}
                       onMouseEnter={() => setHover(s)}
@@ -218,7 +218,7 @@ export default function ReviewsSection({ courseSlug }: { courseSlug: string }) {
         </div>
       ) : (
         <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
-          {reviews.map(review => (
+          {reviews.map((review: any) => (
             <div key={review.id} className="card" style={{ padding:24 }}>
               <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:12 }}>
                 <div style={{ width:42, height:42, borderRadius:"50%", background:"linear-gradient(135deg,#E8CB7E,#C9A84C)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, fontWeight:800, color:"#0A0A0A", flexShrink:0 }}>

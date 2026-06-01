@@ -9,7 +9,7 @@ function PianoKeysDecoration({ opacity = 0.06 }: { opacity?: number }) {
   const pattern = [1,0,1,0,1,1,0,1,0,1,0,1]
   return (
     <div style={{ display: "flex", alignItems: "flex-start", gap: 2, opacity }}>
-      {Array.from({ length: 28 }).map((_, i) => {
+      {Array.from({ length: 28 }).map((_: any, i: any) => {
         const isBlack = pattern[i % 12]
         return (
           <div key={i} style={{
@@ -114,7 +114,7 @@ export default function HeroSection() {
         { left: "92%", top: "70%", size: 18, delay: "2s",    dur: 6 },
         { left: "48%", top: "8%",  size: 11, delay: "1s",    dur: 10 },
         { left: "75%", top: "15%", size: 16, delay: "3s",    dur: 7 },
-      ].map((n, i) => (
+      ].map((n: any, i: any) => (
         <span key={i} style={{
           position: "absolute", left: n.left, top: n.top,
           fontSize: n.size, color: "var(--gold)", opacity: 0.1,

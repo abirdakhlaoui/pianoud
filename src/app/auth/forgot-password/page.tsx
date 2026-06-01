@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
 
           {/* Step indicators */}
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:8, marginBottom:28 }}>
-            {["email","code","password"].map((s, i) => (
+            {["email","code","password"].map((s: any, i: any) => (
               <div key={s} style={{ display:"flex", alignItems:"center", gap:8 }}>
                 <div style={{
                   width:28, height:28, borderRadius:"50%",
@@ -167,7 +167,7 @@ export default function ForgotPasswordPage() {
                 {[
                   { label:"New Password",     value:newPwd,     set:setNewPwd     },
                   { label:"Confirm Password", value:confirmPwd, set:setConfirm    },
-                ].map(f => (
+                ].map((f: any) => (
                   <div key={f.label}>
                     <label style={{ fontSize:13, fontWeight:500, color:"var(--text-muted)", display:"block", marginBottom:8 }}>{f.label}</label>
                     <input type="password" value={f.value} onChange={e => f.set(e.target.value)}

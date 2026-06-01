@@ -38,7 +38,7 @@ export default function PianoSection() {
                 { level_en:"Beginner",     level_ar:"مبتدئ",  price:"$25",  desc_en:"/session", desc_ar:"/جلسة", color:"#34d399" },
                 { level_en:"Intermediate", level_ar:"متوسط",  price:"$50",  desc_en:"/session", desc_ar:"/جلسة", color:"#fbbf24" },
                 { level_en:"Advanced",     level_ar:"متقدم",  price:"$75",  desc_en:"/session", desc_ar:"/جلسة", color:"#f87171" },
-              ].map((p,i) => (
+              ].map((p: any, i: any) => (
                 <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>
                     {isAr ? p.level_ar : p.level_en}
@@ -56,7 +56,7 @@ export default function PianoSection() {
                 { en:"Bundle packages — save up to $125",        ar:"باقات مجمّعة — وفّر حتى 125 دولار" },
                 { en:"Classical, Arabic, Jazz & Kids Piano",     ar:"بيانو كلاسيكي وعربي وجاز وأطفال"  },
                 { en:"Bilingual instruction (Arabic & English)", ar:"تدريس ثنائي اللغة"                  },
-              ].map((f,i) => (
+              ].map((f: any, i: any) => (
                 <div key={i} style={{ display:"flex", gap:10, fontSize:14, color:"var(--text-muted)" }}>
                   <span style={{ color:"var(--gold)", flexShrink:0 }}>✓</span>
                   <span>{isAr ? f.ar : f.en}</span>
@@ -81,10 +81,10 @@ export default function PianoSection() {
             <div style={{ padding:"36px", borderRadius:20, background:"rgba(201,168,76,0.06)", border:"1px solid rgba(201,168,76,0.2)", textAlign:"center" }}>
               <svg width="160" height="100" viewBox="0 0 160 100" fill="none" style={{ margin:"0 auto 20px", display:"block" }}>
                 <rect x="4" y="20" width="152" height="64" rx="6" fill="none" stroke="#C9A84C" strokeWidth="2"/>
-                {[12,32,52,72,92,112,132].map((x,i) => (
+                {[12,32,52,72,92,112,132].map((x: any, i: any) => (
                   <rect key={i} x={x} y="26" width="16" height="52" rx="2" fill="none" stroke="#C9A84C" strokeWidth="1.2" opacity="0.7"/>
                 ))}
-                {[22,42,82,102,122].map((x,i) => (
+                {[22,42,82,102,122].map((x: any, i: any) => (
                   <rect key={i} x={x} y="26" width="10" height="32" rx="1.5" fill="#C9A84C" opacity="0.6"/>
                 ))}
                 <rect x="4" y="82" width="152" height="6" rx="2" fill="#C9A84C" opacity="0.15"/>
@@ -106,7 +106,7 @@ export default function PianoSection() {
                 { icon:"🌍", en:"Arabic Piano",     ar:"بيانو عربي",     href:"/courses/arabic-piano"        },
                 { icon:"🎵", en:"Piano KIDS",       ar:"بيانو للأطفال",  href:"/courses/piano-kids"          },
                 { icon:"📖", en:"Music Reading",    ar:"قراءة النوتة",   href:"/courses/music-reading"       },
-              ].map((item,i) => (
+              ].map((item: any, i: any) => (
                 <Link key={i} href={item.href} style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 14px", borderRadius:10, background:"rgba(0,0,0,0.3)", border:"1px solid var(--border)", textDecoration:"none", transition:"all 0.2s" }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)"}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor="var(--border)"}>

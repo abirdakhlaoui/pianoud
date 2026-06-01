@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
             { label:"Total Courses",     value:totalCourses,                 icon:"🎓", color:"var(--gold)" },
             { label:"Total Enrollments", value:totalEnrollments,             icon:"📋", color:"#34d399" },
             { label:"Total Revenue",     value:`${revenue.toFixed(0)} SAR`,  icon:"💰", color:"#fbbf24" },
-          ].map(stat => (
+          ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <div style={{ width:48, height:48, borderRadius:12, background:`${stat.color}18`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:24 }}>
                 {stat.icon}
@@ -65,7 +65,7 @@ export default async function AdminDashboard() {
             { label:"Messages",        href:"/dashboard/messages",       icon:"💬", desc:"Platform messages" },
             { label:"Homework",        href:"/dashboard/homework",       icon:"📝", desc:"View all homework" },
             { label:"Enrollments",     href:"/dashboard/admin/enrollments", icon:"📋", desc:"Manage enrollments manually" },
-          ].map(item => (
+          ].map((item: any) => (
             <Link key={item.href} href={item.href} style={{ textDecoration:"none" }}>
               <div className="card" style={{ padding:24 }}>
                 <span style={{ fontSize:32, display:"block", marginBottom:12 }}>{item.icon}</span>
@@ -86,7 +86,7 @@ export default async function AdminDashboard() {
               <Link href="/dashboard/admin/users" style={{ fontSize:13, color:"var(--gold)", textDecoration:"none" }}>View all →</Link>
             </div>
             <div style={{ display:"flex", flexDirection:"column" }}>
-              {recentUsers.map((u,i) => (
+              {recentUsers.map((u: any, i: any) => (
                 <div key={u.id} style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 0", borderBottom: i<recentUsers.length-1?"1px solid var(--border)":"none" }}>
                   <div style={{ width:36, height:36, borderRadius:"50%", background:"var(--gold)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:14, fontWeight:700, color:"#0A0A0A", flexShrink:0 }}>
                     {u.name[0].toUpperCase()}
@@ -114,7 +114,7 @@ export default async function AdminDashboard() {
             <div style={{ display:"flex", flexDirection:"column" }}>
               {recentEnrollments.length === 0 ? (
                 <p style={{ fontSize:14, color:"var(--text-muted)" }}>No enrollments yet.</p>
-              ) : recentEnrollments.map((e,i) => (
+              ) : recentEnrollments.map((e: any, i: any) => (
                 <div key={e.id} style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 0", borderBottom: i<recentEnrollments.length-1?"1px solid var(--border)":"none" }}>
                   <span style={{ fontSize:24, flexShrink:0 }}>{e.course.instrument==="PIANO"?"🎹":"🪘"}</span>
                   <div style={{ flex:1, minWidth:0 }}>

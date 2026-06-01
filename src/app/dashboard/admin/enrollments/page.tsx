@@ -91,7 +91,7 @@ export default function AdminEnrollmentsPage() {
     }
   }
 
-  const students = users.filter(u => u.role === "STUDENT")
+  const students = users.filter((u: any) => u.role === "STUDENT")
   const filtered = enrollments.filter((e: any) =>
     !searchUser ||
     e.user?.name?.toLowerCase().includes(searchUser.toLowerCase()) ||
@@ -151,7 +151,7 @@ export default function AdminEnrollmentsPage() {
                 <select value={selectedUser} onChange={e=>setSelectedUser(e.target.value)} required
                   style={{ ...inputStyle, cursor:"pointer" }}>
                   <option value="">Select a student...</option>
-                  {students.map(u => (
+                  {students.map((u: any) => (
                     <option key={u.id} value={u.id}>{u.name} — {u.email}</option>
                   ))}
                 </select>
@@ -164,7 +164,7 @@ export default function AdminEnrollmentsPage() {
                 <select value={selectedCourse} onChange={e=>setSelectedCourse(e.target.value)} required
                   style={{ ...inputStyle, cursor:"pointer" }}>
                   <option value="">Select a course...</option>
-                  {courses.map(c => (
+                  {courses.map((c: any) => (
                     <option key={c.id} value={c.id}>{c.title_en}</option>
                   ))}
                 </select>

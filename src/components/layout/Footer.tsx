@@ -31,7 +31,7 @@ export default function Footer() {
                 { label:"YouTube",   color:"#f87171", href:"#" },
                 { label:"Instagram", color:"#c084fc", href:"#" },
                 { label:"Facebook",  color:"#60a5fa", href:"#" },
-              ].map(s => (
+              ].map((s: any) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   style={{ fontSize:11, padding:"5px 12px", borderRadius:6, border:"1px solid var(--border)", color:"var(--text-muted)", textDecoration:"none", transition:"all 0.2s" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor=s.color; (e.currentTarget as HTMLElement).style.color=s.color }}
@@ -54,7 +54,7 @@ export default function Footer() {
                 { en:"Arabic Piano",       ar:"البيانو العربي",   href:"/courses/arabic-piano"       },
                 { en:"Piano KIDS",         ar:"البيانو للأطفال",  href:"/courses/piano-kids"         },
                 { en:"View All",           ar:"جميع الدورات",     href:"/courses"                    },
-              ].map(link => (
+              ].map((link: any) => (
                 <Link key={link.href} href={link.href}
                   style={{ fontSize:14, color:"var(--text-muted)", textDecoration:"none", transition:"color 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.color="var(--gold)")}
@@ -76,7 +76,7 @@ export default function Footer() {
                 { en:"Instructors",  ar:"المدرّسون",     href:"/instructors" },
                 { en:"Contact",      ar:"تواصل معنا",    href:"/contact"     },
                 { en:"Search",       ar:"البحث",         href:"/search"      },
-              ].map(link => (
+              ].map((link: any) => (
                 <Link key={link.href} href={link.href}
                   style={{ fontSize:14, color:"var(--text-muted)", textDecoration:"none", transition:"color 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.color="var(--gold)")}
@@ -99,7 +99,7 @@ export default function Footer() {
                 { en:"Dashboard",   ar:"لوحة التحكم",   href:"/dashboard"     },
                 { en:"My Progress", ar:"تقدّمي",         href:"/dashboard/progress" },
                 { en:"Settings",    ar:"الإعدادات",      href:"/dashboard/settings" },
-              ].map(link => (
+              ].map((link: any) => (
                 <Link key={link.href} href={link.href}
                   style={{ fontSize:14, color:"var(--text-muted)", textDecoration:"none", transition:"color 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.color="var(--gold)")}

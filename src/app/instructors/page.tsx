@@ -84,7 +84,7 @@ export default function InstructorsPage() {
       {/* Instructor profiles */}
       <div className="container" style={{ paddingTop:64, paddingBottom:80 }}>
         <div style={{ display:"flex", flexDirection:"column", gap:64 }}>
-          {INSTRUCTORS.map((inst, idx) => (
+          {INSTRUCTORS.map((inst: any, idx: any) => (
             <div key={idx} style={{ display:"grid", gap:40, alignItems:"start" }} className="instructor-grid">
 
               {/* Left — Profile card */}
@@ -118,7 +118,7 @@ export default function InstructorsPage() {
                       { value:inst.rating+"⭐", label_en:"Rating",   label_ar:"تقييم"  },
                       { value:inst.students,    label_en:"Students", label_ar:"طالب"   },
                       { value:inst.courses.length, label_en:"Courses",  label_ar:"دورات"  },
-                    ].map((s,si) => (
+                    ].map((s: any, si: any) => (
                       <div key={si} style={{ textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:20, fontWeight:700, color:"var(--cream)" }}>{s.value}</div>
                         <div style={{ fontSize:11, color:"var(--text-muted)" }}>{isAr?s.label_ar:s.label_en}</div>
@@ -128,7 +128,7 @@ export default function InstructorsPage() {
 
                   {/* Specialties */}
                   <div style={{ display:"flex", gap:6, flexWrap:"wrap", justifyContent:"center", marginBottom:20 }}>
-                    {(isAr?inst.specialties_ar:inst.specialties_en).map((s,si) => (
+                    {(isAr?inst.specialties_ar:inst.specialties_en).map((s: any, si: any) => (
                       <span key={si} style={{ fontSize:11, padding:"3px 10px", borderRadius:6, background:"var(--gold-pale)", color:"var(--gold)", border:"1px solid var(--border)" }}>
                         {s}
                       </span>
@@ -160,7 +160,7 @@ export default function InstructorsPage() {
                     {isAr ? "الإنجازات" : "Achievements"}
                   </h3>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
-                    {(isAr?inst.achievements_ar:inst.achievements_en).map((a,ai) => (
+                    {(isAr?inst.achievements_ar:inst.achievements_en).map((a: any, ai: any) => (
                       <div key={ai} style={{ display:"flex", gap:10, alignItems:"flex-start", padding:"12px 16px", borderRadius:10, background:"var(--ink-soft)", border:"1px solid var(--border)" }}>
                         <span style={{ color:"var(--gold)", flexShrink:0, marginTop:1 }}>✓</span>
                         <span style={{ fontSize:13, color:"var(--text-muted)", lineHeight:1.5 }}>{a}</span>
@@ -175,7 +175,7 @@ export default function InstructorsPage() {
                     {isAr ? "دوراتي" : "My Courses"}
                   </h3>
                   <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
-                    {inst.courses.map((c,ci) => {
+                    {inst.courses.map((c: any, ci: any) => {
                       const lc = LEVEL_COLOR[c.level]
                       return (
                         <Link key={ci} href={`/courses/${c.slug}`} style={{ textDecoration:"none" }}>

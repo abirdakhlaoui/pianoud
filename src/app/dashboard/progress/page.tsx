@@ -54,7 +54,7 @@ export default function ProgressPage() {
   function getCourseProgress(slug: string) {
     const lessonIds = COURSE_LESSON_IDS[slug] || []
     const total     = lessonIds.length || 1
-    const completed = lessonIds.filter(id => completedIds.has(id)).length
+    const completed = lessonIds.filter((id: any) => completedIds.has(id)).length
     const pct       = Math.round((completed / total) * 100)
     return { completed, total, pct }
   }
@@ -95,8 +95,8 @@ export default function ProgressPage() {
             {[
               { label_en:"Enrolled",          label_ar:"الدورات",          value: enrollments.length,                                                             icon:"📚" },
               { label_en:"Lessons Done",      label_ar:"دروس مكتملة",      value: completedIds.size,                                                              icon:"✅" },
-              { label_en:"Certificates",      label_ar:"شهادات",           value: enrollments.filter(e => getCourseProgress(e.course?.slug).pct===100).length,    icon:"🎓" },
-            ].map((s,i) => (
+              { label_en:"Certificates",      label_ar:"شهادات",           value: enrollments.filter((e: any) => getCourseProgress(e.course?.slug).pct===100).length,    icon:"🎓" },
+            ].map((s: any, i: any) => (
               <div key={i} className="card" style={{ padding:20, textAlign:"center" }}>
                 <div style={{ fontSize:28, marginBottom:8 }}>{s.icon}</div>
                 <div className="font-display" style={{ fontSize:28, fontWeight:700, color:"var(--gold)", marginBottom:4 }}>{s.value}</div>

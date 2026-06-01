@@ -54,7 +54,7 @@ export default function Navbar() {
   const [userMenu, setUserMenu] = useState(false)
   const [themeOpen, setThemeOpen] = useState(false)
   const user = session?.user as any
-  const current = THEMES.find(t => t.key === theme)
+  const current = THEMES.find((t: any) => t.key === theme)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -124,7 +124,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden-mobile" style={{ display:"flex", alignItems:"center", gap:32 }}>
-            {links.map(link => (
+            {links.map((link: any) => (
               <Link key={link.href} href={link.href}
                 style={{ fontSize:13, fontWeight:500, color:"var(--text-muted)", textDecoration:"none", transition:"color 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--gold-light)")}
@@ -171,7 +171,7 @@ export default function Navbar() {
                   boxShadow:"0 20px 60px rgba(0,0,0,0.5)",
                 }}>
                   <div style={{ padding:"8px" }}>
-                    {THEMES.map(t => (
+                    {THEMES.map((t: any) => (
                       <button
                         key={t.key}
                         onClick={(e) => { e.stopPropagation(); setTheme(t.key); setThemeOpen(false) }}
@@ -264,7 +264,7 @@ export default function Navbar() {
                     { en:"Homework",      ar:"الواجبات",   href:"/dashboard/homework" },
                     { en:"Messages",      ar:"الرسائل",    href:"/dashboard/messages", badge:true },
                       { en:"Settings",     ar:"الإعدادات", href:"/dashboard/settings" },
-                    ].map(item => (
+                    ].map((item: any) => (
                       <Link key={item.href} href={item.href}
                         style={{ display:"block", padding:"11px 18px", fontSize:13, color:"var(--text-muted)", textDecoration:"none" }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background="var(--gold-pale)"; (e.currentTarget as HTMLElement).style.color="var(--cream)" }}
@@ -313,7 +313,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         {menuOpen && (
           <div style={{ background:"var(--ink-soft)", backdropFilter:"blur(20px)", borderTop:"1px solid var(--border)", padding:"24px 32px", display:"flex", flexDirection:"column", gap:20 }}>
-            {links.map(link => (
+            {links.map((link: any) => (
               <Link key={link.href} href={link.href}
                 style={{ color:"var(--text-muted)", textDecoration:"none", fontSize:16 }}
                 onClick={() => setMenuOpen(false)}>
@@ -323,7 +323,7 @@ export default function Navbar() {
             <div className="gold-line"/>
             {/* Mobile theme buttons */}
             <div style={{ display:"flex", gap:8 }}>
-              {THEMES.map(t => (
+              {THEMES.map((t: any) => (
                 <button key={t.key} onClick={() => setTheme(t.key)} style={{
                   flex:1, padding:"9px 4px", borderRadius:8,
                   border:"1px solid",

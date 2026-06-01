@@ -83,8 +83,8 @@ export default function CheckoutPage() {
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({ slug }),
       })
-        .then(r => r.json())
-        .then(d => {
+        .then((r: any) => r.json())
+        .then((d: any) => {
           if (d.clientSecret) setClientSecret(d.clientSecret)
           setLoadingPayment(false)
         })
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
                 { icon:"🔄", text:"30-day money-back guarantee"   },
                 { icon:"💬", text:"Direct instructor Q&A"         },
                 { icon:"📅", text:"Live sessions with instructor" },
-              ].map(item => (
+              ].map((item: any) => (
                 <div key={item.text} style={{ display:"flex", gap:10, alignItems:"center", fontSize:14, color:"var(--text-muted)", marginBottom:10 }}>
                   <span>{item.icon}</span>
                   <span>{item.text}</span>
@@ -157,7 +157,7 @@ export default function CheckoutPage() {
             <div className="card" style={{ padding:20 }}>
               <p style={{ fontSize:13, color:"var(--text-muted)", marginBottom:12 }}>Accepted payment methods</p>
               <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
-                {["💳 Credit Card","🍎 Apple Pay","🔵 Google Pay","🏦 Mada"].map(m => (
+                {["💳 Credit Card","🍎 Apple Pay","🔵 Google Pay","🏦 Mada"].map((m: any) => (
                   <span key={m} style={{ fontSize:12, padding:"6px 12px", borderRadius:6, border:"1px solid var(--border)", color:"var(--text-muted)" }}>{m}</span>
                 ))}
               </div>

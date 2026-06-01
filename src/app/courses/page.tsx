@@ -27,10 +27,10 @@ function PianoIcon({ size = 40 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 80 80" fill="none">
       <rect x="8" y="24" width="64" height="36" rx="4" fill="none" stroke="#C9A84C" strokeWidth="2"/>
-      {[14,22,30,38,46,54,62].map((x,i) => (
+      {[14,22,30,38,46,54,62].map((x: any, i: any) => (
         <rect key={i} x={x} y="30" width="6" height="24" rx="1" fill="none" stroke="#C9A84C" strokeWidth="1.2" opacity="0.7"/>
       ))}
-      {[18,26,42,50,58].map((x,i) => (
+      {[18,26,42,50,58].map((x: any, i: any) => (
         <rect key={i} x={x} y="30" width="4" height="15" rx="1" fill="#C9A84C" opacity="0.6"/>
       ))}
     </svg>
@@ -67,7 +67,7 @@ export default function CoursesPage() {
   const [sort, setSort]             = useState<Sort>("popular")
   const [search, setSearch]         = useState("")
 
-  let filtered = COURSES.filter(c => {
+  let filtered = COURSES.filter((c: any) => {
     if (instrument !== "ALL" && c.instrument !== instrument) return false
     if (level !== "ALL" && c.level !== level)               return false
     if (search) {
@@ -143,7 +143,7 @@ export default function CoursesPage() {
           </div>
         ) : (
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))", gap:24 }}>
-            {filtered.map(course => {
+            {filtered.map((course: any) => {
               const lc = LEVEL_COLOR[course.level]
               return (
                 <Link key={course.id} href={`/courses/${course.slug}`} style={{ textDecoration:"none" }}>

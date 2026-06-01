@@ -188,7 +188,7 @@ export default function MaqamatPage() {
               { key: "overview",   en: "What You Learn",  ar: "ماذا ستتعلم" },
               { key: "curriculum", en: "Curriculum",      ar: "المنهج الدراسي" },
               { key: "pricing",    en: "Pricing & Plans", ar: "الأسعار والخطط" },
-            ].map(t => (
+            ].map((t: any) => (
               <button key={t.key} onClick={() => setActiveTab(t.key as any)} style={{
                 padding: "16px 24px", fontSize: 14, fontWeight: 600, cursor: "pointer",
                 background: "transparent", border: "none",
@@ -235,7 +235,7 @@ export default function MaqamatPage() {
                   { en: "Applies to Oud, Piano, and voice",          ar: "مطبّق على العود والبيانو والصوت" },
                   { en: "Free assessment session included",          ar: "جلسة تقييم مجانية مشمولة" },
                   { en: "Bilingual instruction (Arabic & English)",  ar: "تدريس ثنائي اللغة" },
-                ].map((f, i) => (
+                ].map((f: any, i: any) => (
                   <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--text-muted)" }}>
                     <span style={{ color: "var(--gold)", flexShrink: 0 }}>✓</span>
                     <span>{isAr ? f.ar : f.en}</span>
@@ -257,7 +257,7 @@ export default function MaqamatPage() {
                   { en: "Anyone passionate about Arabic musical heritage",          ar: "كل من يشغفه التراث الموسيقي العربي" },
                   { en: "Music teachers who want to deepen their theory knowledge", ar: "معلّمو الموسيقى الراغبون في تعميق معرفتهم النظرية" },
                   { en: "Beginners with no prior theory knowledge",                 ar: "المبتدئون بدون معرفة نظرية مسبقة" },
-                ].map((item, i) => (
+                ].map((item: any, i: any) => (
                   <div key={i} style={{ display: "flex", gap: 10, fontSize: 14, color: "var(--text-muted)", alignItems: "flex-start" }}>
                     <span style={{ color: "var(--gold)", flexShrink: 0 }}>→</span>
                     <span>{isAr ? item.ar : item.en}</span>
@@ -288,7 +288,7 @@ export default function MaqamatPage() {
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {TOPICS.map((topic, i) => (
+              {TOPICS.map((topic: any, i: any) => (
                 <div key={topic.id} style={{ border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
                   <button
                     onClick={() => setOpenTopic(openTopic === topic.id ? null : topic.id)}
@@ -346,7 +346,7 @@ export default function MaqamatPage() {
 
             {/* Pricing cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginBottom: 40 }} className="pricing-cards">
-              {PRICING.map((plan, i) => (
+              {PRICING.map((plan: any, i: any) => (
                 <div key={plan.id} style={{
                   borderRadius: 16, overflow: "hidden",
                   border: `2px solid ${plan.border}`,
@@ -387,7 +387,7 @@ export default function MaqamatPage() {
                       <p style={{ fontSize: 11, fontWeight: 700, color: "var(--gold)", letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 }}>
                         {isAr ? "يشمل:" : "Includes:"}
                       </p>
-                      {(isAr ? plan.includes_ar : plan.includes_en).map((item, idx) => (
+                      {(isAr ? plan.includes_ar : plan.includes_en).map((item: any, idx: any) => (
                         <div key={idx} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--text-muted)", marginBottom: 7, alignItems: "flex-start" }}>
                           <span style={{ color: plan.color, flexShrink: 0, fontWeight: 700 }}>✓</span>
                           <span>{item}</span>
@@ -426,7 +426,7 @@ export default function MaqamatPage() {
                       <th style={{ padding: "12px 20px", textAlign: isAr ? "right" : "left", fontSize: 12, color: "var(--text-muted)", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", borderBottom: "1px solid var(--border)", background: "var(--ink-soft)" }}>
                         {isAr ? "الميزة" : "Feature"}
                       </th>
-                      {PRICING.map(p => (
+                      {PRICING.map((p: any) => (
                         <th key={p.id} style={{ padding: "12px 20px", textAlign: "center", fontSize: 12, color: p.color, fontWeight: 700, borderBottom: "1px solid var(--border)", background: "var(--ink-soft)", whiteSpace: "nowrap" }}>
                           {isAr ? p.title_ar.split(" — ")[0] : p.title_en.split(" — ")[0]}
                         </th>
@@ -443,12 +443,12 @@ export default function MaqamatPage() {
                       { feature_en: "Maqamat Level 1", feature_ar: "مقامات المستوى 1", values: ["✓", "✓", "✓"] },
                       { feature_en: "Maqamat Level 2", feature_ar: "مقامات المستوى 2", values: ["—", "✓", "✓"] },
                       { feature_en: "Ertijal (Improv)", feature_ar: "الارتجال", values: ["Basic", "Intermediate", "Advanced"] },
-                    ].map((row, i) => (
+                    ].map((row: any, i: any) => (
                       <tr key={i} style={{ borderBottom: "1px solid var(--border)" }}>
                         <td style={{ padding: "12px 20px", fontSize: 13, color: "var(--text-muted)", background: "var(--ink-soft)" }}>
                           {isAr ? row.feature_ar : row.feature_en}
                         </td>
-                        {row.values.map((val, vi) => (
+                        {row.values.map((val: any, vi: any) => (
                           <td key={vi} style={{ padding: "12px 20px", textAlign: "center", fontSize: 13, color: val === "✓" ? "#34d399" : val === "—" ? "var(--text-muted)" : "var(--cream)", fontWeight: val === "✓" || val === "—" ? 700 : 500, background: "var(--ink)" }}>
                             {val}
                           </td>

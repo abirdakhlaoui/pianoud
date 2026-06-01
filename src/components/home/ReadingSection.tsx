@@ -50,7 +50,7 @@ export default function ReadingSection() {
               {[
                 { label_en:"Per month",    label_ar:"شهرياً",      price:"$200", desc_en:"4 sessions", desc_ar:"4 جلسات",  color:"#34d399" },
                 { label_en:"3-month pack", label_ar:"باقة 3 أشهر", price:"$575", desc_en:"Save $25",   desc_ar:"وفّر $25", color:"#C9A84C" },
-              ].map((p,i) => (
+              ].map((p: any, i: any) => (
                 <div key={i} style={{ padding:"14px 16px", borderRadius:10, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:6 }}>
                     {isAr ? p.label_ar : p.label_en}
@@ -77,7 +77,7 @@ export default function ReadingSection() {
                 {isAr ? "ماذا ستتعلم" : "What You Learn"}
               </p>
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
-                {TOPICS.map((t, i) => (
+                {TOPICS.map((t: any, i: any) => (
                   <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", borderRadius:8, background:"rgba(0,0,0,0.3)", border:"1px solid var(--border)" }}>
                     <span style={{ fontSize:20 }}>{t.icon}</span>
                     <span style={{ fontSize:13, fontWeight:600, color:"var(--cream)" }}>{isAr ? t.ar : t.en}</span>

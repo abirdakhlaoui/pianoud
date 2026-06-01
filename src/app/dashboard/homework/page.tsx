@@ -218,7 +218,7 @@ export default function HomeworkPage() {
           </div>
         ) : (
           <div style={{ display:"flex", flexDirection:"column", gap:20 }}>
-            {homeworks.map(hw => {
+            {homeworks.map((hw: any) => {
               const mySubmission = hw.submissions?.[0]
               const isSubmitted  = submitted.has(hw.id) || !!mySubmission
               const isOverdue    = hw.dueDate && new Date(hw.dueDate) < new Date()

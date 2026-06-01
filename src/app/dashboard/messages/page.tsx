@@ -53,8 +53,8 @@ function MessagesContent() {
     const withId = searchParams.get("with")
     if (withId) {
       fetch(`/api/users/${withId}`)
-        .then(r => r.json())
-        .then(d => { if (d.user) loadConversation(d.user) })
+        .then((r: any) => r.json())
+        .then((d: any) => { if (d.user) loadConversation(d.user) })
     }
   }, [])
 
@@ -112,7 +112,7 @@ function MessagesContent() {
     return date.toLocaleDateString()
   }
 
-  const filteredUsers = allUsers.filter(u =>
+  const filteredUsers = allUsers.filter((u: any) =>
     u.id !== user?.id &&
     (u.name.toLowerCase().includes(searchUser.toLowerCase()) ||
      u.email.toLowerCase().includes(searchUser.toLowerCase()))
@@ -174,7 +174,7 @@ function MessagesContent() {
                   <p style={{ fontSize:12, color:"var(--text-muted)", textAlign:"center", padding:"12px 0" }}>
                     {isAr ? "لا نتائج" : "No users found"}
                   </p>
-                ) : filteredUsers.map(u => (
+                ) : filteredUsers.map((u: any) => (
                   <button key={u.id} onClick={() => loadConversation(u)} style={{
                     width:"100%", textAlign:"left", padding:"10px 12px",
                     background:"transparent", border:"none",
@@ -215,7 +215,7 @@ function MessagesContent() {
                   {isAr ? 'اضغط "+" لبدء محادثة' : 'Press "+" to start a chat'}
                 </p>
               </div>
-            ) : conversations.map(conv => (
+            ) : conversations.map((conv: any) => (
               <button key={conv.user.id}
                 onClick={() => loadConversation(conv.user)}
                 style={{
@@ -283,7 +283,7 @@ function MessagesContent() {
                     {isAr ? `ابدأ محادثة مع ${activeUser.name}` : `Start a conversation with ${activeUser.name}`}
                   </p>
                 </div>
-              ) : messages.map(msg => {
+              ) : messages.map((msg: any) => {
                 const isMine = msg.senderId === user?.id
                 return (
                   <div key={msg.id} style={{ display:"flex", justifyContent: isMine ? "flex-end" : "flex-start" }}>

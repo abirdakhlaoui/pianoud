@@ -28,7 +28,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
   const [confirm, setConfirm]   = useState<string|null>(null)
   const [msg, setMsg]           = useState("")
 
-  const filtered = list.filter(u => {
+  const filtered = list.filter((u: any) => {
     const matchSearch = u.name.toLowerCase().includes(search.toLowerCase()) || u.email.toLowerCase().includes(search.toLowerCase())
     const matchFilter = filter === "ALL" || u.role === filter
     return matchSearch && matchFilter
@@ -42,7 +42,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
       body: JSON.stringify({ userId, role }),
     })
     if (res.ok) {
-      setList(prev => prev.map(u => u.id===userId ? { ...u, role } : u))
+      setList(prev => prev.map((u: any) => u.id===userId ? { ...u, role } : u))
       setMsg(`Role updated to ${role} ✓`)
       setTimeout(() => setMsg(""), 3000)
     }
@@ -53,7 +53,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
     setLoading("delete" + userId)
     const res = await fetch(`/api/admin/users/${userId}`, { method:"DELETE" })
     if (res.ok) {
-      setList(prev => prev.filter(u => u.id !== userId))
+      setList(prev => prev.filter((u: any) => u.id !== userId))
       setConfirm(null)
       setMsg("User deleted ✓")
       setTimeout(() => setMsg(""), 3000)
@@ -102,7 +102,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
             onBlur={e =>e.target.style.borderColor="var(--border)"} />
 
           <div style={{ display:"flex", gap:8 }}>
-            {(["ALL","STUDENT","INSTRUCTOR","ADMIN"] as const).map(role => (
+            {(["ALL","STUDENT","INSTRUCTOR","ADMIN"] as const).map((role: any) => (
               <button key={role} onClick={() => setFilter(role)} style={{
                 padding:"9px 16px", borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer",
                 border:"1px solid",
@@ -110,7 +110,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
                 background: filter===role ? "var(--gold-pale)" : "transparent",
                 color: filter===role ? "var(--gold)" : "var(--text-muted)",
               }}>
-                {role} ({counts[role]})
+                {role} ({(counts as any)[role]})
               </button>
             ))}
           </div>
@@ -120,7 +120,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
         <div className="card" style={{ overflow:"hidden" }}>
           {/* Header */}
           <div style={{ display:"grid", gridTemplateColumns:"2fr 2fr 1fr 1fr 1fr auto", gap:16, padding:"14px 24px", background:"var(--ink-soft)", borderBottom:"1px solid var(--border)" }}>
-            {["USER","EMAIL","ROLE","COURSES","JOINED","ACTIONS"].map(h => (
+            {["USER","EMAIL","ROLE","COURSES","JOINED","ACTIONS"].map((h: any) => (
               <span key={h} style={{ fontSize:11, fontWeight:700, color:"var(--text-muted)", letterSpacing:1.5 }}>{h}</span>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function AdminUsersClient({ users, currentUserId }: { users: User
             <div style={{ padding:"40px", textAlign:"center", color:"var(--text-muted)", fontSize:14 }}>
               No users found
             </div>
-          ) : filtered.map((u, i) => {
+          ) : filtered.map((u: any, i: any) => {
             const rs = ROLE_STYLE[u.role]
             const isMe = u.id === currentUserId
             return (

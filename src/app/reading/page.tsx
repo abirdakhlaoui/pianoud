@@ -68,7 +68,7 @@ export default function ReadingPage() {
               { key:"overview", en:"What You Learn", ar:"ماذا ستتعلم" },
               { key:"levels",   en:"6 Levels",       ar:"6 مستويات"   },
               { key:"pricing",  en:"Pricing",        ar:"الأسعار"     },
-            ].map(t => (
+            ].map((t: any) => (
               <button key={t.key} onClick={() => setActiveTab(t.key)} style={{ padding:"16px 24px", fontSize:14, fontWeight:600, cursor:"pointer", background:"transparent", border:"none", color: activeTab===t.key ? "var(--gold)" : "var(--text-muted)", borderBottom: activeTab===t.key ? "2px solid var(--gold)" : "2px solid transparent", whiteSpace:"nowrap" }}>
                 {isAr ? t.ar : t.en}
               </button>
@@ -88,7 +88,7 @@ export default function ReadingPage() {
               {isAr ? "6 محاور أساسية في القراءة والكتابة الموسيقية." : "6 core pillars of music reading and writing."}
             </p>
             <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
-              {TOPICS.map((topic, i) => (
+              {TOPICS.map((topic: any, i: any) => (
                 <div key={i} className="card" style={{ padding:24, display:"flex", gap:16 }}>
                   <div style={{ width:48, height:48, borderRadius:10, background:"var(--gold-pale)", border:"1px solid var(--border)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
                     {topic.icon}

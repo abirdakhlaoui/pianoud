@@ -25,8 +25,8 @@ function CertificateContent() {
     if (status === "authenticated") {
       const url = slug ? `/api/certificate?slug=${slug}` : "/api/certificate"
       fetch(url)
-        .then(r => r.json())
-        .then(data => {
+        .then((r: any) => r.json())
+        .then((data: any) => {
           if (data.eligible) setCert(data)
           else setError(data.error || "Not eligible")
           setLoading(false)
@@ -95,7 +95,7 @@ function CertificateContent() {
             { top:20, right:20, borderTop:"2px solid #C9A84C", borderRight:"2px solid #C9A84C" },
             { bottom:20, left:20, borderBottom:"2px solid #C9A84C", borderLeft:"2px solid #C9A84C" },
             { bottom:20, right:20, borderBottom:"2px solid #C9A84C", borderRight:"2px solid #C9A84C" },
-          ].map((s,i) => (
+          ].map((s: any, i: any) => (
             <div key={i} style={{ position:"absolute", width:40, height:40, ...s as any }}/>
           ))}
 

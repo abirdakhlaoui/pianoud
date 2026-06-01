@@ -61,7 +61,7 @@ export default function AboutPage() {
 
           {/* Stats */}
           <div style={{ display:"flex", gap:48, justifyContent:"center", flexWrap:"wrap" }}>
-            {STATS.map((stat,i) => (
+            {STATS.map((stat: any, i: any) => (
               <div key={i} style={{ textAlign:"center" }}>
                 <div className="font-display gradient-text" style={{ fontSize:48, fontWeight:800, lineHeight:1 }}>{stat.value}</div>
                 <div style={{ fontSize:14, color:"var(--text-muted)", marginTop:6, fontWeight:500 }}>
@@ -98,7 +98,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:16 }}>
-              {VALUES.map((v,i) => (
+              {VALUES.map((v: any, i: any) => (
                 <div key={i} className="card" style={{ padding:24 }}>
                   <span style={{ fontSize:32, display:"block", marginBottom:12 }}>{v.icon}</span>
                   <h3 style={{ fontSize:15, fontWeight:700, color:"var(--cream)", marginBottom:8 }}>
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 facts_ar:["أكثر من 15 سنة خبرة","عروض في أوروبا","مؤلف على Sibelius","متخصص في المقامات العربية"],
                 instrument:"OUD",
               },
-            ].map((instructor,i) => (
+            ].map((instructor: any, i: any) => (
               <div key={i} className="card" style={{ overflow:"hidden" }}>
                 {/* Header */}
                 <div style={{
@@ -173,7 +173,7 @@ export default function AboutPage() {
                       {isAr ? instructor.role_ar : instructor.role_en}
                     </p>
                     <div style={{ display:"flex", gap:8, flexWrap:"wrap" }}>
-                      {(isAr ? instructor.facts_ar : instructor.facts_en).map((fact,fi) => (
+                      {(isAr ? instructor.facts_ar : instructor.facts_en).map((fact: any, fi: any) => (
                         <span key={fi} style={{ fontSize:11, padding:"3px 10px", borderRadius:6, background:"rgba(201,168,76,0.1)", color:"var(--gold)", border:"1px solid rgba(201,168,76,0.2)" }}>
                           {fact}
                         </span>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                     {isAr ? "الدورات:" : "Courses:"}
                   </p>
                   <div style={{ display:"flex", gap:8, flexWrap:"wrap", marginBottom:20 }}>
-                    {instructor.courses.map((c,ci) => (
+                    {instructor.courses.map((c: any, ci: any) => (
                       <span key={ci} style={{ fontSize:12, padding:"4px 12px", borderRadius:6, background:"var(--ink)", border:"1px solid var(--border)", color:"var(--text-muted)" }}>
                         {c}
                       </span>
@@ -228,7 +228,7 @@ export default function AboutPage() {
             <div style={{ position:"absolute", left: isAr?"auto":"24px", right: isAr?"24px":"auto", top:0, bottom:0, width:2, background:"linear-gradient(to bottom, var(--gold), transparent)", opacity:0.3 }}/>
 
             <div style={{ display:"flex", flexDirection:"column", gap:32 }}>
-              {TIMELINE.map((item,i) => (
+              {TIMELINE.map((item: any, i: any) => (
                 <div key={i} style={{ display:"flex", gap:24, alignItems:"flex-start", paddingLeft: isAr?0:64, paddingRight: isAr?64:0, position:"relative" }}>
                   {/* Dot */}
                   <div style={{

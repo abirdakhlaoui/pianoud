@@ -21,7 +21,7 @@ export default function InstructorStudentsPage() {
     setLoading(false)
   }
 
-  const filtered = students.filter(s =>
+  const filtered = students.filter((s: any) =>
     s.name.toLowerCase().includes(search.toLowerCase()) ||
     s.email.toLowerCase().includes(search.toLowerCase())
   )

@@ -28,8 +28,8 @@ export default function EditCoursePage() {
 
   useEffect(() => {
     fetch(`/api/instructor/courses/${id}`)
-      .then(r => r.json())
-      .then(data => {
+      .then((r: any) => r.json())
+      .then((data: any) => {
         if (data.course) {
           setForm({
             title_en:       data.course.title_en,

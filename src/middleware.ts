@@ -18,7 +18,7 @@ export async function middleware(req: NextRequest) {
 
   // Must be logged in
   const protectedRoutes = ["/dashboard", "/checkout"]
-  const isProtected = protectedRoutes.some(r => pathname.startsWith(r))
+  const isProtected = protectedRoutes.some((r: any) => pathname.startsWith(r))
   if (isProtected && !token) {
     const url = new URL("/auth/signin", req.url)
     url.searchParams.set("redirect", pathname)

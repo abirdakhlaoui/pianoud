@@ -74,7 +74,7 @@ export default function MeetingsPage() {
     if (!studentId || !date || !time || !link) return
     setSending(true)
 
-    const selectedStudent = students.find(s => s.id === studentId)
+    const selectedStudent = students.find((s: any) => s.id === studentId)
 
     // Send meeting as a message to the student
     const meetingMsg = platform === "meet"
@@ -162,7 +162,7 @@ export default function MeetingsPage() {
                   {[
                     { key:"meet", label:"Google Meet", icon:"📹", color:"#34d399" },
                     { key:"zoom", label:"Zoom",        icon:"💻", color:"#60a5fa" },
-                  ].map(p => (
+                  ].map((p: any) => (
                     <button key={p.key} type="button" onClick={() => setPlatform(p.key as any)} style={{
                       padding:"14px", borderRadius:10, cursor:"pointer",
                       border:"2px solid",
@@ -197,7 +197,7 @@ export default function MeetingsPage() {
                   <select value={studentId} onChange={e=>setStudentId(e.target.value)} required
                     style={{ ...inputStyle, cursor:"pointer" }}>
                     <option value="">{isAr?"اختر الطالب...":"Select a student..."}</option>
-                    {students.map(s => (
+                    {students.map((s: any) => (
                       <option key={s.id} value={s.id}>{s.name} — {s.email}</option>
                     ))}
                   </select>
@@ -292,7 +292,7 @@ export default function MeetingsPage() {
               </div>
             ) : (
               <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
-                {meetings.map((m, i) => {
+                {meetings.map((m: any, i: any) => {
                   const isPast = new Date(`${m.date}T${m.time}`) < new Date()
                   return (
                     <div key={m.id || i} className="card" style={{ padding:20, borderLeft: isPast?"3px solid var(--border)":"3px solid #34d399", opacity:isPast?0.7:1 }}>
@@ -347,7 +347,7 @@ export default function MeetingsPage() {
                 { step:"3", en:"Fill the form and click Send",             ar:"امل النموذج واضغط إرسال" },
                 { step:"4", en:"Student receives the link in Messages",    ar:"يصل الرابط للطالب في الرسائل" },
                 { step:"5", en:"Both join at the scheduled time",          ar:"ينضمان معاً في الوقت المحدد" },
-              ].map(s => (
+              ].map((s: any) => (
                 <div key={s.step} style={{ display:"flex", gap:12, alignItems:"flex-start", marginBottom:10 }}>
                   <div style={{ width:22, height:22, borderRadius:"50%", background:"var(--gold-pale)", border:"1px solid var(--border)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, color:"var(--gold)", flexShrink:0 }}>
                     {s.step}

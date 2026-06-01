@@ -38,7 +38,7 @@ export default function OudSection() {
                 { level_en:"Beginner",     level_ar:"مبتدئ",  price:"$25",  desc_en:"/session",  desc_ar:"/جلسة", color:"#34d399" },
                 { level_en:"Intermediate", level_ar:"متوسط",  price:"$50",  desc_en:"/session",  desc_ar:"/جلسة", color:"#fbbf24" },
                 { level_en:"Advanced",     level_ar:"متقدم",  price:"$75",  desc_en:"/session",  desc_ar:"/جلسة", color:"#f87171" },
-              ].map((p,i) => (
+              ].map((p: any, i: any) => (
                 <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"rgba(0,0,0,0.3)", border:`1px solid ${p.color}30`, textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>
                     {isAr?p.level_ar:p.level_en}
@@ -56,7 +56,7 @@ export default function OudSection() {
                 { en:"Official Manhej by Prof. Tareq Jundi (8 grades)", ar:"المنهج الرسمي للأستاذ طارق الجندي (8 مستويات)" },
                 { en:"Arabic Music Theory (Maqamat & Ajnas)",     ar:"نظرية الموسيقى العربية (مقامات وأجناس)" },
                 { en:"Bundle packages — save up to $125",         ar:"باقات مجمّعة — وفّر حتى 125 دولار" },
-              ].map((f,i) => (
+              ].map((f: any, i: any) => (
                 <div key={i} style={{ display:"flex", alignItems:"flex-start", gap:10, fontSize:14, color:"var(--text-muted)" }}>
                   <span style={{ color:"var(--gold)", flexShrink:0, marginTop:1 }}>✓</span>
                   <span>{isAr?f.ar:f.en}</span>
@@ -121,7 +121,7 @@ export default function OudSection() {
                   {isAr?"الأستاذ طارق الجندي · 8 مستويات":"Prof. Tareq Jundi · 8 Grades"}
                 </p>
                 <div style={{ display:"flex", gap:4 }}>
-                  {[1,2,3,4,5,6,7,8].map(g => (
+                  {[1,2,3,4,5,6,7,8].map((g: any) => (
                     <div key={g} style={{
                       width:20, height:20, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", fontSize:8, fontWeight:800, color:"#fff",
                       background: g<=2?"#ef4444":g<=4?"#f97316":g<=6?"#22c55e":"#3b82f6"
