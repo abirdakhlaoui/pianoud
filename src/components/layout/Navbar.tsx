@@ -65,14 +65,14 @@ export default function Navbar() {
   const links = isAr
     ? [
         { label: "الدورات",   href: "/courses" },
-        { label: "بيانو",     href: "/courses?instrument=piano" },
+        { label: "بيانو",     href: "/piano" },
         { label: "عود",       href: "/oud" },
         { label: "المدرّسون", href: "/instructors" },
         { label: "عن المنصة", href: "/about" },
       ]
     : [
         { label: "Courses",     href: "/courses" },
-        { label: "Piano",       href: "/courses?instrument=piano" },
+        { label: "Piano",       href: "/piano" },
         { label: "Oud",         href: "/oud" },
         { label: "Instructors", href: "/instructors" },
         { label: "About",       href: "/about" },
