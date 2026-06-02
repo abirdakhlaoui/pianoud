@@ -1,12 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { signIn, getSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 export default function SignInPage() {
   const router = useRouter()
+
+  useEffect(() => {
+    getSession().then(session => {
+      const role = (session?.user as any)?.role
+      if (role === "ADMIN")            window.location.href = "/dashboard/admin"
+      else if (role === "INSTRUCTOR")  window.location.href = "/dashboard/instructor"
+      else if (role)                   window.location.href = "/dashboard"
+    })
+  }, [])
+
   const [email, setEmail]       = useState("")
   const [password, setPassword] = useState("")
   const [error, setError]       = useState("")
