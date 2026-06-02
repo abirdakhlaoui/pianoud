@@ -8,6 +8,10 @@ export default async function StudentDashboard() {
   if (!session) redirect("/auth/signin")
   const user = session.user as any
 
+  // Route admins and instructors to their own dashboards
+  if (user.role === "ADMIN")      redirect("/dashboard/admin")
+  if (user.role === "INSTRUCTOR") redirect("/dashboard/instructor")
+
   const [enrollments, completedLessons, unreadMessages] = await Promise.all([
     prisma.enrollment.findMany({
       where: { userId: user.id },

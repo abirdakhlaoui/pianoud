@@ -35,17 +35,8 @@ export default function SignInPage() {
       return
     }
 
-    let role = null
-    for (let i = 0; i < 6; i++) {
-      const session = await getSession()
-      role = (session?.user as any)?.role
-      if (role) break
-      await new Promise(r => setTimeout(r, 300))
-    }
-
-    if (role === "ADMIN")            window.location.href = "/dashboard/admin"
-    else if (role === "INSTRUCTOR")  window.location.href = "/dashboard/instructor"
-    else                             window.location.href = "/dashboard"
+    // Session is set — redirect to dashboard which will route by role
+    window.location.href = "/dashboard"
   }
 
   const inputStyle: React.CSSProperties = {
