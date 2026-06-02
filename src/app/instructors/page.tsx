@@ -195,7 +195,7 @@ export default function InstructorsPage() {
                             </div>
                             <div style={{ textAlign: isAr?"left":"right", flexShrink:0 }}>
                               <div className="font-display" style={{ fontSize:18, fontWeight:700, color:"var(--cream)" }}>{c.price}</div>
-                              <div style={{ fontSize:11, color:"var(--text-muted)" }}>SAR</div>
+                              <div style={{ fontSize:11, color:"var(--text-muted)" }}>USD</div>
                             </div>
                             <span style={{ color:"var(--gold)", fontSize:16 }}>→</span>
                           </div>

@@ -116,7 +116,7 @@ export default function InstructorCoursesPage() {
                     <span>•</span>
                     <span>{course.level === "BEGINNER" ? (isAr?"مبتدئ":"Beginner") : course.level === "INTERMEDIATE" ? (isAr?"متوسط":"Intermediate") : (isAr?"متقدم":"Advanced")}</span>
                     <span>•</span>
-                    <span>{course.price} SAR</span>
+                    <span>${course.price}</span>
                   </div>
                 </div>
 

@@ -56,7 +56,7 @@ function CheckoutForm({ slug, price }: { slug: string; price: number }) {
       )}
       <button type="submit" disabled={!stripe || loading} className="btn-gold"
         style={{ width:"100%", justifyContent:"center", padding:16, fontSize:16, marginTop:24, opacity:loading?0.7:1 }}>
-        {loading ? "Processing..." : `Pay ${price} SAR`}
+        {loading ? "Processing..." : `Pay $${price}`}
       </button>
     </form>
   )
@@ -130,7 +130,7 @@ export default function CheckoutPage() {
                   </div>
                 </div>
                 <div className="font-display" style={{ fontSize:26, fontWeight:700, color:"var(--cream)", flexShrink:0 }}>
-                  {course.price} <span style={{ fontSize:13, color:"var(--text-muted)", fontWeight:400 }}>SAR</span>
+                  <span style={{ fontSize:13, color:"var(--text-muted)", fontWeight:400 }}>$</span>{course.price}
                 </div>
               </div>
             </div>

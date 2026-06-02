@@ -108,7 +108,7 @@ function SearchContent() {
                     </div>
                     <div style={{ textAlign:"right", flexShrink:0 }}>
                       <div className="font-display" style={{ fontSize:20, fontWeight:700, color:"var(--cream)" }}>{course.price}</div>
-                      <div style={{ fontSize:11, color:"var(--text-muted)" }}>SAR</div>
+                      <div style={{ fontSize:11, color:"var(--text-muted)" }}>USD</div>
                     </div>
                     <span style={{ color:"var(--gold)", fontSize:16 }}>→</span>
                   </div>

@@ -137,7 +137,7 @@ export default function EditCoursePage() {
               </div>
               <div>
                 <label style={{ fontSize:13, fontWeight:500, color:"var(--text-muted)", display:"block", marginBottom:8 }}>
-                  {isAr ? "السعر (ريال)" : "Price (SAR)"}
+                  {isAr ? "السعر (دولار)" : "Price (USD)"}
                 </label>
                 <input type="number" value={form.price} onChange={e => update("price", e.target.value)} min="0" style={inputStyle}
                   onFocus={e => e.target.style.borderColor="var(--gold)"}

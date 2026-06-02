@@ -43,7 +43,7 @@ export default async function AdminDashboard() {
             { label:"Total Users",       value:totalUsers,                   icon:"👥", color:"#60a5fa" },
             { label:"Total Courses",     value:totalCourses,                 icon:"🎓", color:"var(--gold)" },
             { label:"Total Enrollments", value:totalEnrollments,             icon:"📋", color:"#34d399" },
-            { label:"Total Revenue",     value:`${revenue.toFixed(0)} SAR`,  icon:"💰", color:"#fbbf24" },
+            { label:"Total Revenue",     value:`$${revenue.toFixed(0)}`,  icon:"💰", color:"#fbbf24" },
           ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <div style={{ width:48, height:48, borderRadius:12, background:`${stat.color}18`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:24 }}>
@@ -122,7 +122,7 @@ export default async function AdminDashboard() {
                     <div style={{ fontSize:11, color:"var(--text-muted)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{e.course.title_en}</div>
                   </div>
                   <div style={{ fontSize:13, fontWeight:600, color:"var(--gold)", flexShrink:0 }}>
-                    {e.paidAmount} SAR
+                    ${e.paidAmount}
                   </div>
                 </div>
               ))}

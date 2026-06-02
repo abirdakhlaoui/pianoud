@@ -193,7 +193,7 @@ export default function CoursesPage() {
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:"1px solid var(--border)" }}>
                         <div>
                           <span className="font-display" style={{ fontSize:24, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
-                          <span style={{ fontSize:13, color:"var(--text-muted)", marginLeft:4 }}>SAR</span>
+                          <span style={{ fontSize:13, color:"var(--text-muted)", marginRight:4 }}>$</span>
                         </div>
                         <span style={{ fontSize:13, color:"var(--gold)", fontWeight:500 }}>{isAr?"عرض ←":"View →"}</span>
                       </div>

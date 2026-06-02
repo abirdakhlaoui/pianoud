@@ -498,7 +498,7 @@ export default function CourseDetailPage() {
                   {/* Price */}
                   <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:16 }}>
                     <span className="font-display" style={{ fontSize:40, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
-                    <span style={{ fontSize:16, color:"var(--text-muted)" }}>SAR</span>
+                    <span style={{ fontSize:16, color:"var(--text-muted)" }}>USD</span>
                   </div>
 
                   {/* Enroll button */}
@@ -835,7 +835,7 @@ export default function CourseDetailPage() {
           </p>
           <div style={{ display:"flex", gap:16, justifyContent:"center", flexWrap:"wrap" }}>
             <Link href={`/checkout/${slug}`} className="btn-gold" style={{ padding:"16px 48px", fontSize:16 }}>
-              {isAr?"سجّل الآن — "+course.price+" ريال":"Enroll Now — "+course.price+" SAR"}
+              {isAr?"سجّل الآن — $"+course.price:"Enroll Now — $"+course.price}
             </Link>
             <Link href={`/courses/${slug}/learn`} className="btn-outline" style={{ padding:"16px 32px", fontSize:15 }}>
               ▶ {isAr?"جرّب مجاناً":"Try Free"}

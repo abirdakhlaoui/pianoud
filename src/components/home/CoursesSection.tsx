@@ -174,7 +174,7 @@ export default function CoursesSection() {
                     <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:12, borderTop:"1px solid var(--border)" }}>
                       <div>
                         <span className="font-display" style={{ fontSize:22, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
-                        <span style={{ fontSize:12, color:"var(--text-muted)", marginLeft:4 }}>SAR</span>
+                        <span style={{ fontSize:12, color:"var(--text-muted)", marginRight:4 }}>$</span>
                       </div>
                       <span style={{ fontSize:11, color:"var(--text-muted)" }}>{course.lessons} {isAr?"درس":"lessons"}</span>
                     </div>

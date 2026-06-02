@@ -268,7 +268,7 @@ export default function PianoPage() {
                     </div>
                     <div style={{ fontSize:12, color:"var(--text-muted)" }}>{course.level}</div>
                     <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginTop:"auto" }}>
-                      <span className="font-display" style={{ fontSize:22, fontWeight:800, color:"var(--gold)" }}>{course.price} SAR</span>
+                      <span className="font-display" style={{ fontSize:22, fontWeight:800, color:"var(--gold)" }}>${course.price}</span>
                       <span style={{ fontSize:12, color:"var(--gold)" }}>{isAr ? "عرض ←" : "View →"}</span>
                     </div>
                   </div>

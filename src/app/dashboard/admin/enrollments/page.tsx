@@ -215,7 +215,7 @@ export default function AdminEnrollmentsPage() {
                         {e.course?.instrument==="PIANO"?"🎹":"🪘"} {e.course?.title_en}
                       </div>
                       {e.paidAmount > 0 && (
-                        <div style={{ fontSize:11, color:"var(--gold)" }}>{e.paidAmount} SAR paid</div>
+                        <div style={{ fontSize:11, color:"var(--gold)" }}>${e.paidAmount} paid</div>
                       )}
                       {e.paidAmount === 0 && (
                         <div style={{ fontSize:11, color:"var(--text-muted)" }}>Free / Manual</div>
