@@ -65,6 +65,25 @@ const TOPICS = [
 
 const PRICING = [
   {
+    id: "month1",
+    title_en: "Beginner — 1 Month",
+    title_ar: "مبتدئ — شهر واحد",
+    duration_en: "1 month",
+    duration_ar: "شهر واحد",
+    sessions_en: "2 sessions/week × 45 min",
+    sessions_ar: "جلستان/أسبوع × 45 دقيقة",
+    price: 175,
+    note_en: "Try it for one month",
+    note_ar: "جرّبه لمدة شهر",
+    includes_en: ["Maqamat fundamentals", "Ajnas basics", "Musical intervals", "Free assessment session"],
+    includes_ar: ["أساسيات المقامات", "أجناس موسيقية", "الأبعاد الموسيقية", "جلسة تقييم مجانية"],
+    color: "#f87171",
+    bg: "rgba(248,113,113,0.08)",
+    border: "rgba(248,113,113,0.3)",
+    badge_en: "Flexible",
+    badge_ar: "مرن",
+  },
+  {
     id: "level1",
     title_en: "Level 1 — Beginner",
     title_ar: "المستوى الأول — مبتدئ",
@@ -77,9 +96,9 @@ const PRICING = [
     note_ar: "الحجز الأدنى: شهران",
     includes_en: ["Maqamat fundamentals", "Ajnas basics", "Musical intervals", "Song examples", "Free assessment session"],
     includes_ar: ["أساسيات المقامات", "أجناس موسيقية", "الأبعاد الموسيقية", "أمثلة غنائية", "جلسة تقييم مجانية"],
-    color: "#34d399",
-    bg: "rgba(52,211,153,0.08)",
-    border: "rgba(52,211,153,0.3)",
+    color: "#f87171",
+    bg: "rgba(248,113,113,0.08)",
+    border: "rgba(248,113,113,0.3)",
     badge_en: "Start Here",
     badge_ar: "ابدأ من هنا",
   },
@@ -115,9 +134,9 @@ const PRICING = [
     note_ar: "إتقان كامل لنظرية الموسيقى العربية",
     includes_en: ["All Levels 1 & 2 content", "Advanced improvisation (Taqsim)", "Composition in maqamat", "Professional performance", "3 free assessment sessions"],
     includes_ar: ["كل محتوى المستوى 1 و 2", "الارتجال المتقدم (تقسيم)", "التأليف في المقامات", "الأداء الاحترافي", "3 جلسات تقييم مجانية"],
-    color: "#C9A84C",
-    bg: "rgba(201,168,76,0.1)",
-    border: "rgba(201,168,76,0.35)",
+    color: "#60a5fa",
+    bg: "rgba(96,165,250,0.08)",
+    border: "rgba(96,165,250,0.3)",
     badge_en: "Best Value",
     badge_ar: "أفضل قيمة",
   },
@@ -150,7 +169,7 @@ export default function MaqamatPage() {
           <h1 className="font-display" style={{ fontSize: "clamp(36px,6vw,72px)", fontWeight: 300, color: "var(--cream)", marginBottom: 16, lineHeight: 1.1 }}>
             {isAr
               ? <><span className="gradient-text" style={{ fontWeight: 800 }}>المقامات</span> الموسيقية</>
-              : <>Arabic <span className="gradient-text" style={{ fontWeight: 800 }}>Maqamat</span></>}
+              : <>Music Theory & <span className="gradient-text" style={{ fontWeight: 800 }}>Maqamat</span></>}
           </h1>
 
           <p style={{ fontSize: 17, color: "var(--text-muted)", maxWidth: 620, margin: "0 auto 16px", lineHeight: 1.9 }}>
@@ -164,18 +183,24 @@ export default function MaqamatPage() {
               : "Maqamat · Ouqoud · Ajnas · Abaad · Awa'el · Ghina'ia Examples · Ertijal"}
           </p>
 
-          {/* Free assessment CTA */}
-          <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 10, padding: "24px 40px", borderRadius: 16, background: "rgba(201,168,76,0.08)", border: "2px solid rgba(201,168,76,0.3)" }}>
-            <span style={{ fontSize: 28 }}>🎯</span>
-            <p style={{ fontSize: 16, fontWeight: 700, color: "var(--cream)", marginBottom: 4 }}>
-              {isAr ? "لا تعرف مستواك؟ احجز جلسة تقييم مجانية" : "Don't know your level? Book a free assessment"}
+          {/* Free assessment CTA — highlighted */}
+          <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 12, padding: "36px 56px", borderRadius: 20, background: "linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06))", border: "2px solid var(--gold)", boxShadow: "0 0 40px rgba(201,168,76,0.25)" }}>
+            <span style={{ fontSize: 12, fontWeight: 800, color: "#0A0A0A", background: "var(--gold)", padding: "5px 16px", borderRadius: 999, letterSpacing: 1, textTransform: "uppercase" }}>
+              {isAr ? "★ مجاني تماماً ★" : "★ 100% Free ★"}
+            </span>
+            <span style={{ fontSize: 40 }}>🎯</span>
+            <p className="font-display" style={{ fontSize: 26, fontWeight: 700, color: "var(--cream)", marginBottom: 2 }}>
+              {isAr ? "لا تعرف مستواك؟" : "Don't know your level?"}
             </p>
-            <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
-              {isAr ? "20 دقيقة · مجاني · بدون التزام" : "20 minutes · Free · No commitment"}
+            <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 6, maxWidth: 360, lineHeight: 1.6 }}>
+              {isAr ? "احجز جلسة تقييم مجانية واكتشف المستوى المناسب لك" : "Book a free assessment session and discover the level that fits you"}
             </p>
-            <Link href="/booking?plan=assessment" className="btn-gold" style={{ padding: "12px 32px", fontSize: 15 }}>
-              {isAr ? "🎯 احجز جلسة التقييم المجانية" : "🎯 Book Free Assessment Session"}
+            <Link href="/booking?plan=assessment" className="btn-gold" style={{ padding: "16px 44px", fontSize: 17, fontWeight: 700 }}>
+              {isAr ? "🎯 احجز جلسة التقييم المجانية" : "🎯 Book Your Free Assessment"}
             </Link>
+            <p style={{ fontSize: 12, color: "var(--text-muted)" }}>
+              {isAr ? "20 دقيقة · بدون التزام · بدون بطاقة" : "20 minutes · No commitment · No card required"}
+            </p>
           </div>
         </div>
       </section>
