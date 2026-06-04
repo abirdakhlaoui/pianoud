@@ -38,16 +38,11 @@ function PianoIcon({ size = 40 }: { size?: number }) {
 }
 
 const COURSES = [
-  { id:"1", slug:"piano-fundamentals", instrument:"PIANO", level:"BEGINNER",     price:184, rating:4.9, students:842,  lessons:36, duration:"12h 30m", bestseller:true,  title_en:"Piano Fundamentals: From Zero to Advanced", title_ar:"أساسيات البيانو: من الصفر إلى المتقدم",  instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
-  { id:"2", slug:"arabic-maqam-oud",   instrument:"OUD",   level:"INTERMEDIATE", price:259, rating:4.8, students:631,  lessons:48, duration:"18h 00m", bestseller:true,  title_en:"Arabic Maqam & Oud Mastery",                title_ar:"المقامات العربية وإتقان العود",           instructor_en:"Omar Algour",       instructor_ar:"عمر الغور" },
-  { id:"3", slug:"classical-piano",    instrument:"PIANO", level:"ADVANCED",     price:334, rating:4.7, students:412,  lessons:54, duration:"22h 15m", bestseller:false, title_en:"Classical Piano",                           title_ar:"البيانو الكلاسيكي",                       instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
-  { id:"4", slug:"oud-beginners",      instrument:"OUD",   level:"BEGINNER",     price:146, rating:4.9, students:1205, lessons:28, duration:"9h 45m",  bestseller:true,  title_en:"Oud for Beginners: First Steps",            title_ar:"العود للمبتدئين: الخطوات الأولى",         instructor_en:"Omar Algour",       instructor_ar:"عمر الغور" },
-  { id:"5", slug:"arabic-piano",       instrument:"PIANO", level:"INTERMEDIATE", price:296, rating:4.6, students:318,  lessons:42, duration:"16h 00m", bestseller:false, title_en:"Arabic Piano",                              title_ar:"البيانو العربي",                          instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
-  { id:"6", slug:"oud-advanced",       instrument:"OUD",   level:"ADVANCED",     price:371, rating:4.8, students:204,  lessons:60, duration:"25h 30m", bestseller:false, title_en:"Oud Advanced",                              title_ar:"العود المتقدم",                           instructor_en:"Omar Algour",       instructor_ar:"عمر الغور" },
-  { id:"7", slug:"piano-kids",         instrument:"PIANO", level:"BEGINNER",     price:120, rating:5.0, students:530,  lessons:20, duration:"7h 00m",  bestseller:true,  title_en:"Piano KIDS",                                title_ar:"البيانو للأطفال",                         instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
-  { id:"8", slug:"music-reading",      instrument:"PIANO", level:"BEGINNER",     price:99,  rating:4.8, students:720,  lessons:18, duration:"6h 30m",  bestseller:false, title_en:"Music Reading",                             title_ar:"قراءة النوتة الموسيقية",                  instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
-  { id:"10", slug:"music-theory-abrsm", instrument:"OUD", level:"INTERMEDIATE", price:245, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظرية الموسيقى ABRSM", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
-  { id:"9", slug:"oud-harmony",        instrument:"OUD",   level:"INTERMEDIATE", price:220, rating:4.7, students:280,  lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony for Oud",                           title_ar:"الهارموني للعود",                         instructor_en:"Omar Algour",       instructor_ar:"عمر الغور" },
+  { id:"1", slug:"piano-fundamentals", instrument:"PIANO", level:"BEGINNER", price:25, rating:4.9, students:842, lessons:36, duration:"12h 30m", bestseller:true, title_en:"Piano", title_ar:"البيانو", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
+  { id:"2", slug:"oud-beginners", instrument:"OUD", level:"BEGINNER", price:25, rating:4.9, students:1205, lessons:28, duration:"9h 45m", bestseller:true, title_en:"Oud", title_ar:"العود", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"3", slug:"arabic-maqam-oud", instrument:"OUD", level:"INTERMEDIATE", price:25, rating:4.8, students:631, lessons:48, duration:"18h 00m", bestseller:true, title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"4", slug:"music-theory-abrsm", instrument:"PIANO", level:"INTERMEDIATE", price:25, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظرية الموسيقى ABRSM", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
+  { id:"5", slug:"oud-harmony", instrument:"OUD", level:"ADVANCED", price:25, rating:4.7, students:280, lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony & Counterpoint (Musicians Only)", title_ar:"الهارموني والكونتربوان (للموسيقيين)", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
 ]
 
 const LEVEL_COLOR: Record<string,{bg:string;color:string;en:string;ar:string}> = {
@@ -191,9 +186,10 @@ export default function CoursesPage() {
                         <span>⏱ {course.duration}</span>
                       </div>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:"1px solid var(--border)" }}>
-                        <div>
+                        <div style={{ display:"flex", alignItems:"baseline", gap:4 }}>
+                          <span style={{ fontSize:11, color:"var(--text-muted)" }}>{isAr?"من":"From"}</span>
+                          <span style={{ fontSize:13, color:"var(--text-muted)" }}>$</span>
                           <span className="font-display" style={{ fontSize:24, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
-                          <span style={{ fontSize:13, color:"var(--text-muted)", marginRight:4 }}>$</span>
                         </div>
                         <span style={{ fontSize:13, color:"var(--gold)", fontWeight:500 }}>{isAr?"عرض ←":"View →"}</span>
                       </div>
