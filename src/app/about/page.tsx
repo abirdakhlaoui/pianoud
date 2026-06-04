@@ -56,7 +56,7 @@ export default function AboutPage() {
           <p style={{ fontSize:18, color:"var(--text-muted)", maxWidth:640, margin:"0 auto 48px", lineHeight:1.9 }}>
             {isAr
               ? "منصة تعليم الموسيقى الأولى عربياً — نجمع بين أصالة الموسيقى العربية وأساليب التدريس الحديثة لنقدّم تجربة تعلّم استثنائية."
-              : "The leading online music academy for Arabic speakers — bridging authentic Arabic musical tradition with modern teaching methods for an exceptional learning experience."}
+              : "The leading online music academy for Arabic and English speakers — bridging authentic Arabic musical tradition with modern teaching methods for an exceptional learning experience."}
           </p>
 
           {/* Stats */}
