@@ -15,9 +15,9 @@ export default function OudPage() {
         level_en: "Beginner",
         level_ar: "مبتدئ",
         icon: "🌱",
-        color: "#34d399",
-        bg: "rgba(52,211,153,0.08)",
-        border: "rgba(52,211,153,0.3)",
+        color: "#f87171",
+        bg: "rgba(248,113,113,0.08)",
+        border: "rgba(248,113,113,0.3)",
         session_en: "45 min / session",
         session_ar: "45 دقيقة / جلسة",
         frequency_en: "2 sessions / week",
@@ -27,10 +27,7 @@ export default function OudPage() {
           { label_en:"1 month",      label_ar:"شهر واحد",      price:200,  note_en:"8 sessions",           note_ar:"8 جلسات",        badge_en:"Save 20%", badge_ar:"وفّر 20%" },
           { label_en:"16 sessions",  label_ar:"16 جلسة",       price:375,  note_en:"Best value pack",      note_ar:"أفضل قيمة",      badge_en:"Popular",  badge_ar:"الأكثر طلباً" },
         ],
-        combos: [
-          { label_en:"Beginner + Intermediate (2 levels)", label_ar:"مبتدئ + متوسط (مستويان)",              price:650,  months:4  },
-          { label_en:"All 3 levels (Beginner → Advanced)", label_ar:"المستويات الثلاثة (مبتدئ → متقدم)",   price:975,  months:6  },
-        ],
+        combos: [],
       },
       {
         level_en: "Intermediate",
@@ -54,9 +51,9 @@ export default function OudPage() {
         level_en: "Advanced",
         level_ar: "متقدم",
         icon: "🌳",
-        color: "#f87171",
-        bg: "rgba(248,113,113,0.08)",
-        border: "rgba(248,113,113,0.3)",
+        color: "#60a5fa",
+        bg: "rgba(96,165,250,0.08)",
+        border: "rgba(96,165,250,0.3)",
         session_en: "60 min / session",
         session_ar: "60 دقيقة / جلسة",
         frequency_en: "1 session / week",
@@ -117,7 +114,7 @@ export default function OudPage() {
         <div className="container">
           <div style={{ display:"flex", gap:0 }}>
             {[
-              { key:"individual", en:"Individual Lessons", ar:"دروس فردية" },
+              { key:"individual", en:"One-by-One Lessons", ar:"دروس فردية" },
               { key:"theory",     en:"Arabic Music Theory", ar:"نظرية الموسيقى العربية" },
               { key:"group",      en:"Curriculum (Manhej)", ar:"المنهج الدراسي" },
             ].map((t: any) => (
