@@ -8,7 +8,7 @@ const schema = z.object({
   name:       z.string().min(2).max(50),
   email:      z.string().email(),
   password:   z.string().min(8).max(100),
-  instrument: z.enum(["PIANO","OUD","BOTH"]).optional(),
+  instrument: z.enum(["PIANO","OUD","MAQAMAT","ABRSM","HARMONY"]).optional(),
   level:      z.enum(["BEGINNER","INTERMEDIATE","ADVANCED"]).optional(),
 })
 
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
       success: true,
       instrument,
       level,
-      redirect: instrument === "OUD" ? "/courses?instrument=oud" : "/courses?instrument=piano"
+      redirect: "/dashboard"
     }, { status:201 })
 
   } catch(err) {

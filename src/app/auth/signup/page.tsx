@@ -10,7 +10,7 @@ export default function SignUpPage() {
   const [name, setName]             = useState("")
   const [email, setEmail]           = useState("")
   const [password, setPassword]     = useState("")
-  const [instrument, setInstrument] = useState<"PIANO"|"OUD"|"BOTH"|"">("")
+  const [instrument, setInstrument] = useState<string>("")
   const [level, setLevel]           = useState<"BEGINNER"|"INTERMEDIATE"|"ADVANCED"|"">("")
   const [error, setError]           = useState("")
   const [loading, setLoading]       = useState(false)
@@ -48,7 +48,7 @@ export default function SignUpPage() {
       setError(data.error || "Something went wrong.")
       setStep(1)
     } else {
-      const redirect = data.instrument === "OUD" ? "/courses?instrument=oud" : "/courses?instrument=piano"
+      const redirect = "/dashboard"
       router.push(`/auth/signin?registered=true&redirect=${redirect}`)
     }
   }
@@ -151,11 +151,13 @@ export default function SignUpPage() {
                   <label style={{ fontSize:13, fontWeight:600, color:"var(--cream)", display:"block", marginBottom:14 }}>
                     Which instrument do you want to learn?
                   </label>
-                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:12 }}>
+                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                     {[
-                      { key:"PIANO", icon:"🎹", label:"Piano",      desc:"Classical, Arabic, Jazz" },
-                      { key:"OUD",   icon:"🪘", label:"Oud",        desc:"Arabic, Maqam, Andalusian" },
-                      { key:"BOTH",  icon:"🎵", label:"Both",       desc:"Piano & Oud together" },
+                      { key:"PIANO",   icon:"🎹", label:"Piano",                    desc:"Classical, Arabic, Jazz" },
+                      { key:"OUD",     icon:"🪘", label:"Oud",                      desc:"Arabic, Maqam, Andalusian" },
+                      { key:"MAQAMAT", icon:"🎶", label:"Arabic Music Theory",      desc:"Maqamat & theory" },
+                      { key:"ABRSM",   icon:"📘", label:"Music Theory ABRSM",       desc:"Western theory exams" },
+                      { key:"HARMONY", icon:"🎼", label:"Harmony & Counterpoint",   desc:"For musicians only" },
                     ].map((opt: any) => (
                       <button key={opt.key} type="button" onClick={() => setInstrument(opt.key as any)} style={{
                         padding:"18px 12px", borderRadius:12, cursor:"pointer",
@@ -182,7 +184,7 @@ export default function SignUpPage() {
                   <label style={{ fontSize:13, fontWeight:600, color:"var(--cream)", display:"block", marginBottom:14 }}>
                     What is your current level?
                   </label>
-                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:12 }}>
+                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                     {[
                       { key:"BEGINNER",     icon:"🌱", label:"Beginner",     desc:"No experience yet" },
                       { key:"INTERMEDIATE", icon:"🌿", label:"Intermediate", desc:"Some basics known" },
