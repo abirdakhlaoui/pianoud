@@ -209,6 +209,21 @@ export default function SignUpPage() {
                     ))}
                   </div>
                 </div>
+                {/* Don't know your level? — free assessment */}
+                <div style={{ display:"flex", alignItems:"center", gap:14, padding:"16px 20px", borderRadius:12, background:"rgba(201,168,76,0.06)", border:"1px solid rgba(201,168,76,0.25)", flexWrap:"wrap" }}>
+                  <span style={{ fontSize:26 }}>🎯</span>
+                  <div style={{ flex:1, minWidth:180 }}>
+                    <p style={{ fontSize:14, fontWeight:700, color:"var(--cream)", marginBottom:2 }}>
+                      Not sure about your level?
+                    </p>
+                    <p style={{ fontSize:12, color:"var(--text-muted)" }}>
+                      Book a free 20-min assessment session — no commitment.
+                    </p>
+                  </div>
+                  <a href="/booking?plan=assessment" className="btn-gold" style={{ padding:"10px 20px", fontSize:13, flexShrink:0, textDecoration:"none" }}>
+                    Book Free Assessment
+                  </a>
+                </div>
 
                 <div style={{ display:"flex", gap:12 }}>
                   <button type="button" onClick={() => setStep(1)} className="btn-outline"
