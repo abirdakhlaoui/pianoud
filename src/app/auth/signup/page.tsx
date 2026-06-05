@@ -154,7 +154,7 @@ export default function SignUpPage() {
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                     {[
                       { key:"PIANO",   icon:"🎹", label:"Piano",                    desc:"Classical, Arabic, Jazz" },
-                      { key:"OUD",     icon:"🪘", label:"Oud",                      desc:"Arabic, Maqam, Andalusian" },
+                      { key:"OUD",     icon:"🪕", label:"Oud",                      desc:"Arabic, Maqam, Andalusian" },
                       { key:"MAQAMAT", icon:"🎶", label:"Arabic Music Theory",      desc:"Maqamat & theory" },
                       { key:"ABRSM",   icon:"📘", label:"Music Theory ABRSM",       desc:"Western theory exams" },
                       { key:"HARMONY", icon:"🎼", label:"Harmony & Counterpoint",   desc:"For musicians only" },

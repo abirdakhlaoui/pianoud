@@ -183,7 +183,7 @@ export default function InstructorsPage() {
                             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)"; (e.currentTarget as HTMLElement).style.transform="translateX(4px)" }}
                             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="var(--border)"; (e.currentTarget as HTMLElement).style.transform="translateX(0)" }}>
                             <span style={{ fontSize:28, flexShrink:0 }}>
-                              {inst.instrument==="PIANO"?"🎹":"🪘"}
+                              {inst.instrument==="PIANO"?"🎹":"🪕"}
                             </span>
                             <div style={{ flex:1 }}>
                               <div style={{ fontSize:14, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>

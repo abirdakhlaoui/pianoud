@@ -97,7 +97,7 @@ export default async function StudentDashboard() {
               {enrollments.map((enrollment: any) => (
                 <div key={enrollment.id} className="card" style={{ padding:22, display:"flex", alignItems:"center", gap:20, flexWrap:"wrap" }}>
                   <div style={{ width:52, height:52, borderRadius:10, background: enrollment.course.instrument==="PIANO" ? "linear-gradient(135deg,#0d1117,#1a1a2e)" : "linear-gradient(135deg,#0d1117,#1a0a00)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:24, flexShrink:0 }}>
-                    {enrollment.course.instrument==="PIANO" ? "🎹" : "🪘"}
+                    {enrollment.course.instrument==="PIANO" ? "🎹" : "🪕"}
                   </div>
                   <div style={{ flex:1, minWidth:200 }}>
                     <div style={{ fontSize:15, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>

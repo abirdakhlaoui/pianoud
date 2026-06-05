@@ -140,7 +140,7 @@ export default function ProgressPage() {
                         : "linear-gradient(135deg,#0d1117,#1a0a00)",
                       display:"flex", alignItems:"center", justifyContent:"center", fontSize:26,
                     }}>
-                      {enrollment.course?.instrument==="PIANO"?"🎹":"🪘"}
+                      {enrollment.course?.instrument==="PIANO"?"🎹":"🪕"}
                     </div>
 
                     <div style={{ flex:1 }}>

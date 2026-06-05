@@ -96,7 +96,7 @@ function SearchContent() {
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)" }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="var(--border)" }}>
                     <div style={{ width:48, height:48, borderRadius:10, background: course.instrument==="PIANO"?"linear-gradient(135deg,#0d1117,#1a1a2e)":"linear-gradient(135deg,#0d1117,#1a0a00)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
-                      {course.instrument==="PIANO"?"🎹":"🪘"}
+                      {course.instrument==="PIANO"?"🎹":"🪕"}
                     </div>
                     <div style={{ flex:1, minWidth:0 }}>
                       <div style={{ fontSize:16, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>

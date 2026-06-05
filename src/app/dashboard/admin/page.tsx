@@ -116,7 +116,7 @@ export default async function AdminDashboard() {
                 <p style={{ fontSize:14, color:"var(--text-muted)" }}>No enrollments yet.</p>
               ) : recentEnrollments.map((e: any, i: any) => (
                 <div key={e.id} style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 0", borderBottom: i<recentEnrollments.length-1?"1px solid var(--border)":"none" }}>
-                  <span style={{ fontSize:24, flexShrink:0 }}>{e.course.instrument==="PIANO"?"🎹":"🪘"}</span>
+                  <span style={{ fontSize:24, flexShrink:0 }}>{e.course.instrument==="PIANO"?"🎹":"🪕"}</span>
                   <div style={{ flex:1, minWidth:0 }}>
                     <div style={{ fontSize:13, fontWeight:600, color:"var(--cream)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{e.user.name}</div>
                     <div style={{ fontSize:11, color:"var(--text-muted)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{e.course.title_en}</div>

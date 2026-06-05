@@ -408,7 +408,7 @@ export default function CourseDetailPage() {
                   {course.level==="BEGINNER"?(isAr?"مبتدئ":"Beginner"):course.level==="INTERMEDIATE"?(isAr?"متوسط":"Intermediate"):(isAr?"متقدم":"Advanced")}
                 </span>
                 <span style={{ fontSize:11, fontWeight:600, padding:"4px 12px", borderRadius:6, background:"rgba(201,168,76,0.1)", color:"var(--gold)" }}>
-                  {course.instrument==="PIANO"?(isAr?"🎹 بيانو":"🎹 Piano"):(isAr?"🪘 عود":"🪘 Oud")}
+                  {course.instrument==="PIANO"?(isAr?"🎹 بيانو":"🎹 Piano"):(isAr?"🪕 عود":"🪕 Oud")}
                 </span>
               </div>
 
@@ -478,7 +478,7 @@ export default function CourseDetailPage() {
                 }}>
                   <div style={{ position:"absolute", inset:0, background:"repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(201,168,76,0.03) 20px,rgba(201,168,76,0.03) 21px)" }}/>
                   <span style={{ fontSize:80, filter:"drop-shadow(0 0 30px rgba(201,168,76,0.4))" }}>
-                    {course.instrument==="PIANO"?"🎹":"🪘"}
+                    {course.instrument==="PIANO"?"🎹":"🪕"}
                   </span>
                   {/* Play button */}
                   <div style={{

@@ -104,7 +104,7 @@ export default function InstructorCoursesPage() {
             {courses.map((course: any) => (
               <div key={course.id} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:20, flexWrap:"wrap" }}>
                 <div style={{ width:56, height:56, borderRadius:12, background:"var(--ink)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:28, flexShrink:0 }}>
-                  {course.instrument === "PIANO" ? "🎹" : "🪘"}
+                  {course.instrument === "PIANO" ? "🎹" : "🪕"}
                 </div>
 
                 <div style={{ flex:1, minWidth:200 }}>

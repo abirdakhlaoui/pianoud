@@ -122,7 +122,7 @@ export default function EditCoursePage() {
                 </label>
                 <select value={form.instrument} onChange={e => update("instrument", e.target.value)} style={{ ...inputStyle, cursor:"pointer" }}>
                   <option value="PIANO">🎹 {isAr ? "بيانو" : "Piano"}</option>
-                  <option value="OUD">🪘 {isAr ? "عود" : "Oud"}</option>
+                  <option value="OUD">🪕 {isAr ? "عود" : "Oud"}</option>
                 </select>
               </div>
               <div>

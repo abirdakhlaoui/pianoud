@@ -407,7 +407,7 @@ onError={(e) => { (e.target as HTMLImageElement).src = "" }}
                 />
                 <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg,#0d1117,#1a0a00)", display:"flex", alignItems:"center", justifyContent:"center" }}>
                   <div style={{ textAlign:"center" }}>
-                    <div style={{ fontSize:80, marginBottom:16 }}>🪘</div>
+                    <div style={{ fontSize:80, marginBottom:16 }}>🪕</div>
                     <p className="font-display" style={{ fontSize:22, color:"var(--gold)", marginBottom:4 }}>OUD METHOD</p>
                     <p style={{ fontSize:14, color:"var(--text-muted)" }}>منهج آلة العود</p>
                     <p style={{ fontSize:13, color:"var(--cream)", marginTop:8 }}>Tareq Jundi · طارق الجندي</p>

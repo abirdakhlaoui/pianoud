@@ -240,7 +240,7 @@ export default function HeroSection() {
         }}>
           {[
             { emoji: "🎹", name_en: "Piano", name_ar: "بيانو", count_en: "3 courses", count_ar: "٣ دورات", href: "/courses?instrument=piano", color: "#60a5fa" },
-            { emoji: "🪘", name_en: "Oud",   name_ar: "عود",   count_en: "3 courses", count_ar: "٣ دورات", href: "/courses?instrument=oud",   color: "var(--gold)" },
+            { emoji: "🪕", name_en: "Oud",   name_ar: "عود",   count_en: "3 courses", count_ar: "٣ دورات", href: "/courses?instrument=oud",   color: "var(--gold)" },
           ].map((inst) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
               <div style={{

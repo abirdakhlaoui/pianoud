@@ -121,7 +121,7 @@ export default function CheckoutPage() {
                   background: course.instrument==="PIANO" ? "linear-gradient(135deg,#0d1117,#1a1a2e)" : "linear-gradient(135deg,#0d1117,#1a0a00)",
                   display:"flex", alignItems:"center", justifyContent:"center", fontSize:28,
                 }}>
-                  {course.instrument==="PIANO" ? "🎹" : "🪘"}
+                  {course.instrument==="PIANO" ? "🎹" : "🪕"}
                 </div>
                 <div style={{ flex:1 }}>
                   <div style={{ fontSize:16, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>{course.title_en}</div>
