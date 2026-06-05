@@ -35,9 +35,9 @@ export default function PianoSection() {
             {/* Pricing preview */}
             <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:12, marginBottom:32 }}>
               {[
-                { level_en:"Beginner",     level_ar:"مبتدئ",  price:"$25",  desc_en:"/session", desc_ar:"/جلسة", color:"#34d399" },
-                { level_en:"Intermediate", level_ar:"متوسط",  price:"$50",  desc_en:"/session", desc_ar:"/جلسة", color:"#fbbf24" },
-                { level_en:"Advanced",     level_ar:"متقدم",  price:"$75",  desc_en:"/session", desc_ar:"/جلسة", color:"#f87171" },
+                { level_en:"4 Hours",  level_ar:"4 ساعات", price:"$220", desc_en:"1 month",  desc_ar:"شهر",   color:"#f87171" },
+                { level_en:"8 Hours",  level_ar:"8 ساعات", price:"$400", desc_en:"2 months", desc_ar:"شهران", color:"#fbbf24" },
+                { level_en:"16 Hours", level_ar:"16 ساعة", price:"$800", desc_en:"4 months", desc_ar:"4 أشهر", color:"#60a5fa" },
               ].map((p: any, i: any) => (
                 <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>
@@ -53,7 +53,7 @@ export default function PianoSection() {
             <div style={{ display:"flex", flexDirection:"column", gap:10, marginBottom:36 }}>
               {[
                 { en:"Free 20-min assessment session",           ar:"جلسة تقييم مجانية 20 دقيقة"        },
-                { en:"Bundle packages — save up to $125",        ar:"باقات مجمّعة — وفّر حتى 125 دولار" },
+                { en:"1-2 free classes + 20% promo code",        ar:"حصص مجانية + كود خصم 20%" },
                 { en:"Classical, Arabic, Jazz & Kids Piano",     ar:"بيانو كلاسيكي وعربي وجاز وأطفال"  },
                 { en:"Bilingual instruction (Arabic & English)", ar:"تدريس ثنائي اللغة"                  },
               ].map((f: any, i: any) => (

@@ -43,13 +43,13 @@ export default function ReadingSection() {
             <p style={{ fontSize:14, color:"var(--gold)", marginBottom:28, lineHeight:1.7 }}>
               {isAr
                 ? "6 مستويات · كل مستوى 3 أشهر · يبدأ من 200 دولار/شهر"
-                : "6 levels · Each level 3 months · From $200/month"}
+                : "1 hour/week · Packages from $220"}
             </p>
 
             <div style={{ display:"grid", gridTemplateColumns:"repeat(2,1fr)", gap:10, marginBottom:28 }}>
               {[
                 { label_en:"Per month",    label_ar:"شهرياً",      price:"$200", desc_en:"4 sessions", desc_ar:"4 جلسات",  color:"#34d399" },
-                { label_en:"3-month pack", label_ar:"باقة 3 أشهر", price:"$575", desc_en:"Save $25",   desc_ar:"وفّر $25", color:"#C9A84C" },
+                { label_en:"8 Hours", label_ar:"8 ساعات", price:"$400", desc_en:"2 months", desc_ar:"شهران", color:"#fbbf24" },
               ].map((p: any, i: any) => (
                 <div key={i} style={{ padding:"14px 16px", borderRadius:10, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:6 }}>

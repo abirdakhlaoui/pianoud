@@ -14,9 +14,9 @@ const PILLARS = [
 ]
 
 const PLANS = [
-  { label_en: "Beginner",      label_ar: "مبتدئ",          price: "$325", months_en: "2 months", months_ar: "شهران",  color: "#34d399" },
-  { label_en: "2 Levels",      label_ar: "مستويان",         price: "$650", months_en: "4 months", months_ar: "4 اشهر", color: "#fbbf24" },
-  { label_en: "Full Journey",  label_ar: "الرحلة الكاملة", price: "$975", months_en: "6 months", months_ar: "6 اشهر", color: "#C9A84C" },
+  { label_en: "4 Hours",  label_ar: "4 ساعات", price: "$220", months_en: "1 month",  months_ar: "شهر",   color: "#f87171" },
+  { label_en: "8 Hours",  label_ar: "8 ساعات", price: "$400", months_en: "2 months", months_ar: "شهران", color: "#fbbf24" },
+  { label_en: "16 Hours", label_ar: "16 ساعة", price: "$800", months_en: "4 months", months_ar: "4 أشهر", color: "#60a5fa" },
 ]
 
 export default function MaqamatSection() {
@@ -51,7 +51,7 @@ export default function MaqamatSection() {
             <p style={{ fontSize: 14, color: "var(--gold)", marginBottom: 28, lineHeight: 1.7 }}>
               {isAr
                 ? "جلستان اسبوعيا · 45 دقيقة · يبدا من 325 دولار (شهران)"
-                : "2 sessions/week · 45 min · Starting from $325 (2 months)"}
+                : "1 hour/week · Packages from $220"}
             </p>
 
             {/* Pricing preview */}
