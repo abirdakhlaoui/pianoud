@@ -29,8 +29,8 @@ const INSTRUCTORS = [
     photo:"/omar.jpeg",
     rating:4.8, students:1315, totalCourses:4,
     instrument:"OUD",
-    bio_en:"Omar Algour is a professional Oud player, composer, and instructor with over 15 years of experience. He has performed in Germany, Switzerland, Norway and Iceland, bringing the beauty of Arabic music to international audiences. He teaches at Rawaee Academy and specializes in Arabic Maqam, Andalusian music traditions, and music composition using Sibelius notation software.",
-    bio_ar:"عمر الغور عازف عود محترف ومؤلف موسيقي ومدرّس بأكثر من 15 سنة من الخبرة. قدّم عروضاً في ألمانيا وسويسرا والنرويج وآيسلندا، ليحمل جمال الموسيقى العربية للجماهير الدولية. يدرّس في أكاديمية روائع ومتخصص في المقامات العربية والموسيقى الأندلسية وتأليف الموسيقى باستخدام برنامج Sibelius.",
+    bio_en:"Omar Algour is a professional Oud player, composer, and instructor with over 15 years of experience. He has performed in Germany, Switzerland, Norway and Iceland, bringing the beauty of Arabic music to international audiences. He teaches across the Arab world and specializes in Arabic Maqam, Andalusian music traditions, and music composition using Sibelius notation software.",
+    bio_ar:"عمر الغور عازف عود محترف ومؤلف موسيقي ومدرّس بأكثر من 15 سنة من الخبرة. قدّم عروضاً في ألمانيا وسويسرا والنرويج وآيسلندا، ليحمل جمال الموسيقى العربية للجماهير الدولية. يدرّس في العالم العربي ومتخصص في المقامات العربية والموسيقى الأندلسية وتأليف الموسيقى باستخدام برنامج Sibelius.",
     specialties_en:["Arabic Maqam","Andalusian Music","Oud Technique","Music Composition","Harmony"],
     specialties_ar:["المقامات العربية","الموسيقى الأندلسية","تقنية العود","التأليف الموسيقي","الهارموني"],
     courses:[
@@ -38,8 +38,8 @@ const INSTRUCTORS = [
       { slug:"arabic-maqam-oud", title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", level:"INTERMEDIATE", price:220 },
       { slug:"oud-harmony",      title_en:"Harmony & Counterpoint",       title_ar:"الهارموني والكونتربوان",      level:"ADVANCED",     price:220 },
     ],
-    achievements_en:["Performed in 4 European countries","Rawaee Academy instructor","Sibelius-certified composer","Arabic Maqam specialist"],
-    achievements_ar:["عروض في 4 دول أوروبية","مدرّس أكاديمية روائع","مؤلف معتمد على Sibelius","متخصص في المقامات العربية"],
+    achievements_en:["Performed in 4 European countries","Arab world instructor","Sibelius-certified composer","Arabic Maqam specialist"],
+    achievements_ar:["عروض في 4 دول أوروبية","مدرّس العالم العربي","مؤلف معتمد على Sibelius","متخصص في المقامات العربية"],
   },
 ]
 
