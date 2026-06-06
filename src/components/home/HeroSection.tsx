@@ -230,10 +230,10 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Instrument cards floating */}
-        <div style={{
-          display: "flex", justifyContent: "center", gap: 20, marginTop: 80,
-          flexWrap: "wrap",
+        {/* Course cards grid */}
+        <div className="hero-courses-grid" style={{
+          display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 80,
+          maxWidth: 1000, marginLeft: "auto", marginRight: "auto",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(24px)",
           transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s",
@@ -247,21 +247,25 @@ export default function HeroSection() {
             { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399" },
           ].map((inst) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
-              <div className="course-pill" style={{
-                padding: "14px 22px", borderRadius: 14,
+              <div className="course-card" style={{
+                borderRadius: 18, overflow: "hidden",
                 border: "1px solid var(--border)",
                 background: "var(--ink-card)",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                display: "flex", alignItems: "center", gap: 12,
-                transition: "all 0.3s ease",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease",
                 cursor: "pointer",
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = inst.color; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.1)" }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)" }}>
-                <img src={inst.img} alt={inst.name_en} style={{ width: 44, height: 44, borderRadius: 10, objectFit: "cover", flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "var(--cream)" }}>{isAr ? inst.name_ar : inst.name_en}</div>
-                  <div style={{ fontSize: 12, color: inst.color, marginTop: 2, fontWeight: 600 }}>{isAr ? "اعرف المزيد ←" : "Learn more →"}</div>
+                onMouseEnter={e => { const c = e.currentTarget; c.style.transform = "translateY(-8px)"; c.style.boxShadow = "0 20px 50px rgba(0,0,0,0.14)"; c.style.borderColor = inst.color; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1.08)" }}
+                onMouseLeave={e => { const c = e.currentTarget; c.style.transform = "translateY(0)"; c.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; c.style.borderColor = "var(--border)"; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1)" }}>
+                <div style={{ width: "100%", height: 160, overflow: "hidden", position: "relative" }}>
+                  <img src={inst.img} alt={inst.name_en} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.35) 100%)" }} />
+                </div>
+                <div style={{ padding: "18px 20px" }}>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: "var(--cream)", marginBottom: 6 }}>{isAr ? inst.name_ar : inst.name_en}</div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: inst.color, fontWeight: 600 }}>
+                    {isAr ? "اعرف المزيد ←" : "Learn more →"}
+                  </div>
                 </div>
               </div>
             </Link>

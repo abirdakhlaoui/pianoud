@@ -375,3 +375,11 @@ a.nav-link::after {
   transition: width 0.3s ease;
 }
 a.nav-link:hover::after { width: 100%; }
+
+/* Hero course cards responsive grid */
+@media (max-width: 900px) {
+  .hero-courses-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 560px) {
+  .hero-courses-grid { grid-template-columns: 1fr !important; }
+}
