@@ -7,15 +7,15 @@ type Theme = "dark" | "light" | "gold"
 const ThemeContext = createContext<{
   theme: Theme
   setTheme: (t: Theme) => void
-}>({ theme: "dark", setTheme: () => {} })
+}>({ theme: "light", setTheme: () => {} })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark")
+  const [theme, setThemeState] = useState<Theme>("light")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    const saved = (localStorage.getItem("pianoud_theme") as Theme) || "dark"
+    const saved = (localStorage.getItem("pianoud_theme") as Theme) || "light"
     setThemeState(saved)
     applyTheme(saved)
   }, [])
