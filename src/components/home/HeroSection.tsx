@@ -270,14 +270,16 @@ export default function HeroSection() {
             { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/courses", color: "#fbbf24", price: 220 },
             { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/courses", color: "#a78bfa", price: 220 },
             { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
-          ].map((inst) => (
+          ].map((inst, idx) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
               <div className="course-card" style={{
                 borderRadius: 18, overflow: "hidden",
                 border: "1px solid var(--border)",
                 background: "var(--ink-card)",
                 boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-                transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease",
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.96)",
+                transition: `transform 0.6s cubic-bezier(0.16,1,0.3,1) ${0.7 + idx * 0.12}s, opacity 0.6s ease ${0.7 + idx * 0.12}s, box-shadow 0.35s ease, border-color 0.35s ease`,
                 cursor: "pointer",
               }}
                 onMouseEnter={e => { const c = e.currentTarget; c.style.transform = "translateY(-8px)"; c.style.boxShadow = "0 20px 50px rgba(0,0,0,0.14)"; c.style.borderColor = inst.color; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1.08)" }}
