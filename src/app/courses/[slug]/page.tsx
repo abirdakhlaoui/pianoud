@@ -133,8 +133,8 @@ const COURSES: Record<string, any> = {
   },
   "oud-beginners": {
     title_en:"Oud for Beginners: First Steps", title_ar:"العود للمبتدئين: الخطوات الأولى",
-    description_en:"Take your very first steps into the magical world of Oud. This beginner-friendly course will teach you proper holding technique, right and left hand coordination, simple Arabic melodies, and the foundations of Arabic music. No experience needed!",
-    description_ar:"خُذ خطواتك الأولى في عالم العود السحري. ستعلّمك هذه الدورة المناسبة للمبتدئين تقنية الإمساك الصحيحة وتنسيق اليدين والألحان العربية البسيطة وأساسيات الموسيقى العربية. لا تحتاج خبرة!",
+    description_en:"This course allows you to study the Oud academically to develop your talent through smooth, well-structured methods that ensure you avoid incorrect practice and bad habits while playing. Course features and content: Accredited academic curriculum — studying the Oud method by the author Tareq Al-Jundi to track your progress step by step. Flexible learning style — combining live online (face-to-face) classes with recorded videos to make following along easier. Subscribe now and start playing on a correct academic foundation.",
+    description_ar:"تتيح لك هذه المادة دراسة آلة العود بشكل أكاديمي لتطوير موهبتك عبر طرق سلسة ومدروسة، تضمن لك تجنّب التمرين الخاطئ والعادات السيئة أثناء العزف. مميزات ومحتوى المادة: منهج أكاديمي معتمد: دراسة منهج آلة العود للمؤلف طارق الجندي لمتابعة تطورك خطوة بخطوة. أسلوب تعلم مرن: دمج بين الحصص الأونلاين الوجاهية (المباشرة) والفيديوهات المسجّلة لتسهيل المتابعة. اشترك الآن وابدأ العزف على أسس أكاديمية صحيحة.",
     instructor_en:"Omar Algour", instructor_ar:"عمر الغور",
     instructor_photo:"/omar.jpeg",
     instructor_bio_en:"Professional Oud player and instructor, experienced in teaching beginners, children and professionals. Performed across Europe and the Arab world.",
