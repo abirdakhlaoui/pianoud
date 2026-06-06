@@ -43,6 +43,7 @@ const COURSES = [
   { id:"3", slug:"arabic-maqam-oud", instrument:"OUD", level:"INTERMEDIATE", price:220, rating:4.8, students:631, lessons:48, duration:"18h 00m", bestseller:true, title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
   { id:"4", slug:"music-theory-abrsm", instrument:"PIANO", level:"INTERMEDIATE", price:220, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظرية الموسيقى ABRSM", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
   { id:"5", slug:"oud-harmony", instrument:"OUD", level:"ADVANCED", price:220, rating:4.7, students:280, lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony & Counterpoint (Musicians Only)", title_ar:"الهارموني والكونتربوان (للموسيقيين)", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"6", slug:"music-reading", instrument:"PIANO", level:"BEGINNER", price:220, rating:4.8, students:720, lessons:18, duration:"6h 30m", bestseller:false, title_en:"Reading & Rhythm", title_ar:"القراءة والإيقاع", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس وفاء رمضاني" },
 ]
 
 const LEVEL_COLOR: Record<string,{bg:string;color:string;en:string;ar:string}> = {
