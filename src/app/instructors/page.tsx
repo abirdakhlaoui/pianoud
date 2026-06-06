@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const INSTRUCTORS = [
   {
-    name_en:"Ons Wafa Romdhani", name_ar:"أنس وفاء رمضاني",
+    name_en:"Ons Wafa Romdhani", name_ar:"أنس الوفاء رمضاني",
     role_en:"Piano Instructor",   role_ar:"أستاذة البيانو",
     photo:"/ons.jpeg",
     rating:4.9, students:2042, totalCourses:5,

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useLang } from "@/components/providers/LangProvider"
 
 const INSTRUCTORS = [
-  { id:"1", name_en:"Ons Wafa Romdhani", name_ar:"أنس وفاء رمضاني", instrument:"PIANO", specialty_en:"Classical & Contemporary Piano", specialty_ar:"البيانو الكلاسيكي والمعاصر", experience:12, rating:4.9, students:1254, courses:3, photo:"/ons.jpeg" },
+  { id:"1", name_en:"Ons Wafa Romdhani", name_ar:"أنس الوفاء رمضاني", instrument:"PIANO", specialty_en:"Classical & Contemporary Piano", specialty_ar:"البيانو الكلاسيكي والمعاصر", experience:12, rating:4.9, students:1254, courses:3, photo:"/ons.jpeg" },
   { id:"2", name_en:"Omar Algour",        name_ar:"عمر الغور",        instrument:"OUD",   specialty_en:"Arabic Maqam & Oud Performance",  specialty_ar:"المقامات العربية وأداء العود",  experience:15, rating:4.8, students:1835, courses:3, photo:"/omar.jpeg" },
 ]
 

@@ -131,7 +131,7 @@ export default function AboutPage() {
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:32 }} className="team-grid">
             {[
               {
-                name_en:"Ons Wafa Romdhani", name_ar:"أنس وفاء رمضاني",
+                name_en:"Ons Wafa Romdhani", name_ar:"أنس الوفاء رمضاني",
                 role_en:"Piano Instructor",   role_ar:"أستاذة البيانو",
                 photo:"/ons.jpeg",
                 bio_en:"Former accompanist with the Tunisian Symphony Orchestra. Holds a diploma in Music Therapy and extensive experience teaching piano to students of all ages and levels across Tunisia and Saudi Arabia.",
