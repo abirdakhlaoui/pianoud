@@ -497,8 +497,8 @@ export default function CourseDetailPage() {
                 <div style={{ padding:24 }}>
                   {/* Price */}
                   <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:16 }}>
+                    <span style={{ fontSize:24, color:"var(--text-muted)", fontWeight:400 }}>$</span>
                     <span className="font-display" style={{ fontSize:40, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
-                    <span style={{ fontSize:16, color:"var(--text-muted)" }}>USD</span>
                   </div>
 
                   {/* Enroll button */}
