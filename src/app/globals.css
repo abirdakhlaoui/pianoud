@@ -4,17 +4,34 @@
 
 /* ── Default (Dark) tokens ──────────────────── */
 :root {
-  --gold:        #C9A84C;
-  --gold-light:  #E8CB7E;
+  --gold:        #B8893B;
+  --gold-light:  #D4A843;
   --gold-dark:   #8B6914;
-  --gold-pale:   rgba(201,168,76,0.08);
-  --cream:       #F5F0E8;
-  --ink:         #080808;
-  --ink-soft:    #111111;
-  --ink-card:    #161616;
-  --ink-border:  #1E1E1E;
-  --text-muted:  #5A5A4A;
-  --border:      rgba(201,168,76,0.12);
+  --gold-pale:   rgba(184,137,59,0.08);
+  --cream:       #1C1A17;
+  --ink:         #FBFAF7;
+  --ink-soft:    #F3F0EA;
+  --ink-card:    #FFFFFF;
+  --ink-border:  #E6E1D8;
+  --text-muted:  #6E665A;
+  --border:      rgba(28,26,23,0.10);
+}
+body {
+  background-color: #FBFAF7;
+  color: #1C1A17;
+}
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  border: 1px solid var(--border) !important;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+}
+.gradient-text {
+  background: linear-gradient(135deg, #8B6914 0%, #B8893B 50%, #6B5010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── Light theme ────────────────────────────── */
