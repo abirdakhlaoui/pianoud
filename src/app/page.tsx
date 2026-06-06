@@ -1,19 +1,19 @@
 import HeroSection from "@/components/home/HeroSection"
-import PianoSection from "@/components/home/PianoSection"
-import OudSection from "@/components/home/OudSection"
-import MaqamatSection from "@/components/home/MaqamatSection"
-import ReadingSection from "@/components/home/ReadingSection"
+import WhyChooseUs from "@/components/home/WhyChooseUs"
+import HowItWorks from "@/components/home/HowItWorks"
+import IntensiveLessons from "@/components/home/IntensiveLessons"
+import Testimonials from "@/components/home/Testimonials"
 import InstructorsSection from "@/components/home/InstructorsSection"
 
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <PianoSection />
-      <OudSection />
-      <MaqamatSection />
-      <ReadingSection />
+      <WhyChooseUs />
+      <HowItWorks />
+      <IntensiveLessons />
       <InstructorsSection />
+      <Testimonials />
     </main>
   )
 }
