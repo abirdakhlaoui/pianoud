@@ -11,8 +11,8 @@ const INSTRUCTORS = [
     photo:"/ons.jpeg",
     rating:4.9, students:2042, totalCourses:5,
     instrument:"PIANO",
-    bio_en:"Ons Wafa Romdhani is a passionate and experienced piano teacher with both academic and practical expertise. She served as an accompanist with the Tunisian Symphony Orchestra and holds a diploma in Music Therapy. With years of teaching experience in Tunisia and Saudi Arabia, she brings warmth, patience, and deep musical knowledge to every lesson.",
-    bio_ar:"أنس وفاء رمضاني مدرّسة بيانو شغوفة وذات خبرة أكاديمية وعملية عميقة. عملت عازفة مرافقة مع الأوركسترا السيمفونية التونسية وتحمل دبلوم العلاج بالموسيقى. بسنوات من التدريس في تونس والمملكة العربية السعودية، تجلب الدفء والصبر والمعرفة الموسيقية العميقة لكل درس.",
+    bio_en:"Piano teacher and performer, graduate of the Higher Institute of Music — specialization: Music and Musicology. Holder of a professional performance card in piano. Holder of a diploma in Arabic Music. Holder of a training certificate in Music Therapy. Former accompanying pianist for the Symphony Orchestra of Tunisia. Experienced in teaching all age groups across various institutes in Tunisia.",
+    bio_ar:"أستاذة وعازفة بيانو خريجة المعهد العالي للموسيقى – اختصاص: موسيقى وعلوم موسيقية. متحصّلة على بطاقة احتراف في العزف على آلة البيانو. متحصّلة على ديبلوم الموسيقى العربية. متحصّلة على شهادة تدريب في العلاج بالموسيقى (Music Therapy). عازفة بيانو مرافقة للأوركسترا السمفونيّة بتونس سابقاً. خبرة تدريس جميع الفئات العمريّة بمختلف المعاهد في تونس.",
     specialties_en:["Classical Piano","Arabic Music","Music Theory","Piano for Kids","Music Reading"],
     specialties_ar:["البيانو الكلاسيكي","الموسيقى العربية","نظرية الموسيقى","بيانو الأطفال","قراءة النوتة"],
     courses:[
