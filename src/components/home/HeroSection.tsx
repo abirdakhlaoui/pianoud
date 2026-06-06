@@ -239,25 +239,29 @@ export default function HeroSection() {
           transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s",
         }}>
           {[
-            { emoji: "🎹", name_en: "Piano", name_ar: "بيانو", count_en: "3 courses", count_ar: "٣ دورات", href: "/courses?instrument=piano", color: "#60a5fa" },
-            { emoji: "🪕", name_en: "Oud",   name_ar: "عود",   count_en: "3 courses", count_ar: "٣ دورات", href: "/courses?instrument=oud",   color: "var(--gold)" },
+            { emoji: "🎹", img: "/course-piano.png",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa" },
+            { emoji: "🪕", img: "/course-oud.png",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)" },
+            { emoji: "🎶", img: "/course-maqamat.png", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171" },
+            { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/courses", color: "#fbbf24" },
+            { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/courses", color: "#a78bfa" },
+            { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399" },
           ].map((inst) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
-              <div style={{
-                padding: "20px 36px", borderRadius: 16,
+              <div className="course-pill" style={{
+                padding: "14px 22px", borderRadius: 14,
                 border: "1px solid var(--border)",
-                background: "rgba(22,22,22,0.8)",
-                backdropFilter: "blur(20px)",
-                display: "flex", alignItems: "center", gap: 16,
+                background: "var(--ink-card)",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+                display: "flex", alignItems: "center", gap: 12,
                 transition: "all 0.3s ease",
                 cursor: "pointer",
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(201,168,76,0.3)"; e.currentTarget.style.transform = "translateY(-4px)" }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.transform = "translateY(0)" }}>
-                <span style={{ fontSize: 36 }}>{inst.emoji}</span>
+                onMouseEnter={e => { e.currentTarget.style.borderColor = inst.color; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.1)" }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)" }}>
+                <img src={inst.img} alt={inst.name_en} style={{ width: 44, height: 44, borderRadius: 10, objectFit: "cover", flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: "var(--cream)" }}>{isAr ? inst.name_ar : inst.name_en}</div>
-                  <div style={{ fontSize: 13, color: inst.color, marginTop: 2, fontWeight: 500 }}>{isAr ? inst.count_ar : inst.count_en}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: "var(--cream)" }}>{isAr ? inst.name_ar : inst.name_en}</div>
+                  <div style={{ fontSize: 12, color: inst.color, marginTop: 2, fontWeight: 600 }}>{isAr ? "اعرف المزيد ←" : "Learn more →"}</div>
                 </div>
               </div>
             </Link>
