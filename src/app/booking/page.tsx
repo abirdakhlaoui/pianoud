@@ -11,8 +11,8 @@ const BOOKING_OPTIONS = [
     icon: "🎯",
     title_en: "Know Your Level — Free Assessment",
     title_ar: "اعرف مستواك — جلسة تقييم مجانية",
-    desc_en: "20-minute free session to assess your level and recommend the right plan for you.",
-    desc_ar: "جلسة مجانية 20 دقيقة لتقييم مستواك واقتراح الخطة المناسبة لك.",
+    desc_en: "20-minute free session to assess your level and recommend the right package for you.",
+    desc_ar: "جلسة مجانية 20 دقيقة لتقييم مستواك واقتراح الباقة المناسبة لك.",
     price: 0,
     duration_en: "20 minutes",
     duration_ar: "20 دقيقة",
@@ -22,185 +22,53 @@ const BOOKING_OPTIONS = [
     free: true,
   },
   {
-    id: "beginner-session",
-    icon: "🌱",
-    title_en: "Beginner — Single Session",
-    title_ar: "مبتدئ — جلسة واحدة",
-    desc_en: "45-minute individual Oud lesson for complete beginners.",
-    desc_ar: "درس عود فردي 45 دقيقة للمبتدئين الكاملين.",
-    price: 25,
-    duration_en: "45 minutes",
-    duration_ar: "45 دقيقة",
-    color: "#34d399",
-    bg: "rgba(52,211,153,0.08)",
-    border: "rgba(52,211,153,0.3)",
+    id: "opt1",
+    icon: "🎵",
+    title_en: "4 Hours Package",
+    title_ar: "باقة 4 ساعات",
+    desc_en: "4 hours of one-by-one classes — 1 hour per week for 1 month.",
+    desc_ar: "4 ساعات من الحصص الفردية — ساعة أسبوعياً لمدة شهر.",
+    price: 220,
+    duration_en: "1 month",
+    duration_ar: "شهر واحد",
+    color: "#f87171",
+    bg: "rgba(248,113,113,0.08)",
+    border: "rgba(248,113,113,0.3)",
     free: false,
   },
   {
-    id: "beginner-month",
-    icon: "🌱",
-    title_en: "Beginner — 1 Month (8 sessions)",
-    title_ar: "مبتدئ — شهر واحد (8 جلسات)",
-    desc_en: "2 sessions/week × 4 weeks. Includes free assessment session.",
-    desc_ar: "جلستان أسبوعياً × 4 أسابيع. يشمل جلسة تقييم مجانية.",
-    price: 200,
-    duration_en: "45 min/session",
-    duration_ar: "45 دقيقة/جلسة",
-    color: "#34d399",
-    bg: "rgba(52,211,153,0.08)",
-    border: "rgba(52,211,153,0.3)",
+    id: "opt2",
+    icon: "🎶",
+    title_en: "8 Hours Package",
+    title_ar: "باقة 8 ساعات",
+    desc_en: "8 hours — 1 hour per week for 2 months. Includes 1 free class + 20% discount code.",
+    desc_ar: "8 ساعات — ساعة أسبوعياً لمدة شهرين. تشمل حصة مجانية + كود خصم 20%.",
+    price: 400,
+    duration_en: "2 months",
+    duration_ar: "شهران",
+    color: "#fbbf24",
+    bg: "rgba(251,191,36,0.08)",
+    border: "rgba(251,191,36,0.3)",
     free: false,
-    badge_en: "Save 20%",
-    badge_ar: "وفّر 20%",
-  },
-  {
-    id: "beginner-pack",
-    icon: "🌱",
-    title_en: "Beginner — 16 Sessions Pack",
-    title_ar: "مبتدئ — باقة 16 جلسة",
-    desc_en: "Best value pack for beginners. Includes free assessment session.",
-    desc_ar: "أفضل باقة للمبتدئين. تشمل جلسة تقييم مجانية.",
-    price: 375,
-    duration_en: "45 min/session",
-    duration_ar: "45 دقيقة/جلسة",
-    color: "#34d399",
-    bg: "rgba(52,211,153,0.08)",
-    border: "rgba(52,211,153,0.3)",
-    free: false,
-    badge_en: "Most Popular",
+    badge_en: "Popular",
     badge_ar: "الأكثر طلباً",
   },
   {
-    id: "intermediate-session",
-    icon: "🌿",
-    title_en: "Intermediate — Single Session",
-    title_ar: "متوسط — جلسة واحدة",
-    desc_en: "60-minute individual Oud lesson for intermediate players.",
-    desc_ar: "درس عود فردي 60 دقيقة للمستوى المتوسط.",
-    price: 50,
-    duration_en: "60 minutes",
-    duration_ar: "60 دقيقة",
-    color: "#fbbf24",
-    bg: "rgba(251,191,36,0.08)",
-    border: "rgba(251,191,36,0.3)",
-    free: false,
-  },
-  {
-    id: "intermediate-month",
-    icon: "🌿",
-    title_en: "Intermediate — 1 Month (4 sessions)",
-    title_ar: "متوسط — شهر واحد (4 جلسات)",
-    desc_en: "1 session/week × 4 weeks. Includes free assessment session.",
-    desc_ar: "جلسة أسبوعياً × 4 أسابيع. يشمل جلسة تقييم مجانية.",
-    price: 200,
-    duration_en: "60 min/session",
-    duration_ar: "60 دقيقة/جلسة",
-    color: "#fbbf24",
-    bg: "rgba(251,191,36,0.08)",
-    border: "rgba(251,191,36,0.3)",
-    free: false,
-    badge_en: "Save 25%",
-    badge_ar: "وفّر 25%",
-  },
-  {
-    id: "intermediate-pack",
-    icon: "🌿",
-    title_en: "Intermediate — 8 Sessions Pack",
-    title_ar: "متوسط — باقة 8 جلسات",
-    desc_en: "Best value for intermediate level. Includes free assessment.",
-    desc_ar: "أفضل قيمة للمستوى المتوسط. يشمل تقييماً مجانياً.",
-    price: 375,
-    duration_en: "60 min/session",
-    duration_ar: "60 دقيقة/جلسة",
-    color: "#fbbf24",
-    bg: "rgba(251,191,36,0.08)",
-    border: "rgba(251,191,36,0.3)",
+    id: "opt3",
+    icon: "🏆",
+    title_en: "16 Hours Package",
+    title_ar: "باقة 16 ساعة",
+    desc_en: "16 hours — 1 hour per week for 4 months. Includes 2 free classes + 20% discount code.",
+    desc_ar: "16 ساعة — ساعة أسبوعياً لمدة 4 أشهر. تشمل حصتين مجانيتين + كود خصم 20%.",
+    price: 800,
+    duration_en: "4 months",
+    duration_ar: "4 أشهر",
+    color: "#60a5fa",
+    bg: "rgba(96,165,250,0.08)",
+    border: "rgba(96,165,250,0.3)",
     free: false,
     badge_en: "Best Value",
     badge_ar: "أفضل قيمة",
-  },
-  {
-    id: "advanced-session",
-    icon: "🌳",
-    title_en: "Advanced — Single Session",
-    title_ar: "متقدم — جلسة واحدة",
-    desc_en: "60-minute individual Oud lesson for advanced players.",
-    desc_ar: "درس عود فردي 60 دقيقة للمستوى المتقدم.",
-    price: 75,
-    duration_en: "60 minutes",
-    duration_ar: "60 دقيقة",
-    color: "#f87171",
-    bg: "rgba(248,113,113,0.08)",
-    border: "rgba(248,113,113,0.3)",
-    free: false,
-  },
-  {
-    id: "advanced-month",
-    icon: "🌳",
-    title_en: "Advanced — 1 Month (4 sessions)",
-    title_ar: "متقدم — شهر واحد (4 جلسات)",
-    desc_en: "1 session/week × 4 weeks. Includes free assessment session.",
-    desc_ar: "جلسة أسبوعياً × 4 أسابيع. يشمل جلسة تقييم مجانية.",
-    price: 300,
-    duration_en: "60 min/session",
-    duration_ar: "60 دقيقة/جلسة",
-    color: "#f87171",
-    bg: "rgba(248,113,113,0.08)",
-    border: "rgba(248,113,113,0.3)",
-    free: false,
-    badge_en: "Save 20%",
-    badge_ar: "وفّر 20%",
-  },
-  {
-    id: "advanced-2months",
-    icon: "🌳",
-    title_en: "Advanced — 2 Months (8 sessions)",
-    title_ar: "متقدم — شهران (8 جلسات)",
-    desc_en: "Best deal for advanced level. Includes free assessment session.",
-    desc_ar: "أفضل عرض للمستوى المتقدم. يشمل جلسة تقييم مجانية.",
-    price: 575,
-    duration_en: "60 min/session",
-    duration_ar: "60 دقيقة/جلسة",
-    color: "#f87171",
-    bg: "rgba(248,113,113,0.08)",
-    border: "rgba(248,113,113,0.3)",
-    free: false,
-    badge_en: "Best Deal",
-    badge_ar: "أفضل عرض",
-  },
-  {
-    id: "bundle-2levels",
-    icon: "⭐",
-    title_en: "Bundle — Beginner + Intermediate",
-    title_ar: "باقة — مبتدئ + متوسط",
-    desc_en: "Complete 2-level journey · 4 months · Includes 2 free assessment sessions.",
-    desc_ar: "رحلة مستويين · 4 أشهر · يشمل جلستَي تقييم مجانيتَين.",
-    price: 650,
-    duration_en: "4 months",
-    duration_ar: "4 أشهر",
-    color: "var(--gold)",
-    bg: "rgba(201,168,76,0.08)",
-    border: "rgba(201,168,76,0.3)",
-    free: false,
-    badge_en: "Save $75",
-    badge_ar: "وفّر 75$",
-  },
-  {
-    id: "bundle-3levels",
-    icon: "🏆",
-    title_en: "Complete Package — All 3 Levels",
-    title_ar: "الباقة الشاملة — المستويات الثلاثة",
-    desc_en: "Full musical journey · 6 months · Beginner → Intermediate → Advanced · 3 free assessments.",
-    desc_ar: "رحلة موسيقية كاملة · 6 أشهر · مبتدئ → متوسط → متقدم · 3 جلسات تقييم مجانية.",
-    price: 975,
-    duration_en: "6 months",
-    duration_ar: "6 أشهر",
-    color: "var(--gold)",
-    bg: "rgba(201,168,76,0.1)",
-    border: "rgba(201,168,76,0.4)",
-    free: false,
-    badge_en: "Best Value — Save $125",
-    badge_ar: "أفضل قيمة — وفّر 125$",
   },
 ]
 
@@ -225,114 +93,64 @@ function BookingContent() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1000))
-    // Send booking request via contact API
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        subject: `Booking: ${selectedPlan?.title_en}`,
-        message: `
-New Booking Request:
-━━━━━━━━━━━━━━━━━━━
-Plan: ${selectedPlan?.title_en}
-Price: ${selectedPlan?.free ? "FREE" : `$${selectedPlan?.price}`}
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Preferred Date: ${date}
-Preferred Time: ${time}
-Notes: ${note || "None"}
-        `.trim()
+    try {
+      await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          plan: selectedPlan ? (selectedPlan as any).title_en : selected,
+          price: selectedPlan ? (selectedPlan as any).price : 0,
+          name, email, phone, date, time, note,
+        }),
       })
-    })
-    setLoading(false)
-    setDone(true)
+      setDone(true)
+    } catch (err) {
+      console.error(err)
+      setDone(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputStyle: React.CSSProperties = {
     width: "100%", padding: "12px 16px", borderRadius: 8,
     border: "1px solid var(--border)", background: "var(--ink)",
     color: "var(--cream)", fontSize: 14, outline: "none",
-    transition: "border-color 0.2s", fontFamily: "var(--font-body)",
   }
 
-  if (done) return (
-    <main style={{ minHeight: "100vh", paddingTop: 120, textAlign: "center", background: "var(--ink)" }}>
-      <div style={{ maxWidth: 480, margin: "0 auto", padding: 24 }}>
-        <div style={{ fontSize: 72, marginBottom: 20 }}>🎵</div>
-        <h1 className="font-display" style={{ fontSize: 36, fontWeight: 600, color: "var(--cream)", marginBottom: 12 }}>
-          {isAr ? "تم الحجز بنجاح!" : "Booking Request Sent!"}
-        </h1>
-        <p style={{ fontSize: 16, color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12 }}>
-          {isAr
-            ? `شكراً ${name}! تلقّينا طلب حجزك لـ "${selectedPlan?.title_ar}". سنتواصل معك خلال 24 ساعة على بريدك الإلكتروني.`
-            : `Thank you ${name}! We received your booking request for "${selectedPlan?.title_en}". We'll contact you within 24 hours.`}
-        </p>
-        <div style={{ padding: "16px 20px", borderRadius: 10, background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", marginBottom: 28 }}>
-          <p style={{ fontSize: 14, color: "var(--gold)", fontWeight: 600 }}>
-            📧 {isAr ? "تحقّق من بريدك الإلكتروني" : "Check your email"}: {email}
+  if (done) {
+    return (
+      <main style={{ minHeight: "100vh", paddingTop: 120, paddingBottom: 80, background: "var(--ink)" }} dir={isAr ? "rtl" : "ltr"}>
+        <div className="container" style={{ maxWidth: 560, textAlign: "center" }}>
+          <div style={{ fontSize: 64, marginBottom: 20 }}>✅</div>
+          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: "var(--cream)", marginBottom: 12 }}>
+            {isAr ? "تم استلام طلبك!" : "Booking Received!"}
+          </h1>
+          <p style={{ fontSize: 15, color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 28 }}>
+            {isAr
+              ? "شكراً لك! سنتواصل معك خلال 24 ساعة لتأكيد موعدك."
+              : "Thank you! We'll contact you within 24 hours to confirm your session."}
           </p>
+          <a href="/" className="btn-gold" style={{ padding: "13px 36px", fontSize: 15, textDecoration: "none" }}>
+            {isAr ? "العودة للرئيسية" : "Back to Home"}
+          </a>
         </div>
-        <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-          <Link href="/oud" className="btn-gold" style={{ padding: "12px 28px" }}>
-            {isAr ? "العودة للعود" : "Back to Oud"}
-          </Link>
-          <Link href="/" className="btn-outline" style={{ padding: "12px 24px" }}>
-            {isAr ? "الرئيسية" : "Home"}
-          </Link>
-        </div>
-      </div>
-    </main>
-  )
+      </main>
+    )
+  }
 
   return (
     <main style={{ minHeight: "100vh", paddingTop: 100, paddingBottom: 80, background: "var(--ink)" }} dir={isAr ? "rtl" : "ltr"}>
-      <div className="container" style={{ maxWidth: 900 }}>
+      <div className="container" style={{ maxWidth: 920 }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: 40 }}>
-          <Link href="/oud" style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
-            ← {isAr ? "دروس العود" : "Oud Lessons"}
-          </Link>
-          <h1 className="font-display" style={{ fontSize: 40, fontWeight: 400, color: "var(--cream)", marginTop: 12 }}>
-            {isAr ? "احجز " : "Book a "}
-            <span className="gradient-text" style={{ fontWeight: 800 }}>
-              {isAr ? "جلستك" : "Session"}
-            </span>
+        <div style={{ textAlign: "center", marginBottom: 40 }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(32px,5vw,44px)", fontWeight: 400, color: "var(--cream)", marginBottom: 10 }}>
+            {isAr ? "احجز " : "Book Your "}
+            <span className="gradient-text" style={{ fontWeight: 800 }}>{isAr ? "حصتك" : "Session"}</span>
           </h1>
-          <p style={{ color: "var(--text-muted)", fontSize: 14, marginTop: 6 }}>
-            {isAr
-              ? "اختر الخطة المناسبة لك واملأ تفاصيل الحجز — سنتواصل معك خلال 24 ساعة."
-              : "Choose your plan and fill in the booking details — we'll contact you within 24 hours."}
+          <p style={{ fontSize: 15, color: "var(--text-muted)" }}>
+            {isAr ? "اختر باقتك وأكمل بياناتك" : "Choose your package and complete your details"}
           </p>
-        </div>
-
-        {/* Steps */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 40 }}>
-          {[
-            { key: "select",  en: "Choose Plan",    ar: "اختر الخطة"    },
-            { key: "details", en: "Your Details",   ar: "بياناتك"        },
-            { key: "confirm", en: "Confirm",        ar: "تأكيد"          },
-          ].map((s: any, i: any) => {
-            const steps = ["select", "details", "confirm"]
-            const isActive = steps.indexOf(step) >= i
-            return (
-              <div key={s.key} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, background: isActive ? "var(--gold)" : "var(--ink-soft)", color: isActive ? "#0A0A0A" : "var(--text-muted)", border: `1px solid ${isActive ? "var(--gold)" : "var(--border)"}` }}>
-                    {steps.indexOf(step) > i ? "✓" : i + 1}
-                  </div>
-                  <span style={{ fontSize: 13, color: isActive ? "var(--cream)" : "var(--text-muted)", fontWeight: isActive ? 600 : 400 }}>
-                    {isAr ? s.ar : s.en}
-                  </span>
-                </div>
-                {i < 2 && <div style={{ width: 32, height: 1, background: steps.indexOf(step) > i ? "var(--gold)" : "var(--border)" }}/>}
-              </div>
-            )
-          })}
         </div>
 
         {/* Step 1 — Select plan */}
@@ -360,10 +178,7 @@ Notes: ${note || "None"}
 
             {/* All plans grouped */}
             {[
-              { group_en: "🌱 Beginner Plans", group_ar: "🌱 خطط المبتدئين", ids: ["beginner-session", "beginner-month", "beginner-pack"] },
-              { group_en: "🌿 Intermediate Plans", group_ar: "🌿 خطط المتوسط", ids: ["intermediate-session", "intermediate-month", "intermediate-pack"] },
-              { group_en: "🌳 Advanced Plans", group_ar: "🌳 خطط المتقدمين", ids: ["advanced-session", "advanced-month", "advanced-2months"] },
-              { group_en: "⭐ Bundle Packages", group_ar: "⭐ باقات مجمّعة", ids: ["bundle-2levels", "bundle-3levels"] },
+              { group_en: "🎵 Class Packages", group_ar: "🎵 باقات الحصص", ids: ["opt1", "opt2", "opt3"] },
             ].map((group: any) => (
               <div key={group.group_en} style={{ marginBottom: 28 }}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: "var(--cream)", marginBottom: 14, letterSpacing: 0.5 }}>
