@@ -65,15 +65,11 @@ export default function Navbar() {
   const links = isAr
     ? [
         { label: "الدورات",   href: "/courses" },
-        { label: "بيانو",     href: "/piano" },
-        { label: "عود",       href: "/oud" },
         { label: "المدرّسون", href: "/instructors" },
         { label: "عن المنصة", href: "/about" },
       ]
     : [
         { label: "Courses",     href: "/courses" },
-        { label: "Piano",       href: "/piano" },
-        { label: "Oud",         href: "/oud" },
         { label: "Instructors", href: "/instructors" },
         { label: "About",       href: "/about" },
       ]
@@ -125,10 +121,10 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden-mobile" style={{ display:"flex", alignItems:"center", gap:32 }}>
             {links.map((link: any) => (
-              <Link key={link.href} href={link.href}
-                style={{ fontSize:13, fontWeight:500, color:"var(--text-muted)", textDecoration:"none", transition:"color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--gold-light)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}>
+              <Link key={link.href} href={link.href} className="nav-link"
+                style={{ fontSize:14, fontWeight:600, color:"var(--cream)", textDecoration:"none", transition:"color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "var(--cream)")}>
                 {link.label}
               </Link>
             ))}
