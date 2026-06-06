@@ -250,8 +250,8 @@ export default function HeroSection() {
           </h2>
           <p style={{ fontSize: 16, color: "var(--text-muted)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
             {isAr
-              ? "ستة مسارات تعليمية احترافية — اختر آلتك أو تخصصك وابدأ رحلتك الموسيقية اليوم."
-              : "Six professional learning paths — choose your instrument or specialty and start your musical journey today."}
+              ? "سبعة مسارات تعليمية احترافية — اختر آلتك أو تخصصك وابدأ رحلتك الموسيقية اليوم."
+              : "Seven professional learning paths — choose your instrument or specialty and start your musical journey today."}
           </p>
         </div>
 
@@ -270,6 +270,7 @@ export default function HeroSection() {
             { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 220 },
             { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 220 },
             { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
+            { emoji: "🧒", img: "/course-kids.png",    name_en: "Piano for Kids",         name_ar: "البيانو للأطفال",          href: "/kids",    color: "#f472b6", price: 220 },
           ].map((inst, idx) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
               <div className="course-card" style={{
