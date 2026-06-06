@@ -264,13 +264,13 @@ export default function HeroSection() {
           transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s",
         }}>
           {[
-            { emoji: "🎹", img: "/course-piano.png",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 220 },
-            { emoji: "🪕", img: "/course-oud.png",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 220 },
+            { emoji: "🎹", img: "/course-piano.jpeg",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 220 },
+            { emoji: "🪕", img: "/course-oud.jpeg",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 220 },
             { emoji: "🎶", img: "/course-maqamat.png", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 220 },
             { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 220 },
             { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 220 },
             { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
-            { emoji: "🧒", img: "/course-kids.png",    name_en: "Piano for Kids",         name_ar: "البيانو للأطفال",          href: "/kids",    color: "#f472b6", price: 220 },
+            { emoji: "🧒", img: "/course-kids.jpeg",    name_en: "Piano for Kids",         name_ar: "البيانو للأطفال",          href: "/kids",    color: "#f472b6", price: 220 },
             { emoji: "👦", img: "/course-oudkids.png", name_en: "Oud for Kids",           name_ar: "العود للأطفال",            href: "/oudkids", color: "#22d3ee", price: 220 },
           ].map((inst, idx) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>

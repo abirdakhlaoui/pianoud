@@ -162,9 +162,6 @@ export default function CoursesPage() {
                       <div style={{ position:"absolute", top:12, left:12 }}>
                         {course.bestseller && <span style={{ fontSize:10, fontWeight:800, padding:"4px 10px", borderRadius:6, background:"var(--gold)", color:"#0A0A0A" }}>{isAr?"الأكثر مبيعاً":"BESTSELLER"}</span>}
                       </div>
-                      <div style={{ position:"absolute", top:12, right:12 }}>
-                        <span style={{ fontSize:10, fontWeight:700, padding:"4px 10px", borderRadius:6, background:lc.bg, color:lc.color }}>{isAr?lc.ar:lc.en}</span>
-                      </div>
                     </div>
 
                     <div style={{ padding:"22px 24px 20px", display:"flex", flexDirection:"column", flex:1 }}>
