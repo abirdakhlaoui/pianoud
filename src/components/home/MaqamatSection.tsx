@@ -23,7 +23,7 @@ export default function MaqamatSection() {
   const { isAr } = useLang()
 
   return (
-    <section style={{ background: "linear-gradient(135deg,#080808 0%,#0A0A00 40%,#080808 100%)", padding: "100px 0", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }} dir={isAr ? "rtl" : "ltr"}>
+    <section style={{ background:"var(--ink-soft)", padding: "100px 0", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }} dir={isAr ? "rtl" : "ltr"}>
       <div className="container">
         <div style={{ display: "grid", gap: 64, alignItems: "center", gridTemplateColumns: "1fr 1fr" }}>
 
@@ -57,7 +57,7 @@ export default function MaqamatSection() {
             {/* Pricing preview */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 28 }}>
               {PLANS.map((p: any, i: any) => (
-                <div key={i} style={{ padding: "14px 12px", borderRadius: 10, background: "rgba(0,0,0,0.3)", border: "1px solid " + p.color + "30", textAlign: "center" }}>
+                <div key={i} style={{ padding: "14px 12px", borderRadius: 10, background:"var(--ink-card)", border: "1px solid " + p.color + "30", textAlign: "center" }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: p.color, letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 }}>
                     {isAr ? p.label_ar : p.label_en}
                   </div>
@@ -89,7 +89,7 @@ export default function MaqamatSection() {
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                 {PILLARS.map((p: any, i: any) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, background: "rgba(0,0,0,0.3)", border: "1px solid var(--border)" }}>
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 8, background:"var(--ink-card)", border: "1px solid var(--border)" }}>
                     <span style={{ fontSize: 20 }}>{p.icon}</span>
                     <span style={{ fontSize: 13, fontWeight: 600, color: "var(--cream)" }}>
                       {isAr ? p.ar : p.en}
@@ -105,7 +105,7 @@ export default function MaqamatSection() {
               </div>
             </div>
 
-            <div style={{ padding: "18px 20px", borderRadius: 12, background: "rgba(0,0,0,0.4)", border: "1px solid var(--border)", display: "flex", gap: 14, alignItems: "center" }}>
+            <div style={{ padding: "18px 20px", borderRadius: 12, background: "var(--ink-card)", border: "1px solid var(--border)", display: "flex", gap: 14, alignItems: "center" }}>
               <div style={{ width: 44, height: 44, borderRadius: "50%", background: "linear-gradient(135deg,#E8CB7E,#C9A84C)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>
                 📚
               </div>

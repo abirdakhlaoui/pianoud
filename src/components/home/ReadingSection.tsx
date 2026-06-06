@@ -16,7 +16,7 @@ export default function ReadingSection() {
   const { isAr } = useLang()
 
   return (
-    <section style={{ background:"linear-gradient(135deg,#080808 0%,#0a0d14 50%,#080808 100%)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
+    <section style={{ background:"var(--ink-soft)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
       <div className="container">
         <div style={{ display:"grid", gap:64, alignItems:"center", gridTemplateColumns:"1fr 1fr" }} className="reading-section-grid">
 
@@ -51,7 +51,7 @@ export default function ReadingSection() {
                 { label_en:"Per month",    label_ar:"شهرياً",      price:"$200", desc_en:"4 sessions", desc_ar:"4 جلسات",  color:"#34d399" },
                 { label_en:"8 Hours", label_ar:"8 ساعات", price:"$400", desc_en:"2 months", desc_ar:"شهران", color:"#fbbf24" },
               ].map((p: any, i: any) => (
-                <div key={i} style={{ padding:"14px 16px", borderRadius:10, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
+                <div key={i} style={{ padding:"14px 16px", borderRadius:10, background:"var(--ink-card)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:6 }}>
                     {isAr ? p.label_ar : p.label_en}
                   </div>
@@ -78,7 +78,7 @@ export default function ReadingSection() {
               </p>
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
                 {TOPICS.map((t: any, i: any) => (
-                  <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", borderRadius:8, background:"rgba(0,0,0,0.3)", border:"1px solid var(--border)" }}>
+                  <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", borderRadius:8, background:"var(--ink-card)", border:"1px solid var(--border)" }}>
                     <span style={{ fontSize:20 }}>{t.icon}</span>
                     <span style={{ fontSize:13, fontWeight:600, color:"var(--cream)" }}>{isAr ? t.ar : t.en}</span>
                   </div>

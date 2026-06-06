@@ -7,7 +7,7 @@ export default function OudSection() {
   const { isAr } = useLang()
 
   return (
-    <section style={{ background:"linear-gradient(135deg,#080808 0%,#1a0a00 40%,#0d0500 70%,#080808 100%)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
+    <section style={{ background:"var(--ink-soft)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
       <div className="container">
         <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }} className="oud-section-grid">
 
@@ -39,7 +39,7 @@ export default function OudSection() {
                 { level_en:"8 Hours",  level_ar:"8 ساعات", price:"$400", desc_en:"2 months", desc_ar:"شهران", color:"#fbbf24" },
                 { level_en:"16 Hours", level_ar:"16 ساعة", price:"$800", desc_en:"4 months", desc_ar:"4 أشهر", color:"#60a5fa" },
               ].map((p: any, i: any) => (
-                <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"rgba(0,0,0,0.3)", border:`1px solid ${p.color}30`, textAlign:"center" }}>
+                <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"var(--ink-card)", border:`1px solid ${p.color}30`, textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>
                     {isAr?p.level_ar:p.level_en}
                   </div>
@@ -109,7 +109,7 @@ export default function OudSection() {
             </div>
 
             {/* Manhej preview card */}
-            <div style={{ padding:"24px", borderRadius:16, background:"rgba(0,0,0,0.4)", border:"1px solid var(--border)", display:"flex", gap:16, alignItems:"center" }}>
+            <div style={{ padding:"24px", borderRadius:16, background:"var(--ink-card)", border:"1px solid var(--border)", display:"flex", gap:16, alignItems:"center" }}>
               <div style={{ width:56, height:56, borderRadius:10, background:"linear-gradient(135deg,#ef4444,#f97316)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:24, flexShrink:0 }}>
                 📚
               </div>

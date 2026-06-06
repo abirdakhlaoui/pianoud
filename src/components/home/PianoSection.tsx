@@ -7,7 +7,7 @@ export default function PianoSection() {
   const { isAr } = useLang()
 
   return (
-    <section style={{ background:"linear-gradient(135deg,#080808 0%,#0d1117 40%,#1a1a2e 70%,#080808 100%)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
+    <section style={{ background:"var(--ink-soft)", padding:"100px 0", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }} dir={isAr?"rtl":"ltr"}>
       <div className="container">
         <div style={{ display:"grid", gap:64, alignItems:"center", gridTemplateColumns:"1fr 1fr" }} className="piano-section-grid">
 
@@ -39,7 +39,7 @@ export default function PianoSection() {
                 { level_en:"8 Hours",  level_ar:"8 ساعات", price:"$400", desc_en:"2 months", desc_ar:"شهران", color:"#fbbf24" },
                 { level_en:"16 Hours", level_ar:"16 ساعة", price:"$800", desc_en:"4 months", desc_ar:"4 أشهر", color:"#60a5fa" },
               ].map((p: any, i: any) => (
-                <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"rgba(0,0,0,0.3)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
+                <div key={i} style={{ padding:"16px 12px", borderRadius:12, background:"var(--ink-card)", border:"1px solid " + p.color + "30", textAlign:"center" }}>
                   <div style={{ fontSize:11, fontWeight:700, color:p.color, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>
                     {isAr ? p.level_ar : p.level_en}
                   </div>
@@ -107,7 +107,7 @@ export default function PianoSection() {
                 { icon:"🎵", en:"Piano KIDS",       ar:"بيانو للأطفال",  href:"/courses/piano-kids"          },
                 { icon:"📖", en:"Music Reading",    ar:"قراءة النوتة",   href:"/courses/music-reading"       },
               ].map((item: any, i: any) => (
-                <Link key={i} href={item.href} style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 14px", borderRadius:10, background:"rgba(0,0,0,0.3)", border:"1px solid var(--border)", textDecoration:"none", transition:"all 0.2s" }}
+                <Link key={i} href={item.href} style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 14px", borderRadius:10, background:"var(--ink-card)", border:"1px solid var(--border)", textDecoration:"none", transition:"all 0.2s" }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)"}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor="var(--border)"}>
                   <span style={{ fontSize:20 }}>{item.icon}</span>

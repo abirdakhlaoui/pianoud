@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer"
 import SessionWrapper from "@/components/providers/SessionWrapper"
 import { LangProvider } from "@/components/providers/LangProvider"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
+import ScrollReveal from "@/components/ScrollReveal"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SessionWrapper>
           <LangProvider>
             <ThemeProvider>
+              <ScrollReveal />
               <Navbar />
               {children}
               <Footer />
