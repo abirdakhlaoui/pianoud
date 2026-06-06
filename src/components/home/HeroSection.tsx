@@ -239,12 +239,12 @@ export default function HeroSection() {
           transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s",
         }}>
           {[
-            { emoji: "🎹", img: "/course-piano.png",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa" },
-            { emoji: "🪕", img: "/course-oud.png",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)" },
-            { emoji: "🎶", img: "/course-maqamat.png", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171" },
-            { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/courses", color: "#fbbf24" },
-            { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/courses", color: "#a78bfa" },
-            { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399" },
+            { emoji: "🎹", img: "/course-piano.png",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 220 },
+            { emoji: "🪕", img: "/course-oud.png",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 220 },
+            { emoji: "🎶", img: "/course-maqamat.png", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 220 },
+            { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/courses", color: "#fbbf24", price: 220 },
+            { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/courses", color: "#a78bfa", price: 220 },
+            { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
           ].map((inst) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
               <div className="course-card" style={{
@@ -257,13 +257,16 @@ export default function HeroSection() {
               }}
                 onMouseEnter={e => { const c = e.currentTarget; c.style.transform = "translateY(-8px)"; c.style.boxShadow = "0 20px 50px rgba(0,0,0,0.14)"; c.style.borderColor = inst.color; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1.08)" }}
                 onMouseLeave={e => { const c = e.currentTarget; c.style.transform = "translateY(0)"; c.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; c.style.borderColor = "var(--border)"; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1)" }}>
-                <div style={{ width: "100%", height: 160, overflow: "hidden", position: "relative" }}>
+                <div style={{ width: "100%", height: 180, overflow: "hidden", position: "relative" }}>
                   <img src={inst.img} alt={inst.name_en} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }} />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.35) 100%)" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.45) 100%)" }} />
+                  <div style={{ position: "absolute", top: 14, left: isAr ? "auto" : 14, right: isAr ? 14 : "auto", padding: "5px 12px", borderRadius: 999, background: inst.color, color: "#fff", fontSize: 12, fontWeight: 800, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
+                    {isAr ? "من $" + inst.price : "From $" + inst.price}
+                  </div>
                 </div>
-                <div style={{ padding: "18px 20px" }}>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: "var(--cream)", marginBottom: 6 }}>{isAr ? inst.name_ar : inst.name_en}</div>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: inst.color, fontWeight: 600 }}>
+                <div style={{ padding: "20px 22px", borderTop: "3px solid " + inst.color }}>
+                  <div style={{ fontSize: 19, fontWeight: 700, color: "var(--cream)", marginBottom: 8 }}>{isAr ? inst.name_ar : inst.name_en}</div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, color: inst.color, fontWeight: 700 }}>
                     {isAr ? "اعرف المزيد ←" : "Learn more →"}
                   </div>
                 </div>
