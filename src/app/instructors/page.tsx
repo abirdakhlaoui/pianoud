@@ -17,7 +17,6 @@ const INSTRUCTORS = [
     specialties_ar:["البيانو الكلاسيكي","الموسيقى العربية","نظرية الموسيقى","بيانو الأطفال","قراءة النوتة"],
     courses:[
       { slug:"piano-fundamentals", title_en:"Piano",               title_ar:"البيانو",                  level:"BEGINNER",     price:220 },
-      { slug:"music-theory-abrsm", title_en:"Music Theory ABRSM",  title_ar:"نظرية الموسيقى ABRSM",     level:"INTERMEDIATE", price:220 },
       { slug:"music-reading",      title_en:"Reading & Rhythm",    title_ar:"القراءة والإيقاع",         level:"BEGINNER",     price:220 },
     ],
     achievements_en:["Graduate of the Higher Institute of Music","Professional piano performance card","Diploma in Arabic Music","Music Therapy training certificate","Former Symphony Orchestra of Tunisia accompanist"],
@@ -35,6 +34,7 @@ const INSTRUCTORS = [
     specialties_ar:["المقامات العربية","الموسيقى الأندلسية","تقنية العود","التأليف الموسيقي","الهارموني"],
     courses:[
       { slug:"oud-beginners",    title_en:"Oud",                          title_ar:"العود",                       level:"BEGINNER",     price:220 },
+      { slug:"music-theory-abrsm", title_en:"Music Theory ABRSM",            title_ar:"نظرية الموسيقى ABRSM",        level:"INTERMEDIATE", price:220 },
       { slug:"arabic-maqam-oud", title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", level:"INTERMEDIATE", price:220 },
       { slug:"oud-harmony",      title_en:"Harmony & Counterpoint",       title_ar:"الهارموني والكونتربوان",      level:"ADVANCED",     price:220 },
     ],
