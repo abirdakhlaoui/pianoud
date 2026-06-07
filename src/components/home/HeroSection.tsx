@@ -68,16 +68,17 @@ export default function HeroSection() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        filter: "blur(3px)",
       }} />
-      {/* Lighter gradient overlay — image more visible, edges fade for readability */}
+      {/* Strong even overlay — image stays as subtle ambient texture */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        background: "radial-gradient(ellipse 80% 70% at 50% 45%, rgba(251,250,247,0.55) 0%, rgba(251,250,247,0.68) 55%, rgba(251,250,247,0.85) 100%)",
+        background: "linear-gradient(180deg, rgba(251,250,247,0.90) 0%, rgba(251,250,247,0.86) 50%, rgba(251,250,247,0.93) 100%)",
       }} />
       {/* Subtle gold vignette for premium feel */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        background: "radial-gradient(circle at 50% 120%, rgba(184,137,59,0.12) 0%, transparent 55%)",
+        background: "radial-gradient(circle at 50% 110%, rgba(184,137,59,0.10) 0%, transparent 50%)",
       }} />
 
       {/* Gradient mesh background */}
