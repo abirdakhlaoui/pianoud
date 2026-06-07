@@ -83,17 +83,17 @@ export default function AboutPage() {
               </p>
               <h2 className="font-display" style={{ fontSize:"clamp(28px,4vw,48px)", fontWeight:400, color:"var(--cream)", lineHeight:1.2, marginBottom:24 }}>
                 {isAr
-                  ? <>جعل الموسيقى <span className="gradient-text" style={{fontWeight:800}}>في متناول الجميع</span></>
-                  : <>Making music <span className="gradient-text" style={{fontWeight:800}}>accessible to all</span></>}
+                  ? <>نحن <span className="gradient-text" style={{fontWeight:800}}>عمر وأنس</span></>
+                  : <>We are <span className="gradient-text" style={{fontWeight:800}}>Omar & Ons</span></>}
               </h2>
               <p style={{ fontSize:16, color:"var(--text-muted)", lineHeight:1.9, marginBottom:16 }}>
                 {isAr
-                  ? "وُلدت Pianoud من شغف عميق بالموسيقى ورغبة صادقة في مشاركة هذا الجمال مع العالم. نؤمن بأن كل شخص — بغض النظر عن عمره أو موقعه أو مستواه — يستحق أن يتعلّم الموسيقى."
-                  : "Pianoud was born from a deep passion for music and a genuine desire to share this beauty with the world. We believe that everyone — regardless of age, location, or level — deserves to learn music."}
+                  ? "مرحباً بكم في منصتنا الموسيقية الخاصة. نحن عمر وأنس، أساتذة موسيقى أكاديميون بخبرة تعليمية تتجاوز الـ 10 سنوات في تدريس العود، البيانو، والنظريات الموسيقية في جميع أنحاء العالم العربي."
+                  : "Welcome to our private music platform. We are Omar and Ons, academic music teachers with over 10 years of teaching experience in Oud, Piano, and music theory across the Arab world."}
               </p>
               <p style={{ fontSize:16, color:"var(--text-muted)", lineHeight:1.9 }}>
                 {isAr
-                  ? "من خلال منصتنا ثنائية اللغة، نقدّم دروس البيانو والعود بأعلى جودة أكاديمية، مع الحفاظ على دفء التعليم الشخصي وأصالة التراث الموسيقي العربي."
+                  ? "بعد سنوات من العمل في الأكاديميات والمعاهد الموسيقية، قررنا استثمار كامل خبرتنا الأكاديمية لنقلها إليكم مباشرة في منازلكم من خلال تعليم أكاديمي أونلاين يتخطى حدود المكان، ويمنحكم المرونة الكاملة التي تتناسب مع أوقاتكم وجداولكم اليومية."
                   : "Through our bilingual platform, we deliver Piano and Oud lessons at the highest academic quality, while maintaining the warmth of personal teaching and the authenticity of Arabic musical heritage."}
               </p>
             </div>
