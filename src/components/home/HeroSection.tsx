@@ -266,12 +266,12 @@ export default function HeroSection() {
           {[
             { emoji: "🎹", img: "/course-piano.jpeg",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 220 },
             { emoji: "🪕", img: "/course-oud.jpeg",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 220 },
-            { emoji: "🎶", img: "/course-maqamat.png", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 220 },
-            { emoji: "📘", img: "/course-abrsm.png",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 220 },
-            { emoji: "🎼", img: "/course-harmony.png", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 220 },
-            { emoji: "📖", img: "/course-reading.png", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
+            { emoji: "🎶", img: "/course-maqamat.jpeg", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 220 },
+            { emoji: "📘", img: "/course-abrsm.jpeg",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 220 },
+            { emoji: "🎼", img: "/course-harmony.jpeg", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 220 },
+            { emoji: "📖", img: "/course-reading.jpeg", name_en: "Reading & Rhythm",       name_ar: "القراءة والإيقاع",         href: "/reading", color: "#34d399", price: 220 },
             { emoji: "🧒", img: "/course-kids.jpeg",    name_en: "Piano for Kids",         name_ar: "البيانو للأطفال",          href: "/kids",    color: "#f472b6", price: 220 },
-            { emoji: "👦", img: "/course-oudkids.png", name_en: "Oud for Kids",           name_ar: "العود للأطفال",            href: "/oudkids", color: "#22d3ee", price: 220 },
+            { emoji: "👦", img: "/course-oudkids.jpeg", name_en: "Oud for Kids",           name_ar: "العود للأطفال",            href: "/oudkids", color: "#22d3ee", price: 220 },
           ].map((inst, idx) => (
             <Link key={inst.name_en} href={inst.href} style={{ textDecoration: "none" }}>
               <div className="course-card" style={{
