@@ -61,6 +61,18 @@ export default function HeroSection() {
       overflow: "hidden",
       background: "var(--ink)",
     }}>
+      {/* Background image with light overlay */}
+      <div style={{
+        position: "absolute", inset: 0, zIndex: 0,
+        backgroundImage: "url(/background.jpeg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }} />
+      <div style={{
+        position: "absolute", inset: 0, zIndex: 0,
+        background: "linear-gradient(180deg, rgba(251,250,247,0.82) 0%, rgba(251,250,247,0.72) 50%, rgba(251,250,247,0.88) 100%)",
+      }} />
 
       {/* Gradient mesh background */}
       <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
