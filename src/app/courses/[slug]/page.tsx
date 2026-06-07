@@ -444,8 +444,8 @@ export default function CourseDetailPage() {
       {/* ── HERO ─────────────────────────────────── */}
       <div style={{
         background: course.instrument==="PIANO"
-          ? "linear-gradient(135deg, #080808 0%, #0d1117 40%, #1a1a2e 70%, #080808 100%)"
-          : "linear-gradient(135deg, #080808 0%, #0d1117 40%, #1a0a00 70%, #080808 100%)",
+          ? "var(--ink-soft)"
+          : "var(--ink-soft)",
         borderBottom:"1px solid var(--border)",
         padding:"60px 0 0",
       }}>
@@ -544,8 +544,8 @@ export default function CourseDetailPage() {
                 <div style={{
                   aspectRatio:"16/9",
                   background: course.instrument==="PIANO"
-                    ? "linear-gradient(135deg,#0d1117,#1a1a2e)"
-                    : "linear-gradient(135deg,#0d1117,#1a0a00)",
+                    ? "linear-gradient(135deg, rgba(96,165,250,0.10), rgba(96,165,250,0.04))"
+                    : "linear-gradient(135deg, rgba(184,137,59,0.10), rgba(184,137,59,0.04))",
                   display:"flex", alignItems:"center", justifyContent:"center",
                   position:"relative", overflow:"hidden",
                 }}>
@@ -846,8 +846,8 @@ export default function CourseDetailPage() {
                 <div style={{
                   padding:32, display:"flex", gap:24, alignItems:"flex-start",
                   background: course.instrument==="PIANO"
-                    ? "linear-gradient(135deg,#0d1117,#1a1a2e)"
-                    : "linear-gradient(135deg,#0d1117,#1a0a00)",
+                    ? "linear-gradient(135deg, rgba(96,165,250,0.10), rgba(96,165,250,0.04))"
+                    : "linear-gradient(135deg, rgba(184,137,59,0.10), rgba(184,137,59,0.04))",
                 }}>
                   <div style={{ width:100, height:100, borderRadius:"50%", overflow:"hidden", border:"3px solid var(--gold)", flexShrink:0 }}>
                     <Image src={course.instructor_photo} alt={course.instructor_en} width={100} height={100} style={{ objectFit:"cover", objectPosition:"top" }}/>

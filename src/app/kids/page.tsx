@@ -36,7 +36,7 @@ export default function KidsPage() {
   return (
     <main style={{ minHeight:"100vh", background:"var(--ink)", paddingTop:80 }} dir={isAr ? "rtl" : "ltr"}>
 
-      <section style={{ padding:"80px 0 64px", background:"linear-gradient(135deg,#080808 0%,#0a0d14 50%,#080808 100%)", borderBottom:"1px solid var(--border)", textAlign:"center" }}>
+      <section style={{ padding:"80px 0 64px", background:"var(--ink-soft)", borderBottom:"1px solid var(--border)", textAlign:"center" }}>
         <div className="container">
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, marginBottom:16 }}>
             <div style={{ width:40, height:1, background:"var(--gold)", opacity:0.5 }}/>
