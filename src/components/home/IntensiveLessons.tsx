@@ -39,7 +39,7 @@ export default function IntensiveLessons() {
               </Link>
             </div>
             <div style={{ alignSelf: "stretch", position: "relative", minHeight: 280, overflow: "hidden" }} className="intensive-img">
-              <img src="/course-piano.png" alt="Intensive lessons" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src="/course-piano.jpeg" alt="Intensive lessons" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(184,137,59,0.2), transparent)" }} />
             </div>
           </div>
