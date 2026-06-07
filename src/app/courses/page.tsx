@@ -38,14 +38,14 @@ function PianoIcon({ size = 40 }: { size?: number }) {
 }
 
 const COURSES = [
-  { id:"1", slug:"piano-fundamentals", instrument:"PIANO", level:"BEGINNER", price:220, rating:4.9, students:842, lessons:36, duration:"12h 30m", bestseller:true, title_en:"Piano", title_ar:"البيانو", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
-  { id:"2", slug:"oud-beginners", instrument:"OUD", level:"BEGINNER", price:220, rating:4.9, students:1205, lessons:28, duration:"9h 45m", bestseller:true, title_en:"Oud", title_ar:"العود", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
-  { id:"3", slug:"arabic-maqam-oud", instrument:"OUD", level:"INTERMEDIATE", price:220, rating:4.8, students:631, lessons:48, duration:"18h 00m", bestseller:true, title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
-  { id:"4", slug:"music-theory-abrsm", instrument:"PIANO", level:"INTERMEDIATE", price:220, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظرية الموسيقى ABRSM", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
-  { id:"5", slug:"oud-harmony", instrument:"OUD", level:"ADVANCED", price:220, rating:4.7, students:280, lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony & Counterpoint (Musicians Only)", title_ar:"الهارموني والكونتربوان (للموسيقيين)", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
-  { id:"6", slug:"music-reading", instrument:"PIANO", level:"BEGINNER", price:220, rating:4.8, students:720, lessons:18, duration:"6h 30m", bestseller:false, title_en:"Reading & Rhythm", title_ar:"القراءة والإيقاع", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
-  { id:"7", slug:"piano-kids", instrument:"PIANO", level:"BEGINNER", price:220, rating:5.0, students:530, lessons:20, duration:"7h 00m", bestseller:true, title_en:"Piano for Kids", title_ar:"البيانو للأطفال", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
-  { id:"8", slug:"oud-kids", instrument:"OUD", level:"BEGINNER", price:220, rating:5.0, students:410, lessons:20, duration:"7h 00m", bestseller:true, title_en:"Oud for Kids", title_ar:"العود للأطفال", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"1", slug:"piano-fundamentals", img:"/course-piano.jpeg", instrument:"PIANO", level:"BEGINNER", price:220, rating:4.9, students:842, lessons:36, duration:"12h 30m", bestseller:true, title_en:"Piano", title_ar:"البيانو", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
+  { id:"2", slug:"oud-beginners", img:"/course-oud.jpeg", instrument:"OUD", level:"BEGINNER", price:220, rating:4.9, students:1205, lessons:28, duration:"9h 45m", bestseller:true, title_en:"Oud", title_ar:"العود", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"3", slug:"arabic-maqam-oud", img:"/course-maqamat.jpeg", instrument:"OUD", level:"INTERMEDIATE", price:220, rating:4.8, students:631, lessons:48, duration:"18h 00m", bestseller:true, title_en:"Arabic Music Theory / Maqamat", title_ar:"نظرية الموسيقى العربية / المقامات", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"4", slug:"music-theory-abrsm", img:"/course-abrsm.jpeg", instrument:"PIANO", level:"INTERMEDIATE", price:220, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظرية الموسيقى ABRSM", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
+  { id:"5", slug:"oud-harmony", img:"/course-harmony.jpeg", instrument:"OUD", level:"ADVANCED", price:220, rating:4.7, students:280, lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony & Counterpoint (Musicians Only)", title_ar:"الهارموني والكونتربوان (للموسيقيين)", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
+  { id:"6", slug:"music-reading", img:"/course-reading.jpeg", instrument:"PIANO", level:"BEGINNER", price:220, rating:4.8, students:720, lessons:18, duration:"6h 30m", bestseller:false, title_en:"Reading & Rhythm", title_ar:"القراءة والإيقاع", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
+  { id:"7", slug:"piano-kids", img:"/course-kids.jpeg", instrument:"PIANO", level:"BEGINNER", price:220, rating:5.0, students:530, lessons:20, duration:"7h 00m", bestseller:true, title_en:"Piano for Kids", title_ar:"البيانو للأطفال", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
+  { id:"8", slug:"oud-kids", img:"/course-oudkids.jpeg", instrument:"OUD", level:"BEGINNER", price:220, rating:5.0, students:410, lessons:20, duration:"7h 00m", bestseller:true, title_en:"Oud for Kids", title_ar:"العود للأطفال", instructor_en:"Omar Algour", instructor_ar:"عمر الغور" },
 ]
 
 const LEVEL_COLOR: Record<string,{bg:string;color:string;en:string;ar:string}> = {
@@ -154,11 +154,12 @@ export default function CoursesPage() {
                     onMouseLeave={e => { const el=e.currentTarget as HTMLElement; el.style.borderColor="var(--border)"; el.style.transform="translateY(0)"; el.style.boxShadow="none" }}>
 
                     <div style={{
-                      aspectRatio:"16/9",
-                      background: course.instrument==="PIANO" ? "linear-gradient(135deg,#0d1117,#1a1a2e,#0d1117)" : "linear-gradient(135deg,#0d1117,#1a0a00,#0d1117)",
+                      aspectRatio:"16/9", overflow:"hidden",
                       display:"flex", alignItems:"center", justifyContent:"center", position:"relative",
                     }}>
-                      {course.instrument==="PIANO" ? <PianoIcon size={64}/> : <OudIcon size={64}/>}
+                      <img src={course.img} alt={isAr?course.title_ar:course.title_en} style={{ width:"100%", height:"100%", objectFit:"cover", transition:"transform 0.5s cubic-bezier(0.16,1,0.3,1)" }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform="scale(1.06)" }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform="scale(1)" }} />
                       <div style={{ position:"absolute", top:12, left:12 }}>
                         {course.bestseller && <span style={{ fontSize:10, fontWeight:800, padding:"4px 10px", borderRadius:6, background:"var(--gold)", color:"#0A0A0A" }}>{isAr?"الأكثر مبيعاً":"BESTSELLER"}</span>}
                       </div>
