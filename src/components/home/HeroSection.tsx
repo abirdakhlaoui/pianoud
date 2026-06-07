@@ -61,17 +61,23 @@ export default function HeroSection() {
       overflow: "hidden",
       background: "var(--ink)",
     }}>
-      {/* Background image with light overlay */}
-      <div style={{
+      {/* Background image with ken-burns zoom */}
+      <div className="hero-bg-img" style={{
         position: "absolute", inset: 0, zIndex: 0,
         backgroundImage: "url(/background.jpeg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }} />
+      {/* Lighter gradient overlay — image more visible, edges fade for readability */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        background: "linear-gradient(180deg, rgba(251,250,247,0.82) 0%, rgba(251,250,247,0.72) 50%, rgba(251,250,247,0.88) 100%)",
+        background: "radial-gradient(ellipse 80% 70% at 50% 45%, rgba(251,250,247,0.55) 0%, rgba(251,250,247,0.68) 55%, rgba(251,250,247,0.85) 100%)",
+      }} />
+      {/* Subtle gold vignette for premium feel */}
+      <div style={{
+        position: "absolute", inset: 0, zIndex: 0,
+        background: "radial-gradient(circle at 50% 120%, rgba(184,137,59,0.12) 0%, transparent 55%)",
       }} />
 
       {/* Gradient mesh background */}
