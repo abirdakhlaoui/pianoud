@@ -494,7 +494,7 @@ export default function CourseDetailPage() {
               </h1>
 
               {/* Description */}
-              <p style={{ fontSize:17, color:"#9A9A8A", lineHeight:1.8, marginBottom:28, maxWidth:600 }}>
+              <p style={{ fontSize:17, color:"var(--cream)", lineHeight:1.85, marginBottom:28, maxWidth:600 }}>
                 {isAr?course.description_ar:course.description_en}
               </p>
 
