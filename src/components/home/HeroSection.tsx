@@ -61,24 +61,23 @@ export default function HeroSection() {
       overflow: "hidden",
       background: "var(--ink)",
     }}>
-      {/* Background image with ken-burns zoom */}
+      {/* Background image — visible with ken-burns zoom */}
       <div className="hero-bg-img" style={{
         position: "absolute", inset: 0, zIndex: 0,
         backgroundImage: "url(/background.jpeg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        filter: "blur(3px)",
       }} />
-      {/* Strong even overlay — image stays as subtle ambient texture */}
+      {/* Elegant dark gradient overlay for text readability (rawaee-style) */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        background: "linear-gradient(180deg, rgba(251,250,247,0.90) 0%, rgba(251,250,247,0.86) 50%, rgba(251,250,247,0.93) 100%)",
+        background: "linear-gradient(180deg, rgba(15,12,8,0.55) 0%, rgba(15,12,8,0.40) 40%, rgba(15,12,8,0.65) 100%)",
       }} />
-      {/* Subtle gold vignette for premium feel */}
+      {/* Gold glow accent */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        background: "radial-gradient(circle at 50% 110%, rgba(184,137,59,0.10) 0%, transparent 50%)",
+        background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(184,137,59,0.18) 0%, transparent 70%)",
       }} />
 
       {/* Gradient mesh background */}
@@ -178,7 +177,8 @@ export default function HeroSection() {
               display: "block",
               fontSize: "clamp(48px, 9vw, 96px)",
               fontWeight: 300,
-              color: "var(--cream)",
+              color: "#FFFFFF",
+              textShadow: "0 2px 24px rgba(0,0,0,0.45)",
               letterSpacing: "-1px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -208,7 +208,8 @@ export default function HeroSection() {
           {/* Subtitle */}
           <p style={{
             fontSize: "clamp(16px, 2.2vw, 20px)",
-            color: "var(--text-muted)",
+            color: "rgba(255,255,255,0.92)",
+            textShadow: "0 1px 12px rgba(0,0,0,0.4)",
             maxWidth: 600,
             margin: "0 auto 52px",
             lineHeight: 1.8,
