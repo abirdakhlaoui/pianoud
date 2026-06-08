@@ -182,10 +182,6 @@ export default function CoursesPage() {
                         <span style={{ fontSize:13, fontWeight:700, color:"var(--gold)" }}>{course.rating}</span>
                         <span style={{ fontSize:12, color:"var(--text-muted)" }}>({course.students.toLocaleString()})</span>
                       </div>
-                      <div style={{ display:"flex", gap:16, fontSize:12, color:"var(--text-muted)", marginBottom:16 }}>
-                        <span>📹 {course.lessons} {isAr?"درس":"lessons"}</span>
-                        <span>⏱ {course.duration}</span>
-                      </div>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:"1px solid var(--border)" }}>
                         <div style={{ display:"flex", alignItems:"baseline", gap:4 }}>
                           <span style={{ fontSize:11, color:"var(--text-muted)" }}>{isAr?"من":"From"}</span>
