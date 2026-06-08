@@ -263,12 +263,12 @@ export default function HeroSection() {
             </span>
             <div style={{ width: 40, height: 1, background: "var(--gold)", opacity: 0.5 }} />
           </div>
-          <h2 className="font-display" style={{ fontSize: "clamp(30px,4.5vw,48px)", fontWeight: 400, color: "var(--cream)", lineHeight: 1.15, marginBottom: 14 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(30px,4.5vw,48px)", fontWeight: 400, color: "#FFFFFF", textShadow: "0 2px 20px rgba(0,0,0,0.7)", lineHeight: 1.15, marginBottom: 14 }}>
             {isAr
               ? <>اكتشف <span className="gradient-text" style={{ fontWeight: 800 }}>شغفك الموسيقي</span></>
               : <>Discover Your <span className="gradient-text" style={{ fontWeight: 800 }}>Musical Passion</span></>}
           </h2>
-          <p style={{ fontSize: 16, color: "var(--text-muted)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.9)", textShadow: "0 1px 12px rgba(0,0,0,0.6)", maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
             {isAr
               ? "ثمانية مسارات تعليمية احترافية — اختر آلتك أو تخصصك وابدأ رحلتك الموسيقية اليوم."
               : "Eight professional learning paths — choose your instrument or specialty and start your musical journey today."}
