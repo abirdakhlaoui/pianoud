@@ -36,7 +36,7 @@ export default function AboutPage() {
       {/* ── HERO ── */}
       <section style={{
         padding:"100px 0 80px",
-        background:"linear-gradient(135deg,#080808 0%,#0d1117 40%,#1a1a2e 70%,#080808 100%)",
+        background:"var(--ink-soft)",
         borderBottom:"1px solid var(--border)",
         textAlign:"center",
       }}>
@@ -158,8 +158,8 @@ export default function AboutPage() {
                 <div style={{
                   padding:32,
                   background: instructor.instrument==="PIANO"
-                    ? "linear-gradient(135deg,#0d1117,#1a1a2e)"
-                    : "linear-gradient(135deg,#0d1117,#1a0a00)",
+                    ? "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(96,165,250,0.04))"
+                    : "linear-gradient(135deg, rgba(184,137,59,0.12), rgba(184,137,59,0.04))",
                   display:"flex", gap:24, alignItems:"flex-start",
                 }}>
                   <div style={{ width:100, height:100, borderRadius:"50%", overflow:"hidden", border:"3px solid var(--gold)", flexShrink:0 }}>
