@@ -56,7 +56,7 @@ export default function InstructorsPage() {
     <main style={{ minHeight:"100vh", background:"var(--ink)", paddingTop:80 }} dir={isAr?"rtl":"ltr"}>
 
       {/* Hero */}
-      <section style={{ padding:"80px 0 64px", textAlign:"center", background:"linear-gradient(135deg,#080808,#0d1117,#080808)", borderBottom:"1px solid var(--border)" }}>
+      <section style={{ padding:"80px 0 64px", textAlign:"center", background:"var(--ink-soft)", borderBottom:"1px solid var(--border)" }}>
         <div className="container">
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:12, marginBottom:16 }}>
             <div style={{ width:32, height:1, background:"var(--gold)", opacity:0.5 }}/>
@@ -90,8 +90,8 @@ export default function InstructorsPage() {
                 <div style={{
                   height:140,
                   background: inst.instrument==="PIANO"
-                    ? "linear-gradient(135deg,#0d1117,#1a1a2e)"
-                    : "linear-gradient(135deg,#0d1117,#1a0a00)",
+                    ? "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(96,165,250,0.04))"
+                    : "linear-gradient(135deg, rgba(184,137,59,0.12), rgba(184,137,59,0.04))",
                   position:"relative",
                 }}>
                   <div style={{ position:"absolute", bottom:-40, left:"50%", transform:"translateX(-50%)" }}>
