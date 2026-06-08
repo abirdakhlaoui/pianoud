@@ -178,7 +178,7 @@ export default function HeroSection() {
               fontSize: "clamp(48px, 9vw, 96px)",
               fontWeight: 300,
               color: "#FFFFFF",
-              textShadow: "0 2px 24px rgba(0,0,0,0.45)",
+              textShadow: "0 2px 28px rgba(0,0,0,0.75)",
               letterSpacing: "-1px",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -208,8 +208,8 @@ export default function HeroSection() {
           {/* Subtitle */}
           <p style={{
             fontSize: "clamp(16px, 2.2vw, 20px)",
-            color: "rgba(255,255,255,0.92)",
-            textShadow: "0 1px 12px rgba(0,0,0,0.4)",
+            color: "#FFFFFF",
+            textShadow: "0 2px 16px rgba(0,0,0,0.7)",
             maxWidth: 600,
             margin: "0 auto 52px",
             lineHeight: 1.8,
