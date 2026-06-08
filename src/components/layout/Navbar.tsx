@@ -94,8 +94,8 @@ export default function Navbar() {
       <header dir={isAr ? "rtl" : "ltr"} style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
         padding: scrolled ? "10px 0" : "18px 0",
-        background: scrolled ? "var(--ink-soft)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
+        background: scrolled ? "rgba(20,16,10,0.92)" : "rgba(20,16,10,0.45)",
+        backdropFilter: "blur(20px)",
         borderBottom: scrolled ? "1px solid var(--border)" : "none",
         transition: "all 0.4s ease",
       }}>
@@ -122,9 +122,9 @@ export default function Navbar() {
           <nav className="hidden-mobile" style={{ display:"flex", alignItems:"center", gap:32 }}>
             {links.map((link: any) => (
               <Link key={link.href} href={link.href} className="nav-link"
-                style={{ fontSize:14, fontWeight:600, color:"var(--cream)", textDecoration:"none", transition:"color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--cream)")}>
+                style={{ fontSize:14, fontWeight:600, color:"#F5F0E8", textDecoration:"none", transition:"color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--gold-light)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#F5F0E8")}>
                 {link.label}
               </Link>
             ))}
