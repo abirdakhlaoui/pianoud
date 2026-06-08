@@ -387,7 +387,7 @@ a.nav-link:hover::after { width: 100%; }
 /* Hero background slow ken-burns zoom */
 @keyframes kenBurns {
   0%   { transform: scale(1); }
-  100% { transform: scale(1.04); }
+  100% { transform: scale(1.01); }
 }
 .hero-bg-img {
   animation: kenBurns 28s ease-in-out infinite alternate;
