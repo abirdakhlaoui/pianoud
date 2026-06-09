@@ -8,7 +8,7 @@ const schema = z.object({
   name:       z.string().min(2).max(50),
   email:      z.string().email(),
   password:   z.string().min(8).max(100),
-  instrument: z.enum(["PIANO","OUD","MAQAMAT","ABRSM","HARMONY"]).optional(),
+  instrument: z.enum(["PIANO","OUD","MAQAMAT","ABRSM","HARMONY","READING","PIANOKIDS","OUDKIDS"]).optional(),
   level:      z.enum(["BEGINNER","INTERMEDIATE","ADVANCED"]).optional(),
 })
 
@@ -48,6 +48,12 @@ export async function POST(req: Request) {
         ? (level === "BEGINNER" ? "piano-fundamentals" : level === "INTERMEDIATE" ? "arabic-piano" : "classical-piano")
         : instrument === "OUD"
         ? (level === "BEGINNER" ? "oud-beginners" : level === "INTERMEDIATE" ? "arabic-maqam-oud" : "oud-advanced")
+        : instrument === "MAQAMAT"   ? "arabic-maqam-oud"
+        : instrument === "ABRSM"     ? "music-theory-abrsm"
+        : instrument === "HARMONY"   ? "oud-harmony"
+        : instrument === "READING"   ? "music-reading"
+        : instrument === "PIANOKIDS" ? "piano-kids"
+        : instrument === "OUDKIDS"   ? "oud-kids"
         : "piano-fundamentals"
 
       // Just store the preference — don't auto-enroll (they need to pay)

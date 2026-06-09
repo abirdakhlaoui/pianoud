@@ -153,11 +153,14 @@ export default function SignUpPage() {
                   </label>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                     {[
-                      { key:"PIANO",   icon:"🎹", label:"Piano",                    desc:"Classical, Arabic, Jazz" },
-                      { key:"OUD",     icon:"🪕", label:"Oud",                      desc:"Arabic, Maqam, Andalusian" },
-                      { key:"MAQAMAT", icon:"🎶", label:"Arabic Music Theory",      desc:"Maqamat & theory" },
-                      { key:"ABRSM",   icon:"📘", label:"Music Theory ABRSM",       desc:"Western theory exams" },
-                      { key:"HARMONY", icon:"🎼", label:"Harmony & Counterpoint",   desc:"For musicians only" },
+                      { key:"PIANO",    icon:"🎹", label:"Piano",                   desc:"Classical, Arabic, Jazz" },
+                      { key:"OUD",      icon:"🪕", label:"Oud",                     desc:"Arabic, Maqam, Andalusian" },
+                      { key:"MAQAMAT",  icon:"🎶", label:"Arabic Music Theory",     desc:"Maqamat & theory" },
+                      { key:"ABRSM",    icon:"📘", label:"Music Theory ABRSM",      desc:"Western theory exams" },
+                      { key:"HARMONY",  icon:"🎼", label:"Harmony & Counterpoint",  desc:"For musicians only" },
+                      { key:"READING",  icon:"📖", label:"Reading & Rhythm",        desc:"Sight-reading & rhythm" },
+                      { key:"PIANOKIDS",icon:"🧒", label:"Piano for Kids",          desc:"Fun piano for children" },
+                      { key:"OUDKIDS",  icon:"👦", label:"Oud for Kids",            desc:"Fun oud for children" },
                     ].map((opt: any) => (
                       <button key={opt.key} type="button" onClick={() => setInstrument(opt.key as any)} style={{
                         padding:"18px 12px", borderRadius:12, cursor:"pointer",
