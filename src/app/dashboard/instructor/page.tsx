@@ -9,16 +9,20 @@ export default async function InstructorDashboard() {
   const user = session.user as any
   if (user.role !== "INSTRUCTOR" && user.role !== "ADMIN") redirect("/dashboard")
 
-  const instructor = await prisma.instructor.findUnique({ where:{ userId: user.id } })
-
-  const [totalStudents, totalCourses, unreadMessages, totalHomework] = await Promise.all([
-    instructor ? prisma.enrollment.count({
-      where: { course: { instructorId: instructor.id } }
-    }) : Promise.resolve(0),
-    instructor ? prisma.course.count({ where:{ instructorId: instructor.id } }) : Promise.resolve(0),
-    prisma.message.count({ where:{ receiverId: user.id, read: false } }),
-    prisma.homework.count({ where:{ instructorId: user.id } }),
-  ])
+  let instructor = null, totalStudents = 0, totalCourses = 0, unreadMessages = 0, totalHomework = 0
+  try {
+    instructor = await prisma.instructor.findUnique({ where:{ userId: user.id } })
+    ;[totalStudents, totalCourses, unreadMessages, totalHomework] = await Promise.all([
+      instructor ? prisma.enrollment.count({
+        where: { course: { instructorId: instructor.id } }
+      }) : Promise.resolve(0),
+      instructor ? prisma.course.count({ where:{ instructorId: instructor.id } }) : Promise.resolve(0),
+      prisma.message.count({ where:{ receiverId: user.id, read: false } }),
+      prisma.homework.count({ where:{ instructorId: user.id } }),
+    ])
+  } catch (e: any) {
+    return (<main style={{padding:100,fontFamily:"monospace"}}><h1>Dashboard DB Error</h1><pre style={{background:"#fee",padding:20,color:"#000",whiteSpace:"pre-wrap"}}>{String(e?.message || e)}</pre></main>)
+  }
 
   return (
     <main style={{ minHeight:"100vh", paddingTop:100, paddingBottom:60, background:"var(--ink)" }}>
