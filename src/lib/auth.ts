@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs"
 
 export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
   trustHost: true,
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
   session: { strategy: "jwt" },
   pages: { signIn: "/auth/signin" },
   providers: [
