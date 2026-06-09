@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
-import { getToken } from "next-auth/jwt"
+import { auth } from "@/lib/auth"
 
-export async function middleware(req: NextRequest) {
-  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET })
+export default auth((req) => {
   const { pathname } = req.nextUrl
+  const token = req.auth?.user as any
 
   // ── Security headers on all responses ──────────
   const response = NextResponse.next()
@@ -15,10 +14,8 @@ export async function middleware(req: NextRequest) {
   response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
 
   // ── Route protection ────────────────────────────
-
-  // Must be logged in
   const protectedRoutes = ["/dashboard", "/checkout"]
-  const isProtected = protectedRoutes.some((r: any) => pathname.startsWith(r))
+  const isProtected = protectedRoutes.some((r) => pathname.startsWith(r))
   if (isProtected && !token) {
     const url = new URL("/auth/signin", req.url)
     url.searchParams.set("redirect", pathname)
@@ -50,14 +47,12 @@ export async function middleware(req: NextRequest) {
   }
 
   return response
-}
+})
 
 export const config = {
   matcher: [
     "/dashboard/:path*",
     "/checkout/:path*",
     "/auth/:path*",
-    "/api/:path*",
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg).*)",
   ],
 }
