@@ -1,4 +1,5 @@
 "use client"
+import { useState, useEffect } from "react"
 
 import { useLang } from "@/components/providers/LangProvider"
 import Link from "next/link"
@@ -29,6 +30,16 @@ const TIMELINE = [
 
 export default function AboutPage() {
   const { isAr } = useLang()
+  const [stats, setStats] = useState({ students: 0, courses: 0, enrollments: 0, countries: 3 })
+  useEffect(() => {
+    fetch("/api/stats").then(r => r.json()).then(setStats).catch(() => {})
+  }, [])
+  const liveStats = [
+    { value: stats.students > 0 ? `${stats.students}+` : "0", en:"Students",        ar:"طالب"        },
+    { value: String(stats.courses),                            en:"Courses",         ar:"دورة"        },
+    { value: "2",                                              en:"Expert Teachers", ar:"مدرّس خبير"  },
+    { value: String(stats.countries),                          en:"Countries",       ar:"دول"         },
+  ]
 
   return (
     <main style={{ minHeight:"100vh", background:"var(--ink)", paddingTop:80 }} dir={isAr?"rtl":"ltr"}>
@@ -61,7 +72,7 @@ export default function AboutPage() {
 
           {/* Stats */}
           <div style={{ display:"flex", gap:48, justifyContent:"center", flexWrap:"wrap" }}>
-            {STATS.map((stat: any, i: any) => (
+            {liveStats.map((stat: any, i: any) => (
               <div key={i} style={{ textAlign:"center" }}>
                 <div className="font-display gradient-text" style={{ fontSize:48, fontWeight:800, lineHeight:1 }}>{stat.value}</div>
                 <div style={{ fontSize:14, color:"var(--text-muted)", marginTop:6, fontWeight:500 }}>
