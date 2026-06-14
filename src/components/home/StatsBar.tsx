@@ -5,7 +5,7 @@ import { useLang } from "@/components/providers/LangProvider"
 
 export default function StatsBar() {
   const { isAr } = useLang()
-  const [stats, setStats] = useState({ totalStudents: 0, totalCourses: 0, totalEnrollments: 0 })
+  const [stats, setStats] = useState({ students: 0, courses: 0, enrollments: 0 })
 
   useEffect(() => {
     fetch("/api/stats")
@@ -14,9 +14,9 @@ export default function StatsBar() {
   }, [])
 
   const items = [
-    { value: stats.totalStudents > 0 ? `${stats.totalStudents}+` : "...", value_ar: stats.totalStudents > 0 ? `+${stats.totalStudents}` : "...", label: "Students", label_ar: "طالب" },
-    { value: stats.totalCourses > 0 ? `${stats.totalCourses}` : "...",   value_ar: stats.totalCourses > 0 ? `${stats.totalCourses}` : "...",   label: "Courses",  label_ar: "دورة" },
-    { value: stats.totalEnrollments > 0 ? `${stats.totalEnrollments}+` : "...", value_ar: stats.totalEnrollments > 0 ? `+${stats.totalEnrollments}` : "...", label: "Enrollments", label_ar: "تسجيل" },
+    { value: stats.students > 0 ? `${stats.students}+` : "...", value_ar: stats.students > 0 ? `+${stats.students}` : "...", label: "Students", label_ar: "طالب" },
+    { value: stats.courses > 0 ? `${stats.courses}` : "...",   value_ar: stats.courses > 0 ? `${stats.courses}` : "...",   label: "Courses",  label_ar: "دورة" },
+    { value: stats.enrollments > 0 ? `${stats.enrollments}+` : "...", value_ar: stats.enrollments > 0 ? `+${stats.enrollments}` : "...", label: "Enrollments", label_ar: "تسجيل" },
   ]
 
   return (
