@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { whatsappBookingLink, whatsappAssessmentLink } from "@/lib/whatsapp"
 import { useLang } from "@/components/providers/LangProvider"
 
 const OPTIONS = [
@@ -99,7 +100,7 @@ export default function PianoPage() {
             <p style={{ fontSize:14, color:"var(--text-muted)", marginBottom:6, maxWidth:360, lineHeight:1.6 }}>
               {isAr ? "احجز جلسة تقييم مجانية واكتشف المستوى المناسب لك" : "Book a free assessment session and discover the level that fits you"}
             </p>
-            <Link href="/booking?plan=assessment" className="btn-gold" style={{ padding:"14px 40px", fontSize:16, fontWeight:700 }}>
+            <Link href={whatsappAssessmentLink("Piano", isAr)} target="_blank" className="btn-gold" style={{ padding:"14px 40px", fontSize:16, fontWeight:700 }}>
               {isAr ? "🎯 احجز جلسة التقييم المجانية" : "🎯 Book Your Free Assessment"}
             </Link>
             <p style={{ fontSize:11, color:"var(--text-muted)" }}>
@@ -169,8 +170,8 @@ export default function PianoPage() {
                   </div>
                 )}
 
-                <Link href={"/booking?plan=piano-" + opt.id + "&price=" + opt.price} style={{ marginTop:"auto", display:"flex", alignItems:"center", justifyContent:"center", padding:"14px", borderRadius:10, fontSize:15, fontWeight:700, textDecoration:"none", background:opt.color, color:"#0A0A0A" }}>
-                  {isAr ? "احجز الآن" : "Book Now"}
+                <Link href={whatsappBookingLink("Piano", (isAr ? opt.hours_ar : opt.hours_en), opt.price, isAr)} target="_blank" style={{ marginTop:"auto", display:"flex", alignItems:"center", justifyContent:"center", gap:8, padding:"14px", borderRadius:10, fontSize:15, fontWeight:700, textDecoration:"none", background:opt.color, color:"#0A0A0A" }}>
+                  {isAr ? "احجز عبر واتساب" : "Book via WhatsApp"}
                 </Link>
               </div>
             </div>
