@@ -7,6 +7,7 @@ import SessionWrapper from "@/components/providers/SessionWrapper"
 import { LangProvider } from "@/components/providers/LangProvider"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import ScrollReveal from "@/components/ScrollReveal"
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Navbar />
               {children}
               <Footer />
+              <FloatingWhatsApp />
             </ThemeProvider>
           </LangProvider>
         </SessionWrapper>
