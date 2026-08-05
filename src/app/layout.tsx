@@ -24,7 +24,7 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pianoud.vercel.app"),
+  metadataBase: new URL("https://pianoud.net"),
   title: {
     default: "Pianoud — Online Piano & Oud Academy",
     template: "%s | Pianoud",

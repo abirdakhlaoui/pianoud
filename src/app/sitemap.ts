@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://pianoud.vercel.app"
+  const base = "https://pianoud.net"
   const now = new Date()
 
   const staticPages = [
