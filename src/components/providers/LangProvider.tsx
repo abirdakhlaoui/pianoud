@@ -8,10 +8,10 @@ const LangContext = createContext<{
   lang: Lang
   setLang: (l: Lang) => void
   isAr: boolean
-}>({ lang: "en", setLang: () => {}, isAr: false })
+}>({ lang: "ar", setLang: () => {}, isAr: true })
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en")
+  const [lang, setLangState] = useState<Lang>("ar")
 
   useEffect(() => {
     const saved = localStorage.getItem("pianoud_lang") as Lang
