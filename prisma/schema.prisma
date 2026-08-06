@@ -278,3 +278,15 @@ model PasswordResetCode {
   expiresAt DateTime
   createdAt DateTime @default(now())
 }
+
+model AssessmentBooking {
+  id         String   @id @default(cuid())
+  name       String
+  phone      String
+  instrument String
+  date       String
+  time       String
+  createdAt  DateTime @default(now())
+  @@unique([date, time, instrument])
+  @@index([date, instrument])
+}
