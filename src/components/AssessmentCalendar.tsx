@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect, useMemo } from "react"
 import { useLang } from "@/components/providers/LangProvider"
-import { WHATSAPP_NUMBER } from "@/lib/whatsapp"
 
 const TIMES = ["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00"]
 
@@ -42,6 +41,8 @@ export default function AssessmentCalendar({ instrument, courseName }: { instrum
       .finally(() => setLoading(false))
   }, [selectedDate, instrument])
 
+  const [confirmed, setConfirmed] = useState(false)
+
   async function handleConfirm() {
     if (!name || !phone || !selectedTime) return
     setSubmitting(true)
@@ -52,7 +53,6 @@ export default function AssessmentCalendar({ instrument, courseName }: { instrum
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, instrument, date: selectedDate, time: selectedTime }),
       })
-      const data = await res.json()
       if (!res.ok) {
         setError(isAr ? "هذا الموعد محجوز، اختر موعداً آخر" : "This slot was just taken, please pick another")
         setTakenTimes((t) => [...t, selectedTime])
@@ -60,11 +60,7 @@ export default function AssessmentCalendar({ instrument, courseName }: { instrum
         setSubmitting(false)
         return
       }
-      const dateLabel = new Date(selectedDate + "T00:00:00").toLocaleDateString(isAr ? "ar" : "en-US", { weekday: "long", month: "long", day: "numeric" })
-      const msg = isAr
-        ? `مرحباً، اسمي ${name}. أرغب في تأكيد حجز جلسة التقييم المجانية لدورة ${courseName} يوم ${dateLabel} الساعة ${selectedTime}.`
-        : `Hi! My name is ${name}. I'd like to confirm my free assessment session for ${courseName} on ${dateLabel} at ${selectedTime}.`
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank")
+      setConfirmed(true)
       setSubmitting(false)
     } catch {
       setError(isAr ? "حدث خطأ، حاول مرة أخرى" : "Something went wrong, try again")
@@ -136,8 +132,18 @@ export default function AssessmentCalendar({ instrument, courseName }: { instrum
         })}
       </div>
 
-      {/* Form reveal */}
-      {selectedTime && (
+      {/* Success state */}
+      {confirmed ? (
+        <div style={{ textAlign: "center", padding: "20px 10px", animation: "fadeIn 0.3s ease" }}>
+          <span style={{ fontSize: 40, display: "block", marginBottom: 10 }}>✅</span>
+          <h4 className="font-display" style={{ fontSize: 19, fontWeight: 700, color: "var(--cream)", marginBottom: 6 }}>
+            {isAr ? "تم حجز موعدك بنجاح!" : "Your session is booked!"}
+          </h4>
+          <p style={{ fontSize: 13, color: "var(--text-muted)" }}>
+            {isAr ? "سيتواصل معك المدرّس قريباً لتأكيد التفاصيل." : "Your instructor will reach out soon to confirm the details."}
+          </p>
+        </div>
+      ) : selectedTime && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12, animation: "fadeIn 0.3s ease" }}>
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder={isAr ? "الاسم الكامل" : "Full name"}
             style={{ padding: "12px 16px", borderRadius: 10, border: "1px solid var(--border)", background: "var(--ink)", color: "var(--cream)", fontSize: 14, outline: "none" }} />
@@ -146,7 +152,7 @@ export default function AssessmentCalendar({ instrument, courseName }: { instrum
           {error && <p style={{ color: "#f87171", fontSize: 13, textAlign: "center" }}>{error}</p>}
           <button onClick={handleConfirm} disabled={!name || !phone || submitting} className="btn-gold"
             style={{ width: "100%", justifyContent: "center", padding: 14, fontSize: 15, opacity: (!name || !phone || submitting) ? 0.6 : 1 }}>
-            {submitting ? (isAr ? "جارٍ التأكيد..." : "Confirming...") : (isAr ? "تأكيد والمتابعة عبر واتساب" : "Confirm & Continue on WhatsApp")}
+            {submitting ? (isAr ? "جارٍ التأكيد..." : "Confirming...") : (isAr ? "تأكيد الموعد" : "Confirm Booking")}
           </button>
         </div>
       )}
