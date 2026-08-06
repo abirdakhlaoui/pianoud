@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { whatsappBookingLink, whatsappAssessmentLink } from "@/lib/whatsapp"
+import AssessmentCalendar from "@/components/AssessmentCalendar"
 import { useLang } from "@/components/providers/LangProvider"
 
 const OPTIONS = [
@@ -57,24 +58,7 @@ export default function KidsPage() {
               : "Fun piano lessons designed especially for children with a professional instructor. Choose the package that fits your child."}
           </p>
 
-          <div style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", gap:12, padding:"36px 56px", borderRadius:20, background:"linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06))", border:"2px solid var(--gold)", boxShadow:"0 0 40px rgba(201,168,76,0.25)" }}>
-            <span style={{ fontSize:12, fontWeight:800, color:"#0A0A0A", background:"var(--gold)", padding:"5px 16px", borderRadius:999, letterSpacing:1, textTransform:"uppercase" }}>
-              {isAr ? "★ مجاني تماماً ★" : "★ 100% Free ★"}
-            </span>
-            <span style={{ fontSize:40 }}>🎯</span>
-            <h3 className="font-display" style={{ fontSize:24, fontWeight:700, color:"var(--cream)", marginBottom:2 }}>
-              {isAr ? "لا تعرف مستواك؟" : "Don't know your level?"}
-            </h3>
-            <p style={{ fontSize:14, color:"var(--text-muted)", marginBottom:6, maxWidth:360, lineHeight:1.6 }}>
-              {isAr ? "احجز جلسة تقييم مجانية واكتشف المستوى المناسب لك" : "Book a free assessment session and discover the level that fits you"}
-            </p>
-            <Link href={whatsappAssessmentLink("Piano for Kids", isAr)} target="_blank" className="btn-gold" style={{ padding:"14px 40px", fontSize:16, fontWeight:700 }}>
-              {isAr ? "🎯 احجز جلسة التقييم المجانية" : "🎯 Book Your Free Assessment"}
-            </Link>
-            <p style={{ fontSize:11, color:"var(--text-muted)" }}>
-              {isAr ? "20 دقيقة · بدون التزام" : "20 minutes · No commitment"}
-            </p>
-          </div>
+          <AssessmentCalendar instrument="PIANO" courseName="Piano for Kids" />
         </div>
       </section>
 
