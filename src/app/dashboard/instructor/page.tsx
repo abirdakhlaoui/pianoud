@@ -10,16 +10,17 @@ export default async function InstructorDashboard() {
   const user = session.user as any
   if (user.role !== "INSTRUCTOR" && user.role !== "ADMIN") redirect("/dashboard")
 
-  let instructor = null, totalStudents = 0, totalCourses = 0, unreadMessages = 0, totalHomework = 0
+  let instructor = null, totalStudents = 0, totalCourses = 0, unreadMessages = 0, totalHomework = 0, totalAssessments = 0
   try {
     instructor = await prisma.instructor.findUnique({ where:{ userId: user.id } })
-    ;[totalStudents, totalCourses, unreadMessages, totalHomework] = await Promise.all([
+    ;[totalStudents, totalCourses, unreadMessages, totalHomework, totalAssessments] = await Promise.all([
       instructor ? prisma.enrollment.count({
         where: { course: { instructorId: instructor.id } }
       }) : Promise.resolve(0),
       instructor ? prisma.course.count({ where:{ instructorId: instructor.id } }) : Promise.resolve(0),
       prisma.message.count({ where:{ receiverId: user.id, read: false } }),
       prisma.homework.count({ where:{ instructorId: user.id } }),
+      instructor ? prisma.assessmentBooking.count({ where:{ instrument: instructor.instrument } }) : Promise.resolve(0),
     ])
   } catch (e: any) {
     return (<main style={{padding:100,fontFamily:"monospace"}}><h1>Dashboard DB Error</h1><pre style={{background:"#fee",padding:20,color:"#000",whiteSpace:"pre-wrap"}}>{String(e?.message || e)}</pre></main>)
@@ -45,6 +46,7 @@ export default async function InstructorDashboard() {
             { label:"Total Students",  value: totalStudents,  icon:"👥" },
             { label:"Homework Given",  value: totalHomework,  icon:"📝" },
             { label:"Unread Messages", value: unreadMessages, icon:"💬" },
+            { label:"Free Assessments", value: totalAssessments, icon:"🎯" },
           ].map((stat: any) => (
             <div key={stat.label} className="card" style={{ padding:24, display:"flex", alignItems:"center", gap:16 }}>
               <span style={{ fontSize:32 }}>{stat.icon}</span>
@@ -63,6 +65,7 @@ export default async function InstructorDashboard() {
             { label:"My Students",      href:"/dashboard/instructor/students",      icon:"👥", desc:"View enrolled students" },
             { label:"Create Course",     href:"/dashboard/instructor/courses/new",   icon:"➕", desc:"Add a new course" },
             { label:"Live Sessions",     href:"/dashboard/instructor/meetings",      icon:"📅", desc:"Schedule with students" },
+            { label:"Free Assessments",  href:"/dashboard/instructor/assessments",   icon:"🎯", desc:"New trial requests", badge: totalAssessments },
             { label:"Homework",          href:"/dashboard/homework",                 icon:"📝", desc:"Create & review homework", badge: 0 },
             { label:"Messages",          href:"/dashboard/messages",                 icon:"💬", desc:"Chat with students", badge: unreadMessages },
             { label:"Settings",          href:"/dashboard/settings",                 icon:"⚙️", desc:"Profile settings" },
