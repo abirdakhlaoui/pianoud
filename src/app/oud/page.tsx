@@ -13,9 +13,10 @@ const OPTIONS = [
     detail_ar: "ساعة واحدة / أسبوع",
     duration_en: "1 month",
     duration_ar: "شهر واحد",
-    price: 220,
-    perks_en: [],
-    perks_ar: [],
+    price: 800,
+    oldPrice: 1000,
+    perks_en: ["Limited offer"],
+    perks_ar: ["عرض محدود"],
     promo: false,
     color: "#f87171",
     bg: "rgba(248,113,113,0.08)",
@@ -31,9 +32,10 @@ const OPTIONS = [
     detail_ar: "ساعة واحدة / أسبوع",
     duration_en: "2 months",
     duration_ar: "شهران",
-    price: 400,
-    perks_en: ["1 class FREE", "20% discount code"],
-    perks_ar: ["حصة مجانية واحدة", "كود خصم 20%"],
+    price: 1500,
+    oldPrice: 2000,
+    perks_en: ["Limited offer"],
+    perks_ar: ["عرض محدود"],
     promo: true,
     color: "#fbbf24",
     bg: "rgba(251,191,36,0.08)",
@@ -49,9 +51,10 @@ const OPTIONS = [
     detail_ar: "ساعة واحدة / أسبوع",
     duration_en: "4 months",
     duration_ar: "4 أشهر",
-    price: 800,
-    perks_en: ["2 classes FREE", "20% discount code"],
-    perks_ar: ["حصتان مجانيتان", "كود خصم 20%"],
+    price: 2900,
+    oldPrice: 4000,
+    perks_en: ["Limited offer"],
+    perks_ar: ["عرض محدود"],
     promo: true,
     color: "#60a5fa",
     bg: "rgba(96,165,250,0.08)",
@@ -144,8 +147,13 @@ export default function OudPage() {
                   {isAr ? "لمدة " + opt.duration_ar : "for " + opt.duration_en}
                 </p>
 
-                <div className="font-display" style={{ fontSize:48, fontWeight:800, color:"var(--cream)", marginBottom:20 }}>
-                  ${opt.price}
+                <div style={{ display:"flex", alignItems:"baseline", gap:10, marginBottom:20, flexWrap:"wrap" }}>
+                  <span className="font-display" style={{ fontSize:40, fontWeight:800, color:"var(--cream)" }}>
+                    {opt.price} <span style={{ fontSize:18, fontWeight:600 }}>{isAr ? "ر.س" : "SAR"}</span>
+                  </span>
+                  <span style={{ fontSize:18, color:"var(--text-muted)", textDecoration:"line-through" }}>
+                    {opt.oldPrice} {isAr ? "ر.س" : "SAR"}
+                  </span>
                 </div>
 
                 {opt.perks_en.length > 0 && (
