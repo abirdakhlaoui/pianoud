@@ -26,15 +26,28 @@ export default function InstructorAssessments() {
   }
 
   function Row({ a }: { a: any }) {
+    const dateLabel = formatDate(a.date)
+    const waMsg = isAr
+      ? `مرحباً ${a.name}، معك المدرّس من Pianoud بخصوص جلسة التقييم المجانية يوم ${dateLabel} الساعة ${a.time}.`
+      : `Hi ${a.name}, this is your instructor from Pianoud regarding your free assessment session on ${dateLabel} at ${a.time}.`
+    const cleanPhone = a.phone.replace(/[^0-9]/g, "")
     return (
       <div className="card" style={{ padding: 20, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
         <div>
           <div style={{ fontSize: 16, fontWeight: 700, color: "var(--cream)", marginBottom: 4 }}>{a.name}</div>
-          <a href={`tel:${a.phone}`} style={{ fontSize: 13, color: "var(--gold)", textDecoration: "none" }}>{a.phone}</a>
+          <div style={{ fontSize: 13, color: "var(--text-muted)" }}>{a.phone}</div>
         </div>
         <div style={{ textAlign: isAr ? "left" : "right" }}>
-          <div style={{ fontSize: 14, fontWeight: 600, color: "var(--cream)" }}>{formatDate(a.date)}</div>
+          <div style={{ fontSize: 14, fontWeight: 600, color: "var(--cream)" }}>{dateLabel}</div>
           <div style={{ fontSize: 13, color: "var(--text-muted)" }}>{a.time}</div>
+        </div>
+        <div style={{ display: "flex", gap: 8 }}>
+          <a href={`tel:${a.phone}`} className="btn-outline" style={{ padding: "8px 14px", fontSize: 13, gap: 6 }}>
+            📞 {isAr ? "اتصال" : "Call"}
+          </a>
+          <a href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(waMsg)}`} target="_blank" className="btn-gold" style={{ padding: "8px 14px", fontSize: 13, gap: 6 }}>
+            💬 {isAr ? "واتساب" : "WhatsApp"}
+          </a>
         </div>
       </div>
     )
