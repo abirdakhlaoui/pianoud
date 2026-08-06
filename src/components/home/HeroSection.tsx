@@ -309,9 +309,6 @@ export default function HeroSection() {
                 <div style={{ width: "100%", height: 180, overflow: "hidden", position: "relative" }}>
                   <img src={inst.img} alt={inst.name_en} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.45) 100%)" }} />
-                  <div style={{ position: "absolute", top: 14, left: isAr ? "auto" : 14, right: isAr ? 14 : "auto", padding: "5px 12px", borderRadius: 999, background: inst.color, color: "#fff", fontSize: 12, fontWeight: 800, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
-                    {isAr ? "من $" + inst.price : "From $" + inst.price}
-                  </div>
                 </div>
                 <div style={{ padding: "20px 22px", borderTop: "3px solid " + inst.color }}>
                   <div style={{ fontSize: 19, fontWeight: 700, color: "var(--cream)", marginBottom: 8 }}>{isAr ? inst.name_ar : inst.name_en}</div>
