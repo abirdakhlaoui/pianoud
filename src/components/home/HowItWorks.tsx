@@ -46,7 +46,7 @@ export default function HowItWorks() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <Link href="/booking?plan=assessment" className="btn-gold" style={{ padding: "15px 44px", fontSize: 16, fontWeight: 700 }}>
+          <Link href="/assessment" className="btn-gold" style={{ padding: "15px 44px", fontSize: 16, fontWeight: 700 }}>
             {isAr ? "🎯 ابدأ بتقييم مجاني" : "🎯 Start with a Free Assessment"}
           </Link>
         </div>

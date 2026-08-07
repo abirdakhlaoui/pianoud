@@ -34,7 +34,7 @@ export default function IntensiveLessons() {
                   </div>
                 ))}
               </div>
-              <Link href="/booking?plan=assessment" className="btn-gold" style={{ padding: "14px 38px", fontSize: 16, fontWeight: 700 }}>
+              <Link href="/assessment" className="btn-gold" style={{ padding: "14px 38px", fontSize: 16, fontWeight: 700 }}>
                 {isAr ? "احجز استشارة مجانية" : "Book a Free Consultation"}
               </Link>
             </div>
