@@ -195,11 +195,16 @@ export default function InstructorsPage() {
                                 {isAr ? lc.ar : lc.en}
                               </span>
                             </div>
-                            <div style={{ textAlign: isAr?"left":"right", flexShrink:0 }}>
-                              <div className="font-display" style={{ fontSize:18, fontWeight:700, color:"var(--cream)" }}>{c.price}</div>
-                              <div style={{ fontSize:11, color:"var(--text-muted)" }}>USD</div>
+                            <div style={{
+                              flexShrink:0, display:"flex", alignItems:"center", gap:6,
+                              padding:"6px 14px", borderRadius:999,
+                              background:"var(--gold-pale)", border:"1px solid rgba(201,168,76,0.3)",
+                            }}>
+                              <span style={{ fontSize:12, fontWeight:700, color:"var(--gold)" }}>
+                                {isAr ? "شاهد الدورة" : "View Course"}
+                              </span>
+                              <span style={{ color:"var(--gold)", fontSize:14 }}>{isAr ? "←" : "→"}</span>
                             </div>
-                            <span style={{ color:"var(--gold)", fontSize:16 }}>→</span>
                           </div>
                         </Link>
                       )
