@@ -11,8 +11,8 @@ const INSTRUCTORS = [
     photo:"/ons.jpeg",
     rating:4.9, students:2042, totalCourses:5,
     instrument:"PIANO",
-    bio_en:"Piano teacher and performer, graduate of the Higher Institute of Music — specialization: Music and Musicology. Holder of a professional performance card in piano. Holder of a diploma in Arabic Music. Holder of a training certificate in Music Therapy. Former accompanying pianist for the Symphony Orchestra of Tunisia. Experienced in teaching all age groups across various institutes in Tunisia.",
-    bio_ar:"أستاذة وعازفة بيانو خريجة المعهد العالي للموسيقى – اختصاص: موسيقى وعلوم موسيقية. متحصّلة على بطاقة احتراف في العزف على آلة البيانو. متحصّلة على ديبلوم الموسيقى العربية. متحصّلة على شهادة تدريب في العلاج بالموسيقى (Music Therapy). عازفة بيانو مرافقة للأوركسترا السمفونيّة بتونس سابقاً. خبرة تدريس جميع الفئات العمريّة بمختلف المعاهد في تونس.",
+    bio_en:"Piano teacher and performer, graduate of the Higher Institute of Music — specialization: Music and Musicology. Holder of a professional performance card in piano. Holder of a diploma in Arabic Music. Holder of a training certificate in Music Therapy. Former accompanying pianist for the Symphony Orchestra. Experienced in teaching all age groups. Together, we started our online Piano and Oud project, and launched new subject programs to support students' musical development (Arabic music theory, music reading, and more) — and we are now expanding across the Gulf region.",
+    bio_ar:"أستاذة وعازفة بيانو خريجة المعهد العالي للموسيقى – اختصاص: موسيقى وعلوم موسيقية. متحصّلة على بطاقة احتراف في العزف على آلة البيانو. متحصّلة على ديبلوم الموسيقى العربية. متحصّلة على شهادة تدريب في العلاج بالموسيقى (Music Therapy). خبرة تدريس جميع الفئات العمريّة. لنحكِ بصيغة الجمع: بدأنا مشروعنا أونلاين بيانو وعود، وأطلقنا برامج موادّ جديدة تفيد الطالب في تكوينه الموسيقي (نظريات موسيقى عربية، قراءة موسيقية، وغيرها)، ونعمل اليوم على التوسع نحو الخليج العربي.",
     specialties_en:["Classical Piano","Arabic Music","Music Theory","Piano for Kids","Music Reading"],
     specialties_ar:["البيانو الكلاسيكي","الموسيقى العربية","نظرية الموسيقى","بيانو الأطفال","قراءة النوتة"],
     courses:[
@@ -26,13 +26,13 @@ const INSTRUCTORS = [
     achievements_ar:["خريجة المعهد العالي للموسيقى","بطاقة احتراف في العزف على البيانو","ديبلوم الموسيقى العربية","شهادة تدريب في العلاج بالموسيقى","عازفة مرافقة سابقاً للأوركسترا السمفونيّة بتونس"],
   },
   {
-    name_en:"Omar Algour",       name_ar:"عمر الغور",
+    name_en:"Omar Algour",       name_ar:"عمر القور",
     role_en:"Oud Instructor",     role_ar:"أستاذ العود",
     photo:"/omar.jpeg",
     rating:4.8, students:1315, totalCourses:4,
     instrument:"OUD",
-    bio_en:"Omar Algour is a professional Oud player, composer, and instructor with over 15 years of experience. He has performed in Germany, Switzerland, Norway and Iceland, bringing the beauty of Arabic music to international audiences. He teaches across the Arab world and specializes in Arabic Maqam, Andalusian music traditions, and music composition using Sibelius notation software.",
-    bio_ar:"عمر الغور عازف عود محترف ومؤلف موسيقي ومدرّس بأكثر من 15 سنة من الخبرة. قدّم عروضاً في ألمانيا وسويسرا والنرويج وآيسلندا، ليحمل جمال الموسيقى العربية للجماهير الدولية. يدرّس في العالم العربي ومتخصص في المقامات العربية والموسيقى الأندلسية وتأليف الموسيقى باستخدام برنامج Sibelius.",
+    bio_en:"Omar Algour is a professional Oud player, composer, and instructor with over 15 years of experience. He has performed in Germany, Switzerland, Norway and Iceland, bringing the beauty of Arabic music to international audiences. He specializes in Arabic Maqam, Andalusian music traditions, and music composition using Sibelius notation software. Together, we started our online Piano and Oud project, and launched new subject programs to support students' musical development (Arabic music theory, music reading, and more) — and we are now expanding across the Gulf region.",
+    bio_ar:"عمر القور عازف عود محترف ومؤلف موسيقي ومدرّس بأكثر من 15 سنة من الخبرة. قدّم عروضاً في ألمانيا وسويسرا والنرويج وآيسلندا، ليحمل جمال الموسيقى العربية للجماهير الدولية. متخصص في المقامات العربية والموسيقى الأندلسية وتأليف الموسيقى باستخدام برنامج Sibelius. لنحكِ بصيغة الجمع: بدأنا مشروعنا أونلاين بيانو وعود، وأطلقنا برامج موادّ جديدة تفيد الطالب في تكوينه الموسيقي (نظريات موسيقى عربية، قراءة موسيقية، وغيرها)، ونعمل اليوم على التوسع نحو الخليج العربي.",
     specialties_en:["Arabic Maqam","Andalusian Music","Oud Technique","Music Composition","Harmony"],
     specialties_ar:["المقامات العربية","الموسيقى الأندلسية","تقنية العود","التأليف الموسيقي","الهارموني"],
     courses:[

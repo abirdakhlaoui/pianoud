@@ -22,7 +22,7 @@ const VALUES = [
 const TIMELINE = [
   { year:"2020", en:"Pianoud Founded",         ar:"تأسيس Pianoud",           desc_en:"Started as a small online tutoring project in Tunis.", desc_ar:"بدأت كمشروع تدريس صغير عبر الإنترنت في تونس." },
   { year:"2021", en:"First 100 Students",      ar:"أول 100 طالب",            desc_en:"Reached our first milestone of 100 enrolled students.", desc_ar:"وصلنا إلى أول 100 طالب مسجّل." },
-  { year:"2022", en:"Oud Program Launched",    ar:"إطلاق برنامج العود",       desc_en:"Omar Algour joined and we launched our Oud curriculum.", desc_ar:"انضم عمر الغور وأطلقنا منهج العود." },
+  { year:"2022", en:"Oud Program Launched",    ar:"إطلاق برنامج العود",       desc_en:"Omar Algour joined and we launched our Oud curriculum.", desc_ar:"انضم عمر القور وأطلقنا منهج العود." },
   { year:"2023", en:"Expanded to Saudi Arabia",ar:"التوسع للسعودية",          desc_en:"Opened enrollment to students across the Arab world.", desc_ar:"فتحنا التسجيل للطلاب في جميع أنحاء العالم العربي." },
   { year:"2024", en:"500+ Students",           ar:"أكثر من 500 طالب",         desc_en:"Grew to a community of over 500 active music learners.", desc_ar:"نمونا لمجتمع يضم أكثر من 500 متعلّم موسيقى نشط." },
   { year:"2025", en:"New Platform Launch",     ar:"إطلاق المنصة الجديدة",     desc_en:"Launched our fully redesigned bilingual platform.", desc_ar:"أطلقنا منصتنا ثنائية اللغة المُعاد تصميمها بالكامل." },
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 instrument:"PIANO",
               },
               {
-                name_en:"Omar Algour",         name_ar:"عمر الغور",
+                name_en:"Omar Algour",         name_ar:"عمر القور",
                 role_en:"Oud Instructor",       role_ar:"أستاذ العود",
                 photo:"/omar.jpeg",
                 bio_en:"Professional Oud player and instructor with experience performing in Germany, Switzerland, Norway and Iceland. Teaches across the Arab world and specializes in Arabic Maqam, Andalusian music, and music composition using Sibelius.",
