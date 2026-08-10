@@ -28,9 +28,9 @@ export default function Footer() {
             </p>
             <div style={{ display:"flex", gap:10 }}>
               {[
-                { label:"YouTube",   color:"#f87171", href:"#" },
-                { label:"Instagram", color:"#c084fc", href:"#" },
-                { label:"Facebook",  color:"#60a5fa", href:"#" },
+                { label:"TikTok",    color:"#f87171", href:"https://www.tiktok.com/@pianoud_academy?_r=1&_t=ZS-98kK27CE9jR" },
+                { label:"Instagram", color:"#c084fc", href:"https://www.instagram.com/pianoud_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+                { label:"WhatsApp",  color:"#25D366", href:"https://wa.me/966566896225" },
               ].map((s: any) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   style={{ fontSize:11, padding:"5px 12px", borderRadius:6, border:"1px solid var(--border)", color:"var(--text-muted)", textDecoration:"none", transition:"all 0.2s" }}
