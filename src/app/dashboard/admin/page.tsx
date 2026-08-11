@@ -67,6 +67,7 @@ export default async function AdminDashboard() {
             { label:"Messages",        href:"/dashboard/messages",       icon:"💬", desc:"Platform messages" },
             { label:"Homework",        href:"/dashboard/homework",       icon:"📝", desc:"View all homework" },
             { label:"Enrollments",     href:"/dashboard/admin/enrollments", icon:"📋", desc:"Manage enrollments manually" },
+            { label:"Payments",        href:"/dashboard/admin/payments", icon:"💰", desc:"Track revenue & payments" },
           ].map((item: any) => (
             <Link key={item.href} href={item.href} style={{ textDecoration:"none" }}>
               <div className="card" style={{ padding:24 }}>
