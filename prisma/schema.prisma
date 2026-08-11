@@ -52,6 +52,7 @@ model User {
   instructorMeetings  Meeting[]            @relation("InstructorMeetings")
   receivedMessages    Message[]            @relation("ReceivedMessages")
   homeworkSubmissions HomeworkSubmission[]
+  payments            Payment[]
 
   @@index([email])
 }
@@ -131,6 +132,7 @@ model Course {
   sections     Section[]
   enrollments  Enrollment[]
   reviews      Review[]
+  payments     Payment[]
 
   @@index([slug])
   @@index([instrument, isPublished])
@@ -289,4 +291,20 @@ model AssessmentBooking {
   createdAt  DateTime @default(now())
   @@unique([date, time, instrument])
   @@index([date, instrument])
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  studentId String
+  courseId  String?
+  amount    Float
+  currency  String   @default("SAR")
+  package   String?
+  method    String   @default("Bank Transfer")
+  note      String?
+  createdAt DateTime @default(now())
+  student User    @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  course  Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  @@index([studentId])
+  @@index([courseId])
 }
