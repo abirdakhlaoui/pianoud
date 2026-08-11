@@ -82,13 +82,13 @@ export default function ContactPage() {
               {
                 icon:"📱",
                 title_en:"WhatsApp",       title_ar:"واتساب",
-                value:"+966 50 000 0000",
+                value:"+966 56 689 6225",
                 desc_en:"Available 9am–9pm GST", desc_ar:"متاح 9 صباحاً – 9 مساءً",
               },
               {
                 icon:"📍",
                 title_en:"Location",       title_ar:"الموقع",
-                value: isAr ? "المملكة العربية السعودية • تونس" : "Saudi Arabia • Tunisia",
+                value: isAr ? "المملكة العربية السعودية" : "Saudi Arabia",
                 desc_en:"Online platform, worldwide", desc_ar:"منصة أونلاين — عالمياً",
               },
               {
@@ -119,9 +119,9 @@ export default function ContactPage() {
               </p>
               <div style={{ display:"flex", gap:12 }}>
                 {[
-                  { label:"YouTube",   icon:"▶", color:"#f87171", href:"#" },
-                  { label:"Instagram", icon:"◈", color:"#c084fc", href:"#" },
-                  { label:"Facebook",  icon:"f", color:"#60a5fa", href:"#" },
+                  { label:"TikTok",    icon:"♪", color:"#f87171", href:"https://www.tiktok.com/@pianoud_academy?_r=1&_t=ZS-98kK27CE9jR" },
+                  { label:"Instagram", icon:"◈", color:"#c084fc", href:"https://www.instagram.com/pianoud_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+                  { label:"WhatsApp",  icon:"📱", color:"#25D366", href:"https://wa.me/966566896225" },
                 ].map((s: any) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                     style={{ display:"flex", alignItems:"center", gap:8, padding:"10px 16px", borderRadius:8, border:"1px solid var(--border)", textDecoration:"none", transition:"all 0.2s", background:"var(--ink)" }}
