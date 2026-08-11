@@ -56,7 +56,7 @@ const LEVEL_COLOR: Record<string,{bg:string;color:string;en:string;ar:string}> =
 
 type Instrument = "ALL"|"PIANO"|"OUD"
 type Level      = "ALL"|"BEGINNER"|"INTERMEDIATE"|"ADVANCED"
-type Sort       = "popular"|"rating"|"price-low"|"price-high"
+type Sort       = "popular"|"rating"
 
 export default function CoursesPage() {
   const { isAr }                    = useLang()
@@ -78,8 +78,6 @@ export default function CoursesPage() {
   filtered = [...filtered].sort((a,b) => {
     if (sort==="popular")    return b.students - a.students
     if (sort==="rating")     return b.rating   - a.rating
-    if (sort==="price-low")  return a.price    - b.price
-    if (sort==="price-high") return b.price    - a.price
     return 0
   })
 
@@ -127,8 +125,6 @@ export default function CoursesPage() {
           <select value={sort} onChange={e => setSort(e.target.value as Sort)} style={selectStyle}>
             <option value="popular">{isAr?"الأكثر شعبية":"Most Popular"}</option>
             <option value="rating">{isAr?"الأعلى تقييماً":"Highest Rated"}</option>
-            <option value="price-low">{isAr?"السعر: الأقل":"Price: Low to High"}</option>
-            <option value="price-high">{isAr?"السعر: الأعلى":"Price: High to Low"}</option>
           </select>
         </div>
 
@@ -183,12 +179,19 @@ export default function CoursesPage() {
                         <span style={{ fontSize:12, color:"var(--text-muted)" }}>({course.students.toLocaleString()})</span>
                       </div>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:"1px solid var(--border)" }}>
-                        <div style={{ display:"flex", alignItems:"baseline", gap:4 }}>
-                          <span style={{ fontSize:11, color:"var(--text-muted)" }}>{isAr?"من":"From"}</span>
-                          <span style={{ fontSize:13, color:"var(--text-muted)" }}>$</span>
-                          <span className="font-display" style={{ fontSize:24, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
+                        <div style={{ display:"flex", alignItems:"center", gap:6 }}>
+                          <span style={{ fontSize:16 }}>{course.instrument==="PIANO"?"🎹":"🪕"}</span>
+                          <span style={{ fontSize:12, fontWeight:600, color:"var(--text-muted)" }}>
+                            {isAr ? (course.instrument==="PIANO"?"بيانو":"عود") : (course.instrument==="PIANO"?"Piano":"Oud")}
+                          </span>
                         </div>
-                        <span style={{ fontSize:13, color:"var(--gold)", fontWeight:500 }}>{isAr?"عرض ←":"View →"}</span>
+                        <div style={{
+                          display:"flex", alignItems:"center", gap:6, padding:"7px 16px", borderRadius:999,
+                          background:"var(--gold)", color:"#0A0A0A", fontSize:13, fontWeight:700,
+                        }}>
+                          {isAr?"شاهد الدورة":"View Course"}
+                          <span>{isAr?"←":"→"}</span>
+                        </div>
                       </div>
                     </div>
                   </article>
