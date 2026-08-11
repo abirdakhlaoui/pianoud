@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { whatsappBookingLink } from "@/lib/whatsapp"
+import { whatsappBookingLink, whatsappAssessmentLink } from "@/lib/whatsapp"
 import { useParams } from "next/navigation"
 import { useLang } from "@/components/providers/LangProvider"
 import ReviewsSection from "@/components/reviews/ReviewsSection"
@@ -569,14 +569,19 @@ export default function CourseDetailPage() {
                 </div>
 
                 <div style={{ padding:24 }}>
-                  {/* Price */}
-                  <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:16 }}>
-                    <span style={{ fontSize:24, color:"var(--text-muted)", fontWeight:400 }}>$</span>
-                    <span className="font-display" style={{ fontSize:40, fontWeight:800, color:"var(--cream)" }}>{course.price}</span>
+                  {/* Free trial badge */}
+                  <div style={{
+                    display:"inline-flex", alignItems:"center", gap:8, padding:"8px 16px", borderRadius:999,
+                    background:"var(--gold-pale)", border:"1px solid rgba(201,168,76,0.3)", marginBottom:16,
+                  }}>
+                    <span style={{ fontSize:16 }}>🎯</span>
+                    <span style={{ fontSize:13, fontWeight:700, color:"var(--gold)" }}>
+                      {isAr ? "احجز تقييمك المجاني" : "Book Your Free Assessment"}
+                    </span>
                   </div>
 
                   {/* Enroll button */}
-                  <Link href={whatsappBookingLink(isAr?course.title_ar:course.title_en, "", course.price, isAr)} target="_blank" className="btn-gold"
+                  <Link href={whatsappAssessmentLink(isAr?course.title_ar:course.title_en, isAr)} target="_blank" className="btn-gold"
                     style={{ width:"100%", justifyContent:"center", padding:16, fontSize:16, marginBottom:10, borderRadius:10 }}>
                     {isAr?"احجز عبر واتساب":"Book via WhatsApp"}
                   </Link>
@@ -828,7 +833,7 @@ export default function CourseDetailPage() {
                 <p style={{ fontSize:16, color:"var(--text-muted)", marginBottom:20 }}>
                   {isAr?"هل أنت مستعد لبدء التعلم؟":"Ready to start learning?"}
                 </p>
-                <Link href={whatsappBookingLink(isAr?course.title_ar:course.title_en, "", course.price, isAr)} target="_blank" className="btn-gold" style={{ padding:"14px 40px", fontSize:16 }}>
+                <Link href={whatsappAssessmentLink(isAr?course.title_ar:course.title_en, isAr)} target="_blank" className="btn-gold" style={{ padding:"14px 40px", fontSize:16 }}>
                   {isAr?"احجز عبر واتساب":"Book via WhatsApp"}
                 </Link>
               </div>
@@ -908,8 +913,8 @@ export default function CourseDetailPage() {
             {isAr?"انضم إلى آلاف الطلاب الذين بدأوا بالفعل مع Pianoud":"Join thousands of students who already started with Pianoud"}
           </p>
           <div style={{ display:"flex", gap:16, justifyContent:"center", flexWrap:"wrap" }}>
-            <Link href={whatsappBookingLink(isAr?course.title_ar:course.title_en, "", course.price, isAr)} target="_blank" className="btn-gold" style={{ padding:"16px 48px", fontSize:16 }}>
-              {isAr?"احجز عبر واتساب — $"+course.price:"Book via WhatsApp — $"+course.price}
+            <Link href={whatsappAssessmentLink(isAr?course.title_ar:course.title_en, isAr)} target="_blank" className="btn-gold" style={{ padding:"16px 48px", fontSize:16 }}>
+              {isAr?"احجز عبر واتساب":"Book via WhatsApp"}
             </Link>
             <Link href={`/courses/${slug}/learn`} className="btn-outline" style={{ padding:"16px 32px", fontSize:15 }}>
               ▶ {isAr?"جرّب مجاناً":"Try Free"}
