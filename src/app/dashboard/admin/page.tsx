@@ -62,7 +62,8 @@ export default async function AdminDashboard() {
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))", gap:16, marginBottom:48 }}>
           {[
             { label:"Manage Users",    href:"/dashboard/admin/users",   icon:"👥", desc:"View & manage all users" },
-            { label:"All Courses",     href:"/courses",                  icon:"🎓", desc:"Browse all courses" },
+            { label:"All Courses",     href:"/dashboard/admin/courses",  icon:"🎓", desc:"Manage all courses" },
+            { label:"Create User",     href:"/dashboard/admin/users/new", icon:"➕", desc:"Add a new user" },
             { label:"Messages",        href:"/dashboard/messages",       icon:"💬", desc:"Platform messages" },
             { label:"Homework",        href:"/dashboard/homework",       icon:"📝", desc:"View all homework" },
             { label:"Enrollments",     href:"/dashboard/admin/enrollments", icon:"📋", desc:"Manage enrollments manually" },
