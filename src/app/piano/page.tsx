@@ -14,7 +14,7 @@ const OPTIONS = [
     detail_ar: "60 دقيقة / أسبوع",
     duration_en: "1 month",
     duration_ar: "شهر واحد",
-    price: 800,
+    price: 750,
     oldPrice: 1000,
     perks_en: ["Limited offer"],
     perks_ar: ["عرض محدود"],

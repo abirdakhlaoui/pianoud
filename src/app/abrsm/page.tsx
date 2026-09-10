@@ -10,7 +10,7 @@ const OPTIONS = [
     id: "opt1", hours_en: "4 Hours", hours_ar: "4 ساعات",
     detail_en: "1 hour / week", detail_ar: "ساعة واحدة / أسبوع",
     duration_en: "1 month", duration_ar: "شهر واحد",
-    price: 800, oldPrice: 1000, perks_en: ["Limited offer"], perks_ar: ["عرض محدود"], promo: false,
+    price: 750, oldPrice: 1000, perks_en: ["Limited offer"], perks_ar: ["عرض محدود"], promo: false,
     color: "#f87171", bg: "rgba(248,113,113,0.08)", border: "rgba(248,113,113,0.3)",
     badge_en: "", badge_ar: "",
   },
