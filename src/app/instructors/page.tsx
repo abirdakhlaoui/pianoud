@@ -46,6 +46,34 @@ const INSTRUCTORS = [
     achievements_en:["Performed in 4 European countries","Arab world instructor","Sibelius-certified composer","Arabic Maqam specialist"],
     achievements_ar:["عروض في 4 دول أوروبية","مدرّس العالم العربي","مؤلف معتمد على Sibelius","متخصص في المقامات العربية"],
   },
+  {
+    name_en:"Samer Haddad",      name_ar:"سامر حدّاد",
+    role_en:"Classical Guitar Instructor", role_ar:"أستاذ الجيتار الكلاسيكي",
+    photo:"/samer-haddad.jpeg",
+    rating:4.9, students:0, totalCourses:0,
+    instrument:"GUITAR",
+    bio_en:"Samer Haddad is a classical guitar performer and instructor, holder of a Bachelor's degree in Music Science specializing in Classical Guitar, as well as a Master's degree in Guitar Teaching Methods. He has extensive experience teaching guitar at both academic and cultural levels, having taught at Yas Academy for two years, and worked for five years at the Princess Salma Center under the Jordanian Ministry of Culture. He was a specialized guitar instructor at the Academic University from 2011 to 2020, and a guitar instructor at the University of Jordan from 2012 to 2024. He has also taught guitar at numerous music institutes and centers, training students of all levels and age groups. Alongside his academic career, Samer has performed as a guitarist in many festivals, concerts, and musical events, and has collaborated with various bands and musicians on diverse artistic projects.",
+    bio_ar:"سامر حدّاد عازف وأستاذ متخصص في آلة الجيتار الكلاسيكي، حاصل على درجة البكالوريوس في العلوم الموسيقية، تخصص الجيتار الكلاسيكي، بالإضافة إلى درجة الماجستير في أساليب تدريس آلة الجيتار. يمتلك خبرة طويلة في تدريس الجيتار على المستويين الأكاديمي والثقافي، حيث عمل أستاذًا للجيتار في أكاديمية ياس لمدة عامين، كما عمل في وزارة الثقافة الأردنية لمدة خمس سنوات في مركز الأميرة سلمى. وعمل أستاذًا متخصصًا في آلة الجيتار في الجامعة الأكاديمية من عام 2011 حتى عام 2020، بالإضافة إلى عمله أستاذًا للجيتار في الجامعة الأردنية من عام 2012 حتى عام 2024. كما عمل أستاذًا لآلة الجيتار في العديد من المعاهد والمراكز الموسيقية، وأسهم في تدريب وتعليم طلبة من مستويات وفئات عمرية مختلفة. وإلى جانب مسيرته الأكاديمية والتدريسية، شارك سامر حداد كعازف جيتار في العديد من المهرجانات والحفلات والفعاليات الموسيقية، كما تعاون وعزف مع عدد من الفرق والموسيقيين في مشاريع وتجارب فنية متنوعة.",
+    specialties_en:["Classical Guitar","Guitar Teaching Methods","Performance","Music Education"],
+    specialties_ar:["الجيتار الكلاسيكي","أساليب تدريس الجيتار","الأداء الموسيقي","التربية الموسيقية"],
+    courses:[],
+    achievements_en:["Bachelor's degree in Music Science — Classical Guitar","Master's degree in Guitar Teaching Methods","Guitar instructor at University of Jordan (2012–2024)","Guitar instructor at the Academic University (2011–2020)","Performed in numerous festivals and concerts"],
+    achievements_ar:["بكالوريوس في العلوم الموسيقية — تخصص الجيتار الكلاسيكي","ماجستير في أساليب تدريس آلة الجيتار","أستاذ جيتار في الجامعة الأردنية (2012–2024)","أستاذ جيتار في الجامعة الأكاديمية (2011–2020)","شارك في العديد من المهرجانات والحفلات الموسيقية"],
+  },
+  {
+    name_en:"Samer Al-Sayyed",   name_ar:"سامر السّيّد",
+    role_en:"Clarinet Instructor", role_ar:"أستاذ الكلارينيت",
+    photo:"/samer-sayyed.jpeg",
+    rating:4.9, students:0, totalCourses:0,
+    instrument:"CLARINET",
+    bio_en:"A professional clarinet teacher and performer, holder of a Bachelor's and Master's degree in Music Performance, with academic and professional experience in orchestral teaching and performance. He offers specialized individual lessons aimed at developing technique, tone quality, sight-reading, and performance, while preparing and qualifying students for ABRSM exams at various levels, following a professional academic curriculum tailored to each student's goals.",
+    bio_ar:"مدرّس وعازف كلارينيت محترف، حاصل على البكالوريوس والماجستير في الأداء الموسيقي، مع خبرة أكاديمية ومهنية في التعليم والأداء الأوركسترالي. يقدّم دروسًا فردية متخصصة تهدف إلى تطوير التقنية، جودة الصوت، القراءة الموسيقية والأداء، مع إعداد الطالب وتأهيله للتقدّم لامتحانات ABRSM بمختلف المستويات، وفق منهج أكاديمي احترافي ومناسب لأهداف كل طالب.",
+    specialties_en:["Clarinet Performance","ABRSM Exam Preparation","Orchestral Performance","Sight-Reading"],
+    specialties_ar:["أداء الكلارينيت","التحضير لامتحانات ABRSM","الأداء الأوركسترالي","القراءة الموسيقية"],
+    courses:[],
+    achievements_en:["Bachelor's degree in Music Performance","Master's degree in Music Performance","Academic and professional orchestral experience","ABRSM exam preparation specialist"],
+    achievements_ar:["بكالوريوس في الأداء الموسيقي","ماجستير في الأداء الموسيقي","خبرة أكاديمية ومهنية في الأداء الأوركسترالي","متخصص في التحضير لامتحانات ABRSM"],
+  },
 ]
 
 const LEVEL_COLOR: Record<string,{bg:string;color:string;en:string;ar:string}> = {
@@ -96,7 +124,11 @@ export default function InstructorsPage() {
                   height:140,
                   background: inst.instrument==="PIANO"
                     ? "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(96,165,250,0.04))"
-                    : "linear-gradient(135deg, rgba(184,137,59,0.12), rgba(184,137,59,0.04))",
+                    : inst.instrument==="OUD"
+                    ? "linear-gradient(135deg, rgba(184,137,59,0.12), rgba(184,137,59,0.04))"
+                    : inst.instrument==="GUITAR"
+                    ? "linear-gradient(135deg, rgba(52,211,153,0.12), rgba(52,211,153,0.04))"
+                    : "linear-gradient(135deg, rgba(167,139,250,0.12), rgba(167,139,250,0.04))",
                   position:"relative",
                 }}>
                   <div style={{ position:"absolute", bottom:-40, left:"50%", transform:"translateX(-50%)" }}>
@@ -185,7 +217,7 @@ export default function InstructorsPage() {
                             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="rgba(201,168,76,0.3)"; (e.currentTarget as HTMLElement).style.transform="translateX(4px)" }}
                             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="var(--border)"; (e.currentTarget as HTMLElement).style.transform="translateX(0)" }}>
                             <span style={{ fontSize:28, flexShrink:0 }}>
-                              {inst.instrument==="PIANO"?"🎹":"🪕"}
+                              {inst.instrument==="PIANO"?"🎹":inst.instrument==="OUD"?"🪕":inst.instrument==="GUITAR"?"🎸":"🎵"}
                             </span>
                             <div style={{ flex:1 }}>
                               <div style={{ fontSize:14, fontWeight:600, color:"var(--cream)", marginBottom:4 }}>
