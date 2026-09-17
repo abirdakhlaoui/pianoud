@@ -40,6 +40,8 @@ function PianoIcon({ size = 40 }: { size?: number }) {
 const COURSES = [
   { id:"1", slug:"piano-fundamentals", img:"/course-piano.jpeg", instrument:"PIANO", level:"BEGINNER", price:55, rating:4.9, students:842, lessons:36, duration:"12h 30m", bestseller:true, title_en:"Piano", title_ar:"البيانو", instructor_en:"Ons Wafa Romdhani", instructor_ar:"أنس الوفاء رمضاني" },
   { id:"2", slug:"oud-beginners", img:"/course-oud.jpeg", instrument:"OUD", level:"BEGINNER", price:55, rating:4.9, students:1205, lessons:28, duration:"9h 45m", bestseller:true, title_en:"Oud", title_ar:"العود", instructor_en:"Omar Algour", instructor_ar:"عمر القور" },
+  { id:"9", slug:"guitar-fundamentals", img:"/samer-haddad.jpeg", instrument:"GUITAR", level:"BEGINNER", price:55, rating:4.9, students:0, lessons:0, duration:"", bestseller:false, title_en:"Classical Guitar", title_ar:"الجيتار الكلاسيكي", instructor_en:"Samer Haddad", instructor_ar:"سامر حدّاد" },
+  { id:"10", slug:"clarinet-fundamentals", img:"/samer-sayyed.jpeg", instrument:"CLARINET", level:"BEGINNER", price:55, rating:4.9, students:0, lessons:0, duration:"", bestseller:false, title_en:"Clarinet", title_ar:"الكلارينيت", instructor_en:"Samer Al-Sayyed", instructor_ar:"سامر السّيّد" },
   { id:"3", slug:"arabic-maqam-oud", img:"/course-maqamat.jpeg", instrument:"OUD", level:"INTERMEDIATE", price:55, rating:4.8, students:631, lessons:48, duration:"18h 00m", bestseller:true, title_en:"Arabic Music Theory / Maqamat", title_ar:"نظريات الموسيقى العربية / المقامات", instructor_en:"Omar Algour", instructor_ar:"عمر القور" },
   { id:"4", slug:"music-theory-abrsm", img:"/course-abrsm.jpeg", instrument:"PIANO", level:"INTERMEDIATE", price:55, rating:4.9, students:190, lessons:24, duration:"8h 30m", bestseller:false, title_en:"Music Theory ABRSM", title_ar:"نظريات الموسيقى ABRSM", instructor_en:"Omar Algour", instructor_ar:"عمر القور" },
   { id:"5", slug:"oud-harmony", img:"/course-harmony.jpeg", instrument:"OUD", level:"ADVANCED", price:55, rating:4.7, students:280, lessons:32, duration:"11h 00m", bestseller:false, title_en:"Harmony & Counterpoint (Musicians Only)", title_ar:"الهارموني والكونتربوان (للموسيقيين)", instructor_en:"Omar Algour", instructor_ar:"عمر القور" },
@@ -115,6 +117,8 @@ export default function CoursesPage() {
             <option value="ALL">{isAr?"كل الآلات":"All Instruments"}</option>
             <option value="PIANO">{isAr?"بيانو":"Piano"}</option>
             <option value="OUD">{isAr?"عود":"Oud"}</option>
+            <option value="GUITAR">{isAr?"جيتار":"Guitar"}</option>
+            <option value="CLARINET">{isAr?"كلارينيت":"Clarinet"}</option>
           </select>
           <select value={level} onChange={e => setLevel(e.target.value as Level)} style={selectStyle}>
             <option value="ALL">{isAr?"كل المستويات":"All Levels"}</option>
@@ -162,8 +166,8 @@ export default function CoursesPage() {
                     </div>
 
                     <div style={{ padding:"22px 24px 20px", display:"flex", flexDirection:"column", flex:1 }}>
-                      <p style={{ fontSize:10, fontWeight:700, color: course.instrument==="PIANO"?"#60a5fa":"var(--gold)", letterSpacing:3, textTransform:"uppercase", marginBottom:10 }}>
-                        {course.instrument==="PIANO"?(isAr?"بيانو":"Piano"):(isAr?"عود":"Oud")}
+                      <p style={{ fontSize:10, fontWeight:700, color: course.instrument==="PIANO"?"#60a5fa":course.instrument==="OUD"?"var(--gold)":course.instrument==="GUITAR"?"#34d399":"#a78bfa", letterSpacing:3, textTransform:"uppercase", marginBottom:10 }}>
+                        {course.instrument==="PIANO"?(isAr?"بيانو":"Piano"):course.instrument==="OUD"?(isAr?"عود":"Oud"):course.instrument==="GUITAR"?(isAr?"جيتار":"Guitar"):(isAr?"كلارينيت":"Clarinet")}
                       </p>
                       <h3 className="font-display" style={{ fontSize:19, fontWeight:600, color:"var(--cream)", lineHeight:1.3, marginBottom:8, flex:1 }}>
                         {isAr?course.title_ar:course.title_en}
@@ -180,9 +184,9 @@ export default function CoursesPage() {
                       </div>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:"1px solid var(--border)" }}>
                         <div style={{ display:"flex", alignItems:"center", gap:6 }}>
-                          <span style={{ fontSize:16 }}>{course.instrument==="PIANO"?"🎹":"🪕"}</span>
+                          <span style={{ fontSize:16 }}>{course.instrument==="PIANO"?"🎹":course.instrument==="OUD"?"🪕":course.instrument==="GUITAR"?"🎸":"🎵"}</span>
                           <span style={{ fontSize:12, fontWeight:600, color:"var(--text-muted)" }}>
-                            {isAr ? (course.instrument==="PIANO"?"بيانو":"عود") : (course.instrument==="PIANO"?"Piano":"Oud")}
+                            {isAr ? (course.instrument==="PIANO"?"بيانو":course.instrument==="OUD"?"عود":course.instrument==="GUITAR"?"جيتار":"كلارينيت") : (course.instrument==="PIANO"?"Piano":course.instrument==="OUD"?"Oud":course.instrument==="GUITAR"?"Guitar":"Clarinet")}
                           </span>
                         </div>
                         <div style={{
