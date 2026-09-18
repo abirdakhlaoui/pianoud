@@ -287,7 +287,7 @@ export default function HeroSection() {
             { emoji: "🎹", img: "/course-piano.jpeg",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 55 },
             { emoji: "🪕", img: "/course-oud.jpeg",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 55 },
             { emoji: "🎸", img: "/samer-haddad.jpeg", name_en: "Classical Guitar",       name_ar: "الجيتار الكلاسيكي",        href: "/guitar",  color: "#34d399", price: 55 },
-            { emoji: "🎵", img: "/samer-sayyed.jpeg", name_en: "Clarinet",               name_ar: "الكلارينيت",               href: "/clarinet", color: "#a78bfa", price: 55 },
+            { emoji: "🎵", img: "/samer-sayyed.jpeg", name_en: "Clarinet",               name_ar: "الكلارينيت",               href: "/clarinet", color: "#a78bfa", price: 55, pos: "center 20%" },
             { emoji: "🎶", img: "/course-maqamat.jpeg", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 55 },
             { emoji: "📘", img: "/course-abrsm.jpeg",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 55 },
             { emoji: "🎼", img: "/course-harmony.jpeg", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 55 },
@@ -309,7 +309,7 @@ export default function HeroSection() {
                 onMouseEnter={e => { const c = e.currentTarget; c.style.transform = "translateY(-8px)"; c.style.boxShadow = "0 20px 50px rgba(0,0,0,0.14)"; c.style.borderColor = inst.color; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1.08)" }}
                 onMouseLeave={e => { const c = e.currentTarget; c.style.transform = "translateY(0)"; c.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; c.style.borderColor = "var(--border)"; const img = c.querySelector("img"); if (img) (img as HTMLElement).style.transform = "scale(1)" }}>
                 <div style={{ width: "100%", height: 180, overflow: "hidden", position: "relative" }}>
-                  <img src={inst.img} alt={inst.name_en} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }} />
+                  <img src={inst.img} alt={inst.name_en} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: (inst as any).pos || "center", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.45) 100%)" }} />
                 </div>
                 <div style={{ padding: "20px 22px", borderTop: "3px solid " + inst.color }}>
