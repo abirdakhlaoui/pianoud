@@ -8,16 +8,15 @@ import { useLang } from "@/components/providers/LangProvider"
 const OPTIONS = [
   {
     id: "opt1",
-    hours_en: "4 Hours",
-    hours_ar: "4 ساعات",
-    detail_en: "1 hour / week",
-    detail_ar: "ساعة واحدة / أسبوع",
+    hours_en: "4 Sessions",
+    hours_ar: "4 حصص",
+    detail_en: "60 min / week",
+    detail_ar: "60 دقيقة / أسبوع",
     duration_en: "1 month",
     duration_ar: "شهر واحد",
-    price: 750,
-    oldPrice: 1000,
-    perks_en: ["Limited offer"],
-    perks_ar: ["عرض محدود"],
+    price: 1000,
+    perks_en: [],
+    perks_ar: [],
     promo: false,
     color: "#f87171",
     bg: "rgba(248,113,113,0.08)",
@@ -27,16 +26,15 @@ const OPTIONS = [
   },
   {
     id: "opt2",
-    hours_en: "8 Hours",
-    hours_ar: "8 ساعات",
-    detail_en: "1 hour / week",
-    detail_ar: "ساعة واحدة / أسبوع",
+    hours_en: "8 Sessions",
+    hours_ar: "8 حصص",
+    detail_en: "60 min / week",
+    detail_ar: "60 دقيقة / أسبوع",
     duration_en: "2 months",
     duration_ar: "شهران",
-    price: 1500,
-    oldPrice: 2000,
-    perks_en: ["Limited offer"],
-    perks_ar: ["عرض محدود"],
+    price: 1900,
+    perks_en: [],
+    perks_ar: [],
     promo: true,
     color: "#fbbf24",
     bg: "rgba(251,191,36,0.08)",
@@ -46,16 +44,15 @@ const OPTIONS = [
   },
   {
     id: "opt3",
-    hours_en: "16 Hours",
-    hours_ar: "16 ساعة",
-    detail_en: "1 hour / week",
-    detail_ar: "ساعة واحدة / أسبوع",
-    duration_en: "4 months",
-    duration_ar: "4 أشهر",
-    price: 2900,
-    oldPrice: 4000,
-    perks_en: ["Limited offer"],
-    perks_ar: ["عرض محدود"],
+    hours_en: "12 Sessions",
+    hours_ar: "12 حصة",
+    detail_en: "60 min / week",
+    detail_ar: "60 دقيقة / أسبوع",
+    duration_en: "3 months",
+    duration_ar: "3 أشهر",
+    price: 2800,
+    perks_en: [],
+    perks_ar: [],
     promo: true,
     color: "#60a5fa",
     bg: "rgba(96,165,250,0.08)",
@@ -131,12 +128,9 @@ export default function ClarinetPage() {
                   {isAr ? "لمدة " + opt.duration_ar : "for " + opt.duration_en}
                 </p>
 
-                <div style={{ display:"flex", alignItems:"baseline", gap:10, marginBottom:20, flexWrap:"wrap" }}>
+                <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:20 }}>
                   <span className="font-display" style={{ fontSize:40, fontWeight:800, color:"var(--cream)" }}>
                     {opt.price} <span style={{ fontSize:18, fontWeight:600 }}>{isAr ? "ر.س" : "SAR"}</span>
-                  </span>
-                  <span style={{ fontSize:18, color:"var(--text-muted)", textDecoration:"line-through" }}>
-                    {opt.oldPrice} {isAr ? "ر.س" : "SAR"}
                   </span>
                 </div>
 
