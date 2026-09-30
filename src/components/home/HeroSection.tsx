@@ -286,8 +286,8 @@ export default function HeroSection() {
           {[
             { emoji: "🎹", img: "/course-piano.jpeg",   name_en: "Piano",                  name_ar: "البيانو",                  href: "/piano",   color: "#60a5fa", price: 55 },
             { emoji: "🪕", img: "/course-oud.jpeg",     name_en: "Oud",                    name_ar: "العود",                    href: "/oud",     color: "var(--gold)", price: 55 },
-            { emoji: "🎸", img: "/samer-haddad.jpeg", name_en: "Classical Guitar",       name_ar: "الجيتار الكلاسيكي",        href: "/guitar",  color: "#34d399", price: 55 },
-            { emoji: "🎵", img: "/samer-sayyed.jpeg", name_en: "Clarinet",               name_ar: "الكلارينيت",               href: "/clarinet", color: "#a78bfa", price: 55, pos: "center 20%" },
+            { emoji: "🎸", img: "/course-guitar.jpeg", name_en: "Classical Guitar",       name_ar: "الجيتار الكلاسيكي",        href: "/guitar",  color: "#34d399", price: 55 },
+            { emoji: "🎵", img: "/course-clarinet.jpeg", name_en: "Clarinet",               name_ar: "الكلارينيت",               href: "/clarinet", color: "#a78bfa", price: 55, pos: "center 20%" },
             { emoji: "🎶", img: "/course-maqamat.jpeg", name_en: "Arabic Music Theory",    name_ar: "نظرية الموسيقى العربية",   href: "/maqamat", color: "#f87171", price: 55 },
             { emoji: "📘", img: "/course-abrsm.jpeg",   name_en: "Music Theory ABRSM",     name_ar: "نظرية الموسيقى ABRSM",     href: "/abrsm", color: "#fbbf24", price: 55 },
             { emoji: "🎼", img: "/course-harmony.jpeg", name_en: "Harmony & Counterpoint", name_ar: "الهارموني والكونتربوان",   href: "/harmony", color: "#a78bfa", price: 55 },
