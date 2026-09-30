@@ -163,6 +163,28 @@ export default function AboutPage() {
                 facts_ar:["أكثر من 15 سنة خبرة","عروض في أوروبا","مؤلف على Sibelius","متخصص في المقامات العربية"],
                 instrument:"OUD",
               },
+              {
+                name_en:"Samer Haddad",      name_ar:"سامر حدّاد",
+                role_en:"Classical Guitar Instructor", role_ar:"أستاذ الجيتار الكلاسيكي",
+                photo:"/samer-haddad.jpeg",
+                bio_en:"Classical guitar performer and instructor holding a Bachelor's and Master's degree in Guitar Teaching Methods. Extensive academic and cultural teaching experience, including the University of Jordan (2012–2024) and the Academic University (2011–2020).",
+                bio_ar:"عازف وأستاذ جيتار كلاسيكي، حاصل على البكالوريوس والماجستير في أساليب تدريس الجيتار. خبرة أكاديمية وثقافية واسعة، منها الجامعة الأردنية (2012–2024) والجامعة الأكاديمية (2011–2020).",
+                courses:["Classical Guitar"],
+                facts_en:["Master's in Guitar Teaching Methods","University of Jordan instructor","Performed in numerous festivals","12+ years teaching experience"],
+                facts_ar:["ماجستير في أساليب تدريس الجيتار","أستاذ في الجامعة الأردنية","شارك في مهرجانات عديدة","أكثر من 12 سنة خبرة تدريس"],
+                instrument:"GUITAR",
+              },
+              {
+                name_en:"Samer Al-Sayyed",   name_ar:"سامر السّيّد",
+                role_en:"Clarinet Instructor", role_ar:"أستاذ الكلارينيت",
+                photo:"/samer-sayyed.jpeg",
+                bio_en:"Professional clarinet teacher and performer, holder of a Bachelor's and Master's degree in Music Performance. Specializes in technique, tone quality, sight-reading, and ABRSM exam preparation at all levels.",
+                bio_ar:"مدرّس وعازف كلارينيت محترف، حاصل على البكالوريوس والماجستير في الأداء الموسيقي. متخصص في التقنية وجودة الصوت والقراءة الموسيقية والتحضير لامتحانات ABRSM بمختلف المستويات.",
+                courses:["Clarinet"],
+                facts_en:["Master's in Music Performance","ABRSM exam specialist","Orchestral performance experience","Academic teaching background"],
+                facts_ar:["ماجستير في الأداء الموسيقي","متخصص في امتحانات ABRSM","خبرة أداء أوركسترالي","خلفية تدريس أكاديمية"],
+                instrument:"CLARINET",
+              },
             ].map((instructor: any, i: any) => (
               <div key={i} className="card" style={{ overflow:"hidden" }}>
                 {/* Header */}
