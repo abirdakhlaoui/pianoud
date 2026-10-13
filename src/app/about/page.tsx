@@ -164,17 +164,6 @@ export default function AboutPage() {
                 instrument:"OUD",
               },
               {
-                name_en:"Samer Haddad",      name_ar:"سامر حدّاد",
-                role_en:"Classical Guitar Instructor", role_ar:"أستاذ الجيتار الكلاسيكي",
-                photo:"/samer-haddad.jpeg",
-                bio_en:"Classical guitar performer and instructor holding a Bachelor's and Master's degree in Guitar Teaching Methods. Extensive academic and cultural teaching experience, including the University of Jordan (2012–2024) and the Academic University (2011–2020).",
-                bio_ar:"عازف وأستاذ جيتار كلاسيكي، حاصل على البكالوريوس والماجستير في أساليب تدريس الجيتار. خبرة أكاديمية وثقافية واسعة، منها الجامعة الأردنية (2012–2024) والجامعة الأكاديمية (2011–2020).",
-                courses:["Classical Guitar"],
-                facts_en:["Master's in Guitar Teaching Methods","University of Jordan instructor","Performed in numerous festivals","12+ years teaching experience"],
-                facts_ar:["ماجستير في أساليب تدريس الجيتار","أستاذ في الجامعة الأردنية","شارك في مهرجانات عديدة","أكثر من 12 سنة خبرة تدريس"],
-                instrument:"GUITAR",
-              },
-              {
                 name_en:"Samer Al-Sayyed",   name_ar:"سامر السّيّد",
                 role_en:"Clarinet Instructor", role_ar:"أستاذ الكلارينيت",
                 photo:"/samer-sayyed.jpeg",
